@@ -1,2 +1,4 @@
-# cassiopeia-web
-Repo to store the front-end code for the Patient Whole Slide Image Viewer
+#cassiopeia-web
+
+[![Build Status](https://travis-ci.org/KPMP/cassiopeia-web.svg?branch=develop)](https://travis-ci.org/KPMP/cassiopeia-web)
+
