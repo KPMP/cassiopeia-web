@@ -1,0 +1,18 @@
+.nav-container {
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(121, 121, 121, 1);
+	border-radius: 0px;
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+	height: 60px;
+	
+	.logo {
+		height: 100%;
+	}
+
+	.navbar-brand {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+	}
+}
