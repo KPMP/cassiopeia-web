@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import Navbar from './components/Nav/NavBar';
-import Summary from './components/Summary/Summary'
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import Summary from './components/Summary/Summary';
+import Slides from './components/Slides/Slides';
+import { Container } from 'reactstrap';
 
 class App extends Component {
   render() {
     return (
-      <div >
+      <Container fluid>
       	<Navbar/>
-       	<Summary/>
-      </div>
+      	<HashRouter>
+      		<Switch>
+       			<Route exact path="/" component={Summary}/>
+       			<Route path="/slides" component={Slides}/>
+       		</Switch>
+       	</HashRouter>
+      </Container>
     );
   }
 }

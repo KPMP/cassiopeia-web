@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'reactstrap';
 import PatientListDropDown from './PatientListDropDown.js';
 
 class Summary extends Component {
@@ -12,7 +12,8 @@ class Summary extends Component {
                     <Button bsStyle="primary">View Slides</Button>
                 </div>
                 <div>
-                    Landing Page Content
+                    Landing Page Content <br/>
+                    <a href="/#/slides">See slides</a>
                 </div>
             </div>
         );

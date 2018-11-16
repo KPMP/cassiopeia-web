@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import { Navbar, Row } from 'react-bootstrap';
+import { Row, NavbarBrand } from 'reactstrap';
 
 class NavBar extends Component {
 	render() {
 		return (
 			<Row className="nav-container container-fluid">
-				<Navbar.Header>
-					<Navbar.Brand>
+					<NavbarBrand>
 						<a href="/">
 							<img src="img/kpmp-logo-trans-small.png" alt="Patient Slide Viewer" className="logo"/>
 						</a>
-					</Navbar.Brand>
-				</Navbar.Header>
+					</NavbarBrand>
 			</Row>
 			
 		);
