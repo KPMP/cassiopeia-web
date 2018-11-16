@@ -38,11 +38,14 @@ body {
 	height: calc(100vh - #{$header-height});
 	width: 100vw;
 	
+	.red-text {
+		color: red;	
+	}
+	
 	#side-menu {
 		margin: $menu-margin;
 		width: 32vw;
 		.card {
-			//
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 		}
 	}
