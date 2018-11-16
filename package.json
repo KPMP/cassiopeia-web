@@ -12,7 +12,9 @@
     "react": "16.6.3",
     "react-bootstrap": "0.32.4",
     "react-dom": "16.6.3",
-    "react-select": "2.1.1"
+    "react-redux": "5.1.1",
+    "react-select": "2.1.1",
+    "redux": "4.0.1"
   },
   "scripts": {
     "start-js": "react-scripts start",
