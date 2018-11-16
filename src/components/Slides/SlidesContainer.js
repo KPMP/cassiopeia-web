@@ -3,15 +3,12 @@ import PatientSelect from './PatientSelect';
 import { setSelectedPatient } from '../../actions/Patients/patientActions'
 const mapStateToProps = (state, props) =>
     ({
-        patients: state.patients
+        selectedPatient: state.selectedPatient
     });
 
 const mapDispatchToProps = (dispatch, props) =>
     ({
-        setSelectedPatient(patient) {
-            dispatch(setSelectedPatient(patient));
-            dispatch(() => window.location.href = "/#/oops")
-        }
+
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PatientSelect);
+export default connect(mapStateToProps, mapDispatchToProps)(SlidesContainer);
