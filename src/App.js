@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './components/Nav/NavBar';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import Summary from './components/Summary/Summary';
 import Slides from './components/Slides/Slides';
 
@@ -9,12 +9,12 @@ class App extends Component {
     return (
       <div >
       	<Navbar/>
-      	<BrowserRouter>
+      	<HashRouter>
       		<Switch>
        			<Route exact path="/" component={Summary}/>
-       			<Route exact path="/slides" component={Slides}/>
+       			<Route path="/slides" component={Slides}/>
        		</Switch>
-       	</BrowserRouter>
+       	</HashRouter>
       </div>
     );
   }
