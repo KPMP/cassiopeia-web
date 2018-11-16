@@ -1,3 +1,10 @@
+$header-height: 60px;
+$menu-margin: 15px;
+
+body {
+	overflow: hidden;
+}
+
 .nav-container {
 	border-width: 1px;
 	border-style: solid;
@@ -5,7 +12,7 @@
 	border-radius: 0px;
 	margin-left: 0px !important;
 	padding-left: 0px !important;
-	height: 60px;
+	height: $header-height;
 	
 	.logo {
 		width: 57%;
@@ -16,4 +23,27 @@
 		padding-bottom: 0px !important;
 	}
 
+}
+
+.container-fluid {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+
+#slide-viewer {
+	padding-left: 15px;
+	background-image: url("/img/fake-stain.jpg"); 
+	height: calc(100vh - #{$header-height});
+	width: 100vw;
+	
+	#side-menu {
+		margin: $menu-margin;
+		width: 20vw;
+		.card {
+			//
+			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+		}
+	}
 }

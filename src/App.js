@@ -3,11 +3,12 @@ import Navbar from './components/Nav/NavBar';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import Summary from './components/Summary/Summary';
 import Slides from './components/Slides/Slides';
+import { Container } from 'reactstrap';
 
 class App extends Component {
   render() {
     return (
-      <div >
+      <Container fluid>
       	<Navbar/>
       	<HashRouter>
       		<Switch>
@@ -15,7 +16,7 @@ class App extends Component {
        			<Route path="/slides" component={Slides}/>
        		</Switch>
        	</HashRouter>
-      </div>
+      </Container>
     );
   }
 }
