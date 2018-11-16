@@ -8,7 +8,7 @@ class NavBar extends Component {
 				<Navbar.Header>
 					<Navbar.Brand>
 						<a href="/">
-							<img src="img/kpmp-logo-trans-small.png" alt="Patient Slide Viewer" className="logo navbar-brand"/>
+							<img src="img/kpmp-logo-trans-small.png" alt="Patient Slide Viewer" className="logo"/>
 						</a>
 					</Navbar.Brand>
 				</Navbar.Header>
