@@ -40,7 +40,7 @@ body {
 	
 	#side-menu {
 		margin: $menu-margin;
-		width: 20vw;
+		width: 32vw;
 		.card {
 			//
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
