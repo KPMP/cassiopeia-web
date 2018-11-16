@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+import PatientListDropDown from './PatientListDropDown.js';
 
 class Summary extends Component {
-	render() {
-		return (
-			<div>
-				<h1>Welcome to the Patient Whole Slide Image Viewer!</h1>
-				<a href="/#/slides">See slides</a>
-			</div>
-		);
-	}
+    render() {
+        let patientIds = ["17-1606", "18-139", "18-142", "18-162", "18-312", "18-342"];
+        return (
+            <div id="landing-page">
+                <div className="patient-select-controls pull-left input-group">
+                    <PatientListDropDown patientIds={patientIds} />
+                    <Button bsStyle="primary">View Slides</Button>
+                </div>
+                <div>
+                    Landing Page Content <br/>
+                    <a href="/#/slides">See slides</a>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Summary;
