@@ -10,7 +10,7 @@ const mapDispatchToProps = (dispatch, props) =>
     ({
         setSelectedPatient(patient) {
             dispatch(setSelectedPatient(patient));
-            dispatch(() => window.location.href = "/#/oops")
+            dispatch(() => window.location.href = "/#/slides")
         }
     });
 
