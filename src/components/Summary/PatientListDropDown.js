@@ -10,12 +10,13 @@ class PatientListDropDown extends Component {
 
     handleChange = (selectedOption) => {
         this.setState({selectedOption: selectedOption});
+        this.props.handlePatientSelect(selectedOption.value);
     };
 
     render() {
-        let {selectedOption} = this.props;
-        let options = this.props.patientIds.map((patientId) => {
-                return {value: patientId, label: patientId}
+        let { selectedOption, patients } = this.props;
+        let options = patients.map((patient) => {
+                return {value: patient.id, label: patient.id}
             }
         );
         return (
