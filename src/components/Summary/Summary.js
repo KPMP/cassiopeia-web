@@ -9,7 +9,7 @@ class Summary extends Component {
                     <PatientSelectContainer />
                 </div>
                 <div>
-                    Landing Page Content
+                    Landing Page Content <br/>
                 </div>
             </div>
         );

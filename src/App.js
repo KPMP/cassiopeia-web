@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Navbar from './components/Nav/NavBar';
 import Summary from './components/Summary/Summary';
+import SlidesContainer from '.components/Slides/SlidesContainer';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import loadedState from './initialState';
 import rootReducer from './reducers';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+
 
 window.sessionStorage.clear();
 const cacheStore = window.sessionStorage.getItem("redux-store");
@@ -26,10 +29,15 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <div >
+                <Container fluid>
                     <Navbar/>
-                    <Summary/>
-                </div>
+                    <HashRouter>
+                        <Switch>
+                            <Route exact path="/" component={Summary}/>
+                            <Route path="/slides" component={SlidesContainer}/>
+                        </Switch>
+                    </HashRouter>
+                </Container>
             </Provider>
         );
     }

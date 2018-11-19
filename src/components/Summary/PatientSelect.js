@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'reactstrap';
 import PatientListDropDown from './PatientListDropDown';
 
 class PatientSelect extends Component {
