@@ -5,6 +5,16 @@ body {
 	overflow: hidden;
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+
 .nav-container {
 	border-width: 1px;
 	border-style: solid;
@@ -53,10 +63,23 @@ body {
 	}
 	
 	#side-menu {
+		max-width: 32vw;
+		background: white;
+		border: 1px solid black;
 		margin: $menu-margin;
-		width: 32vw;
-		.card {
+		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+
+		#menu-sidebar {
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+			min-width: 2vw;
+			border-right: 1px solid black;
+			padding-top: 15px;
+			
+			.home {
+				font-family: FontAwesome;
+				content: "\f105";
+			}
 		}
 	}
+
 }

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { Card } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+import MenuSidebar from './MenuSidebar';
 
 class Menu extends Component {
 	render() {
 		return(
-			<div id="side-menu">
-				<Card>
-					I am the menu
-				</Card>
-			</div>
+			<Row id="side-menu">
+				<Col sm="2">
+					<MenuSidebar/>
+				</Col>
+				<Col sm="3">
+						I am the menu
+				</Col>
+			</Row>
 		);
 	}
 }
