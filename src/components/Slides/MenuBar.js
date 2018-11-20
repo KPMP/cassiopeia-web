@@ -6,6 +6,16 @@ import { Row, Col } from 'reactstrap';
 const aClassName = "mx-auto";
 
 class MenuBar extends Component {
+
+	constructor(props) {
+		super(props);
+		this.onBarClick = this.onBarClick.bind(this);
+	}
+
+    onBarClick() {
+		this.props.onToggle();
+	}
+
 	render() {
 		return(
 			<Col sm="2" id="menu-bar">
@@ -16,7 +26,7 @@ class MenuBar extends Component {
 					</a>
 				</Row>
 				<Row>
-					<a className={aClassName}>
+					<a className={aClassName} onClick={this.onBarClick}>
 						<FontAwesomeIcon icon={faBars} size="2x"/>
 					</a>
 				</Row>
