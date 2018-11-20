@@ -69,12 +69,19 @@ a:hover {
 		margin: $menu-margin;
 		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 
-		#menu-sidebar {
+		#menu-bar {
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 			min-width: 2vw;
 			border-right: 1px solid black;
 			padding-top: 15px;
-			
+
+			a {
+				display: block;
+				width: 36px;
+				height: 36px;
+				text-align: center;
+			}
+
 			.home {
 				font-family: FontAwesome;
 				content: "\f105";
