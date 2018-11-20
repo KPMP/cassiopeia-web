@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/Nav/NavBar';
 import Summary from './components/Summary/Summary';
-import SlidesContainer from './components/Slides/SlidesContainer';
+import Slides from './components/Slides/Slides';
 import { Container } from 'reactstrap';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -35,7 +35,7 @@ class App extends Component {
                     <HashRouter>
                         <Switch>
                             <Route exact path="/" component={Summary}/>
-                            <Route path="/slides" component={SlidesContainer}/>
+                            <Route path="/slides" component={Slides}/>
                         </Switch>
                     </HashRouter>
                 </Container>

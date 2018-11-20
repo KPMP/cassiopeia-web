@@ -10,7 +10,7 @@ class Menu extends Component {
 					<MenuSidebar/>
 				</Col>
 				<Col sm="3">
-						I am the menu
+						{this.props.selectedPatient}
 				</Col>
 			</Row>
 		);

@@ -15,7 +15,7 @@ class PatientSelect extends Component {
     };
 
     handleClick = () => {
-        this.props.setSelectedPatient({id: this.state.patientId})
+        this.props.setSelectedPatient(this.state.patientId);
     };
 
     render() {
