@@ -7,23 +7,26 @@ class Menu extends Component {
 
 	constructor(props) {
 		super(props);
+
 		this.toggleHandler = this.toggleHandler.bind(this);
+
 		this.state = {
 			collapse: false
 		};
 	}
 
 	toggleHandler() {
-		this.setState({collapse: !this.state.collapse} );
+		console.log('Toggle');
+		this.setState({
+			collapse: !this.state.collapse
+		} );
 	}
 
 	render() {
 		return(
 			<Row id="side-menu">
 				<MenuBar onToggle={this.toggleHandler}/>
-				<Collapse navbar isOpen={this.state.collapse}>
-					<MenuSlideList />
-				</Collapse>
+				{ this.state.collapse ? null : <MenuSlideList /> }
 			</Row>
 		);
 	}
