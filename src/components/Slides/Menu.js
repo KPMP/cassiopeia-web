@@ -16,7 +16,6 @@ class Menu extends Component {
 	}
 
 	toggleHandler() {
-		console.log('Toggle');
 		this.setState({
 			collapse: !this.state.collapse
 		} );
