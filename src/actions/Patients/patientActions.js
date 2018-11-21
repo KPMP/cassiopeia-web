@@ -1,8 +1,5 @@
 import actionNames from '../actionNames';
-import Api from '../../helpers/Api';
-
-const api = Api.getInstance();
-
+import axios from 'axios';
 
 export const setSelectedPatient = (patient) => {
     return {
@@ -13,10 +10,10 @@ export const setSelectedPatient = (patient) => {
 
 export const getPatientSlides = (patientId) => {
 	return (dispatch) => {
-		api.get('/api/v1/slides/' + patientId)
+		axios.get('/api/v1/slides/' + patientId)
 			.then(result => {
-				console.log(result.data);
-				setSelectedPatient(result.data);
+				dispatch(setSelectedPatient(result.data));
+				window.location.href = "/#/slides";
 			})
 			.catch(err => {
 				
