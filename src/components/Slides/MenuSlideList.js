@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'reactstrap';
+import { Button, Col, Row } from 'reactstrap';
+
+const buttonClassName = 'btn-slide-nav';
 
 class MenuSlideList extends Component {
     render() {
         return (
             <Col id="menu-slide-list">
+                <Row>
+                    <Button className={buttonClassName} outline color={'primary'}>Previous</Button>
+                    <Button className={buttonClassName} outline color={'primary'}>Next</Button>
+                </Row>
                 <Row>Slide List Item 1</Row>
                 <Row>Slide List Item 2</Row>
                 <Row>Slide List Item 3</Row>
