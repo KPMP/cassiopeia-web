@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Row } from 'reactstrap';
+import { Row } from 'reactstrap';
 import MenuBar from './MenuBar';
 import MenuSlideList from "./MenuSlideList";
 

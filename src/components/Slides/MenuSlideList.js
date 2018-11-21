@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardSubtitle, CardTitle, Col, Row } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 
 class MenuSlideList extends Component {
     render() {

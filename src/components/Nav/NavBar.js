@@ -6,11 +6,9 @@ class NavBar extends Component {
 	render() {
 		return (
 			<Row className="nav-container container-fluid">
-					<NavbarBrand>
-						<Link to="/">
-							<img src="img/kpmp-logo-trans-small.png" alt="Patient Slide Viewer" className="logo"/>
-						</Link>
-					</NavbarBrand>
+				<NavbarBrand tag={Link} to={'/'}>
+					<img src="img/kpmp-logo-trans-small.png" alt="Patient Slide Viewer" className="logo"/>
+				</NavbarBrand>
 			</Row>
 			
 		);
