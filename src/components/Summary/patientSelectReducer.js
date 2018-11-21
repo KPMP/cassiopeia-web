@@ -1,6 +1,6 @@
 import actionNames from '../../actions/actionNames';
 
-export const selectedPatient = (state = {}, action) => {
+export const selectedPatient = (state = [], action) => {
     switch(action.type) {
         case actionNames.SET_SELECTED_PATIENT:
             return action.payload;
