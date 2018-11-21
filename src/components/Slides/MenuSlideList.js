@@ -21,7 +21,8 @@ class MenuSlideList extends Component {
             		</Row>;
             	})}
             	</div>
-                <Row>
+            	<Row className="divider" />
+            	<Row>
                     <div id="slide-stain-text">
                         <h2>Slide Title</h2>
                         <h3>Slide Stain Name</h3>
