@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Menu from './Menu';
+import MenuSlideList from './MenuSlideList';
 
 const mapStateToProps = (state, props) =>
     ({
@@ -10,4 +10,4 @@ const mapDispatchToProps = (dispatch, props) =>
     ({
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(MenuSlideList);

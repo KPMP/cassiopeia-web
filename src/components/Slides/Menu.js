@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'reactstrap';
 import MenuBar from './MenuBar';
-import MenuSlideList from "./MenuSlideList";
+import MenuSlideListContainer from "./MenuSlideListContainer";
 
 class Menu extends Component {
 
@@ -22,11 +22,10 @@ class Menu extends Component {
 	}
 
 	render() {
-		console.log(this.props.selectedPatient);
 		return(
 			<Row id="side-menu">
 				<MenuBar onToggle={this.toggleHandler}/>
-				{ this.state.collapse ? null : <MenuSlideList /> }
+				{ this.state.collapse ? null : <MenuSlideListContainer onToggle={this.toggleHandler} /> }
 			</Row>
 		);
 	}

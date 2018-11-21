@@ -36,7 +36,7 @@ class App extends Component {
                             <NavBar/>
                             <Switch>
                                 <Route exact path="/" component={Summary}/>
-                                <Route path="/slides" component={SlidesContainer}/>
+                                <Route path="/slides" component={Slides}/>
                             </Switch>
                         </div>
                     </HashRouter>
