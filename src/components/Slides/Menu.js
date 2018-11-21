@@ -1,20 +1,32 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
-import MenuSidebar from './MenuSidebar';
+import { Row } from 'reactstrap';
+import MenuBar from './MenuBar';
+import MenuSlideList from "./MenuSlideList";
 
 class Menu extends Component {
+
+	constructor(props) {
+		super(props);
+
+		this.toggleHandler = this.toggleHandler.bind(this);
+
+		this.state = {
+			collapse: false
+		};
+	}
+
+	toggleHandler() {
+		this.setState({
+			collapse: !this.state.collapse
+		} );
+	}
+
 	render() {
 		console.log(this.props.selectedPatient);
 		return(
 			<Row id="side-menu">
-				<Col sm="2">
-					<MenuSidebar/>
-				</Col>
-				<Col sm="3">
-						{this.props.selectedPatient.map(function(slide) {
-							return <div>{slide.slideName}</div>;
-						})}
-				</Col>
+				<MenuBar onToggle={this.toggleHandler}/>
+				{ this.state.collapse ? null : <MenuSlideList /> }
 			</Row>
 		);
 	}

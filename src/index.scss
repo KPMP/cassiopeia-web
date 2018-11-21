@@ -64,21 +64,32 @@ a:hover {
 	
 	#side-menu {
 		max-width: 32vw;
-		background: white;
-		border: 1px solid black;
 		margin: $menu-margin;
 		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 
-		#menu-sidebar {
+		#menu-bar {
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 			min-width: 2vw;
-			border-right: 1px solid black;
+			border: 1px solid black;
+			background: white;
 			padding-top: 15px;
-			
-			.home {
-				font-family: FontAwesome;
-				content: "\f105";
+
+			a {
+				display: block;
+				width: 36px;
+				height: 36px;
+				text-align: center;
 			}
+
+			.btn-link {
+				color: black;
+			}
+		}
+
+		#menu-slide-list {
+			background: white;
+			border: 1px solid black;
+			border-left: none;
 		}
 	}
 
