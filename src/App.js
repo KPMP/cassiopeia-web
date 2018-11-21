@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './components/Nav/NavBar';
+import NavBar from './components/Nav/NavBar';
 import Summary from './components/Summary/Summary';
 import SlidesContainer from './components/Slides/SlidesContainer';
 import { Container } from 'reactstrap';
@@ -31,12 +31,14 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Container fluid>
-                    <Navbar/>
                     <HashRouter>
-                        <Switch>
-                            <Route exact path="/" component={Summary}/>
-                            <Route path="/slides" component={SlidesContainer}/>
-                        </Switch>
+                        <div>
+                            <NavBar/>
+                            <Switch>
+                                <Route exact path="/" component={Summary}/>
+                                <Route path="/slides" component={SlidesContainer}/>
+                            </Switch>
+                        </div>
                     </HashRouter>
                 </Container>
             </Provider>

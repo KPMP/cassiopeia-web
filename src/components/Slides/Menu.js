@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
-import MenuSidebar from './MenuSidebar';
+import { Row } from 'reactstrap';
+import MenuBar from './MenuBar';
+import MenuSlideList from "./MenuSlideList";
 
 class Menu extends Component {
+
+	constructor(props) {
+		super(props);
+
+		this.toggleHandler = this.toggleHandler.bind(this);
+
+		this.state = {
+			collapse: false
+		};
+	}
+
+	toggleHandler() {
+		this.setState({
+			collapse: !this.state.collapse
+		} );
+	}
+
 	render() {
 		return(
 			<Row id="side-menu">
-				<Col sm="2">
-					<MenuSidebar/>
-				</Col>
-				<Col sm="3">
-						I am the menu
-				</Col>
+				<MenuBar onToggle={this.toggleHandler}/>
+				{ this.state.collapse ? null : <MenuSlideList /> }
 			</Row>
 		);
 	}
