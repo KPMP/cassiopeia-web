@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const aClassName = "mx-auto";
 
@@ -10,10 +11,10 @@ class MenuBar extends Component {
 		return(
 			<Col sm="2" id="menu-bar">
 				<Row>
-					<a className={aClassName}
-					href="/">
+					<Link className={aClassName}
+					to="/">
 						<FontAwesomeIcon icon={faHome} size="2x"/>
-					</a>
+					</Link>
 				</Row>
 				<Row>
 					<a className={aClassName} onClick={this.props.onToggle}>

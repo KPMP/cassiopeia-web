@@ -31,12 +31,14 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Container fluid>
-                    <Navbar/>
                     <HashRouter>
-                        <Switch>
-                            <Route exact path="/" component={Summary}/>
-                            <Route path="/slides" component={SlidesContainer}/>
-                        </Switch>
+                        <div>
+                            <Navbar/>
+                            <Switch>
+                                <Route exact path="/" component={Summary}/>
+                                <Route path="/slides" component={SlidesContainer}/>
+                            </Switch>
+                        </div>
                     </HashRouter>
                 </Container>
             </Provider>
