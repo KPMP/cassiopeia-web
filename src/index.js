@@ -1,5 +1,6 @@
 import React from 'react';
 import 'js-polyfills/polyfill.min.js';
+import 'airbnb-js-shims';
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
