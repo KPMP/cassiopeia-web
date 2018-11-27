@@ -138,6 +138,12 @@ a:hover {
 
 			.prev-next-buttons {
 				padding: 15px;
+				max-width: 300px;
+				margin: auto;
+
+				.btn {
+					margin: 0 auto 0 auto;
+				}
 			}
 
 			.btn-slide-nav {
