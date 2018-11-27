@@ -16,7 +16,7 @@ $menu-margin: 15px;
 /* Start of real classes */
 
 body {
-	overflow: hidden;
+	overflow: auto;
 }
 
 a {
@@ -76,6 +76,106 @@ a:hover {
 	margin-right: 0px !important;
 	padding-right: 0px !important;
 	padding-left: 0px !important;
+}
+
+#summary-page {
+	max-width: 1200px;
+	margin: auto;
+
+	.btn-primary {
+		background-color: #008ea8;
+	}
+
+	.patient-select-wrapper {
+		p {
+			color: rgb(51, 51, 51);
+			font-family: "Arial";
+			font-feature-settings: "kern";
+			font-kerning: normal;
+			font-size: 13px;
+			font-style: normal;
+			font-weight: 400;
+			letter-spacing: normal;
+			line-height: 15.4333px;
+			text-align: left;
+			text-decoration: none;
+			text-decoration-color: rgb(51, 51, 51);
+			text-decoration-line: none;
+			text-decoration-style: solid;
+			text-rendering: optimizelegibility;
+			text-transform: none;
+			white-space: nowrap;
+		}
+	}
+
+	.light-border {
+		border: 1px solid rgba(212, 212, 212, 1);
+		border-radius: 5px;
+		padding: 18px;
+		margin: 0px 15px;
+
+		p {
+			color: rgb(51, 51, 51);
+			font-family: "ArialMT", "Arial";
+			font-feature-settings: "kern";
+			font-kerning: normal;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			letter-spacing: normal;
+			line-height: 16.45px;
+			overflow-wrap: break-word;
+			text-align: left;
+			text-decoration: none;
+			text-decoration-color: rgb(51, 51, 51);
+			text-decoration-style: solid;
+			text-rendering: optimizelegibility;
+			text-transform: none;
+		}
+
+		p.center {
+			text-align: center;
+		}
+	}
+
+	.row-summary-question {
+		background: #283C5E;
+		font-size: x-large;
+		color: white;
+		padding: 12px 10px;
+	}
+
+	.row-summary-process {
+		img {
+			max-width: 591px;
+			margin: auto;
+		}
+	}
+
+	.row-summary-steps {
+		img {
+			max-width: 152px;
+			margin: auto;
+		}
+
+		.light-border {
+			margin: 0px 35px;
+		}
+	}
+
+	.row-summary-info {
+		margin: 25px 30px 15px 30px;
+	}
+
+	.row-summary-organ-images {
+		text-align: center;
+		margin: 25px 30px 15px;
+
+		img {
+			height: 275px;
+			margin: auto;
+		}
+	}
 }
 
 #slide-viewer {
