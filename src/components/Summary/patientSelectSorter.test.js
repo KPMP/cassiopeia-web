@@ -38,7 +38,6 @@ describe('patientSelectSorter', () => {
     it('should sort the slides array by default on slideName', () => {
         let sortedSlides = patientSelectSorter(patient.slides);
         expect(sortedSlides).toBeDefined();
-        expect(sortedSlides).toBeDefined();
         expect(sortedSlides[0].slideName).toEqual('18-139-1');
         expect(sortedSlides[1].slideName).toEqual('18-139-2');
         expect(sortedSlides[2].slideName).toEqual('18-139-3');
