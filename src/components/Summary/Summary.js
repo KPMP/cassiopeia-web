@@ -6,13 +6,13 @@ class Summary extends Component {
     render() {
         return (
             <div id="summary-page">
-                <div className="patient-select-wrapper">
+                <div id="patient-select-wrapper">
                     <p>
                         Select a KPMP ID and click view slides to get started:
                     </p>
                     <PatientSelectContainer />
                 </div>
-                <div>
+                <div id="summary-content-wrapper">
                     <Col>
                         <Row className="row-summary-question">
                             How does my biopsy get turned into images?
