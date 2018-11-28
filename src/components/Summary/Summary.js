@@ -18,7 +18,7 @@ class Summary extends Component {
                             How does my biopsy get turned into images?
                         </Row>
                         <Row className="row-summary-process">
-                            <img src="/img/summary/biopsy-process.png" />
+                            <img alt="The biopsy process: Segment, Embed, Affix, and Scan" src="/img/summary/biopsy-process.png" />
                         </Row>
                         <Row className="row-summary-info row-summary-steps">
                             <Col className="light-border">
@@ -56,7 +56,7 @@ class Summary extends Component {
                             </Col>
                             <Col className="light-border">
                                 <p className="center">
-                                    <img alt="Step 4, scan the slide image" src="/img/summary/step-4.png" />
+                                    <img alt="Step 4, scan the slide" src="/img/summary/step-4.png" />
                                 </p>
                                 <p className="center">
                                     <b>Step 4: Scan</b>
