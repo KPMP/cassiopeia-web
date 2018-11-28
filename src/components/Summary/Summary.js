@@ -23,7 +23,7 @@ class Summary extends Component {
                         <Row className="row-summary-info row-summary-steps">
                             <Col className="light-border">
                                 <p className="center">
-                                    <img src="/img/summary/step-1.png" />
+                                    <img alt="Step 1, cut the biopsy sample into segments" src="/img/summary/step-1.png" />
                                 </p>
                                 <p className="center">
                                     <b>Step 1: Segment</b>
@@ -34,7 +34,7 @@ class Summary extends Component {
                             </Col>
                             <Col className="light-border">
                                 <p className="center">
-                                    <img src="/img/summary/step-2.png" />
+                                    <img alt="Step 2, embed the segments in paraffin" src="/img/summary/step-2.png" />
                                 </p>
                                 <p className="center">
                                     <b>Step 2: Embed</b>
@@ -45,7 +45,7 @@ class Summary extends Component {
                             </Col>
                             <Col className="light-border">
                                 <p className="center">
-                                    <img src="/img/summary/step-3.png" />
+                                    <img alt="Step 3, affix the slices to slides" src="/img/summary/step-3.png" />
                                 </p>
                                 <p className="center">
                                     <b>Step 3: Affix</b>
@@ -56,7 +56,7 @@ class Summary extends Component {
                             </Col>
                             <Col className="light-border">
                                 <p className="center">
-                                    <img src="/img/summary/step-4.png" />
+                                    <img alt="Step 4, scan the slide image" src="/img/summary/step-4.png" />
                                 </p>
                                 <p className="center">
                                     <b>Step 4: Scan</b>
@@ -88,13 +88,13 @@ class Summary extends Component {
                         </Row>
                         <Row  className="row-summary-info row-summary-organ-images">
                             <Col>
-                                <img src="/img/summary/col1-glomerulus.jpg" />
+                                <img alt="Photograph of a glomerulus with tubules" src="/img/summary/col1-glomerulus.jpg" />
                             </Col>
                             <Col>
-                                <img src="/img/summary/col2-nephron.png" />
+                                <img alt="Diagram of a nephron" src="/img/summary/col2-nephron.png" />
                             </Col>
                             <Col>
-                                <img src="/img/summary/col3-renal-cortex.png" />
+                                <img alt="Diagram of the renal cortex of the kidney" src="/img/summary/col3-renal-cortex.png" />
                             </Col>
                         </Row>
                     </Col>
