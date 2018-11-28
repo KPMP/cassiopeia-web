@@ -197,15 +197,18 @@ a:hover {
 }
 
 #slide-viewer {
-	padding-left: 15px;
-	height: calc(100vh - #{$header-height});
-	width: 100vw;
-
+	position: absolute;
+	top: $header-height;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
 	
 	#side-menu {
 		max-width: 32vw;
 		margin: $menu-margin;
 		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+		z-index: 1000;
+		position: relative;
 
 		#menu-bar {
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
@@ -286,7 +289,7 @@ a:hover {
 //	border: solid 0px #ffffff;
 //	z-index: 3100
 //}
-
+/*
 #navigator {
 	width: 166px;
 	height: 178px;
@@ -299,9 +302,15 @@ a:hover {
 	border-color: #d53015 !important;
 	z-index: 4500 !important;
 	background: rgba(0, 0, 0, .2) !important;
-}
+}*/
 
 .osd-div {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 500; // less than the z-index of #side-menu
 
 	.openseadragon {
 		width: 100%;
