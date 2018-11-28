@@ -25,7 +25,7 @@ class SlideViewer extends Component {
 			previousButton: 'previous',
 			showNavigator: true,
 			navigatorPosition: "BOTTOM_RIGHT",
-			tileSources: 'deepZoomImages/' + slideId + ".dzi.json"
+			tileSources: 'deepZoomImages/' + slideId + '.dzi' //.json'
 		});
 	}
 
