@@ -28,7 +28,8 @@ class MenuSlideList extends Component {
             		</Row>
             	) : (
         			this.props.selectedPatient.map(function(slide, index) {
-                		return <Row className="slide-menu-item">
+						let highlightedClass = index === 0 ? "slide-highlighted" : "";
+                		return <Row className={"slide-menu-item " + highlightedClass}>
                 			<Col sm="2"><div className="thumbnail" /></Col>
                 			<Col sm="10" className="slide-name">{slide.slideName}</Col>
                 		</Row>;

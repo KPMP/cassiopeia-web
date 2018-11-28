@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Row } from 'reactstrap';
-import SlideViewer from './SlideViewer';
+import SlideViewerContainer from './SlideViewerContainer';
 
 class Slides extends Component {
 	render() {
 		return(
 			<Row >
-				<SlideViewer />
+				<SlideViewerContainer />
 			</Row>
 		);
 	}

@@ -2,10 +2,7 @@ $header-height: 60px;
 $menu-margin: 15px;
 
 
-/***  These are some throwaway classes until we have more real stuff in their place ***/	
-.red-text {
-	color: red;	
-}
+/***  These are some throwaway classes until we have more real stuff in their place ***/
 
 .thumbnail {
 	height: 56px;
@@ -16,7 +13,7 @@ $menu-margin: 15px;
 /* Start of real classes */
 
 body {
-	overflow: hidden;
+	//overflow: hidden;
 }
 
 a {
@@ -80,7 +77,6 @@ a:hover {
 
 #slide-viewer {
 	padding-left: 15px;
-	background-image: url("/img/fake-stain.jpg"); 
 	height: calc(100vh - #{$header-height});
 	width: 100vw;
 
@@ -143,9 +139,79 @@ a:hover {
 			.btn-slide-nav {
 				margin-right: 10px;
 			}
+
+			.slide-highlighted {
+				background-color: lightgray;
+			}
 		}
 	}
 
 }
 
+//.navigator-wrapper {
+//	position: fixed;
+//	left: 5px;
+//	bottom: 5px;
+//	background: #000;
+//	overflow: hidden;
+//	width: 166px;
+//	height: 178px;
+//	border: solid 0px #ffffff;
+//	z-index: 3100
+//}
+
+#navigator {
+	width: 166px;
+	height: 178px;
+	position: absolute;
+	top: 0;
+}
+
+#navigator-displayregion {
+	border-width: 1px !important;
+	border-color: #d53015 !important;
+	z-index: 4500 !important;
+	background: rgba(0, 0, 0, .2) !important;
+}
+
+.osd-toolbar {
+	width: 30px;
+	display: block;
+	position: fixed;
+	top: 50%;
+	right: 1px;
+	list-style: none;
+	z-index: 110;
+	padding: 0;
+}
+
+.osd-toolbar > li {
+	list-style: none
+}
+
+.osd-toolbar a {
+	width: 30px;
+	height: 30px;
+	font-height: 30px;
+	display: block !important;
+	background: rgba(0, 0, 0, .6);
+	color: #fff;
+	margin-bottom: 1px;
+	cursor: pointer;
+	text-align: center
+}
+
+.osd-toolbar a:hover {
+	background: rgba(158, 46, 0, 0.6);
+	text-decoration: none
+}
+
+.osd-toolbar a > i {
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	padding-top: 2px
+}
 
