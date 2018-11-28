@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faSave } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 class MenuSlideList extends Component {
     render() {
@@ -19,7 +19,7 @@ class MenuSlideList extends Component {
                         <FontAwesomeIcon icon={faChevronLeft} size="2x"/>
                     </Button>
                     <Button outline color={'secondary'}>
-                        <FontAwesomeIcon icon={faSave} size="2x"/>
+                        <FontAwesomeIcon icon={faDownload} size="2x"/>
                     </Button>
                     <Button outline color={'secondary'}>
                         <FontAwesomeIcon icon={faPrint} size="2x"/>
