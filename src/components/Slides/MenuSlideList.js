@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
-
-const buttonClassName = 'btn-slide-nav';
+import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faSave } from '@fortawesome/free-solid-svg-icons';
 
 class MenuSlideList extends Component {
     render() {
@@ -16,10 +14,20 @@ class MenuSlideList extends Component {
             			<FontAwesomeIcon icon={faCaretLeft} size="lg" onClick={this.props.onToggle} className="clickable"/>
             		</Col>
             	</Row>
-            	<Row className="prev-next-buttons">
-	            	<Button className={buttonClassName} outline color={'secondary'}>Previous</Button>
-	            	<Button className={buttonClassName} outline color={'secondary'}>Next</Button>
-            	</Row>
+                <Row className="prev-next-buttons">
+                    <Button outline color={'secondary'}>
+                        <FontAwesomeIcon icon={faChevronLeft} size="2x"/>
+                    </Button>
+                    <Button outline color={'secondary'}>
+                        <FontAwesomeIcon icon={faSave} size="2x"/>
+                    </Button>
+                    <Button outline color={'secondary'}>
+                        <FontAwesomeIcon icon={faPrint} size="2x"/>
+                    </Button>
+                    <Button outline color={'secondary'}>
+                        <FontAwesomeIcon icon={faChevronRight} size="2x"/>
+                    </Button>
+                </Row>
             	<div id="menu-slide-list-slides">
             	
             	{Object.keys(this.props.selectedPatient).length === 0 && this.props.selectedPatient.constructor === Object  ? (
