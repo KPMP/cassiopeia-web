@@ -6,7 +6,12 @@ import { faPlus, faMinus, faCircle, faCog } from '@fortawesome/free-solid-svg-ic
 
 class SlideViewer extends Component {
 
-	initSeaDragon(){
+	constructor(props) {
+		super(props);
+		this.noSlidesFound = this.noSlidesFound.bind(this);
+	}
+
+	initSeaDragon() {
 		let self = this;
 		let { selectedPatient } = this.props;
 		let slideId = selectedPatient[0].id;
@@ -29,8 +34,15 @@ class SlideViewer extends Component {
 		});
 	}
 
+    noSlidesFound() {
+        return Object.keys(this.props.selectedPatient).length === 0
+            && this.props.selectedPatient.constructor === Object;
+    }
+
 	componentDidMount(){
-		this.initSeaDragon();
+		if(!this.noSlidesFound()) {
+            this.initSeaDragon();
+		}
 	}
 
 	shouldComponentUpdate(nextProps, nextState){
@@ -40,18 +52,22 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
-				<Menu />
-				<div className="osd-div" ref={node => {this.el = node;}}>
-					<div className="openseadragon" id={this.props.selectedPatient[0].id}></div>
-					<ul className="osd-toolbar">
-						<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
-						<li><button id="reset"><FontAwesomeIcon icon={faCircle} /></button></li>
-						<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
-						<li><button id="full-page"><FontAwesomeIcon icon={faCog}/> </button></li>
-					</ul>
-				</div>
+            	<Menu />
+				{ this.noSlidesFound() ? (
+					null
+				) : (
+                    <div className="osd-div" ref={node => {this.el = node;}}>
+                        <div className="openseadragon" id={this.props.selectedPatient[0].id} />
+                        <ul className="osd-toolbar">
+                            <li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
+                            <li><button id="reset"><FontAwesomeIcon icon={faCircle} /></button></li>
+                            <li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
+                            <li><button id="full-page"><FontAwesomeIcon icon={faCog}/> </button></li>
+                        </ul>
+                    </div>
+				) }
 			</div>
-		);
+		)
 	}
 }
 
