@@ -12,7 +12,7 @@ class SlideViewer extends Component {
 		let slideId = selectedPatient[0].id;
 		self.viewer =  OpenSeadragon({
 			id: slideId,
-			visibilityRatio: 1.0,
+			visibilityRatio: 0.5,
 			constrainDuringPan: false,
 			defaultZoomLevel: 1,
 			minZoomLevel: 1,
