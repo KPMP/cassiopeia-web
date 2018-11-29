@@ -295,7 +295,7 @@ a:hover {
 		width: 30px;
 		display: block;
 		position: fixed;
-		top: 50%;
+		bottom: 140px;
 		right: 1px;
 		list-style: none;
 		z-index: 110;
@@ -303,6 +303,10 @@ a:hover {
 
 		> li {
 			list-style: none;
+		}
+
+		#reset {
+			margin-top: 5px;
 		}
 
 		a {
