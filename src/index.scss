@@ -127,7 +127,7 @@ a:hover {
 		border: 1px solid rgba(212, 212, 212, 1);
 		border-radius: 5px;
 		padding: 18px;
-		margin: 0px 15px;
+		margin: 15px;
 
 		p {
 			color: rgb(51, 51, 51);
@@ -173,12 +173,12 @@ a:hover {
 
 	.row-summary-steps {
 		img {
-			max-width: 152px;
+			max-width: 150px;
 			margin: auto;
 		}
 
 		.light-border {
-			margin: 0px 35px;
+			margin-top: 10px;
 		}
 	}
 
@@ -191,7 +191,7 @@ a:hover {
 		margin: 25px 30px 15px;
 
 		img {
-			height: 275px;
+			height: 300px;
 			margin: auto;
 		}
 	}
@@ -203,7 +203,7 @@ a:hover {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	
+
 	#side-menu {
 		max-width: 32vw;
 		margin: $menu-margin;
@@ -234,7 +234,7 @@ a:hover {
 			background: white;
 			border: 1px solid black;
 			border-left: none;
-						
+
 			.menu-slide-list-header {
 				background-color: lightgray;	
 				padding-top: 5px;
