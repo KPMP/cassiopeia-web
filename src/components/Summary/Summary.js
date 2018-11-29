@@ -88,7 +88,7 @@ class Summary extends Component {
                         </Row>
                         <Row  className="row-summary-info row-summary-organ-images">
                             <Col>
-                                <img alt="Photograph of a glomerulus with tubules" src="/img/summary/col1-glomerulus.jpg" />
+                                <img alt="Photograph of a glomerulus with tubules" src="/img/summary/col1-glomerulus.png" />
                             </Col>
                             <Col>
                                 <img alt="Diagram of a nephron" src="/img/summary/col2-nephron.png" />
