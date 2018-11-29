@@ -16,7 +16,6 @@ class MenuSlideList extends Component {
     }
 
     render() {
-        console.log(this.props);
     	return this.noSlidesFound() ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">

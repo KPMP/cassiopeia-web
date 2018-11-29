@@ -2,10 +2,7 @@ $header-height: 60px;
 $menu-margin: 15px;
 
 
-/***  These are some throwaway classes until we have more real stuff in their place ***/	
-.red-text {
-	color: red;	
-}
+/***  These are some throwaway classes until we have more real stuff in their place ***/
 
 .thumbnail {
 	height: 56px;
@@ -201,16 +198,18 @@ a:hover {
 }
 
 #slide-viewer {
-	padding-left: 15px;
-	background-image: url("/img/fake-stain.jpg"); 
-	height: calc(100vh - #{$header-height});
-	width: 100vw;
-
+	position: absolute;
+	top: $header-height;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
 	
 	#side-menu {
 		max-width: 32vw;
 		margin: $menu-margin;
 		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+		z-index: 1000;
+		position: relative;
 
 		#menu-bar {
 			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
@@ -272,9 +271,66 @@ a:hover {
 			.btn-slide-nav {
 				margin-right: 10px;
 			}
+
+			.slide-highlighted {
+				background-color: lightgray;
+			}
 		}
 	}
 
 }
 
+.osd-div {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 500; // less than the z-index of #side-menu
 
+	.openseadragon {
+		width: 100%;
+		height: 100%;
+	}
+
+	.osd-toolbar {
+		width: 30px;
+		display: block;
+		position: fixed;
+		top: 50%;
+		right: 1px;
+		list-style: none;
+		z-index: 110;
+		padding: 0;
+
+		> li {
+			list-style: none;
+		}
+
+		a {
+			width: 30px;
+			height: 30px;
+			font-height: 30px;
+			display: block !important;
+			background: rgba(0, 0, 0, .6);
+			color: #fff;
+			margin-bottom: 1px;
+			cursor: pointer;
+			text-align: center;
+		}
+
+		a:hover {
+			background: rgba(158, 46, 0, 0.6);
+			text-decoration: none;
+
+			> i {
+				display: block;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 15px;
+				padding-top: 2px;
+			}
+		}
+	}
+}

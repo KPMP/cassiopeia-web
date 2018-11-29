@@ -10,8 +10,6 @@ import loadedState from './initialState';
 import rootReducer from './reducers';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
-
-window.sessionStorage.clear();
 const cacheStore = window.sessionStorage.getItem("redux-store");
 const initialState = cacheStore ?
     JSON.parse(cacheStore) :
