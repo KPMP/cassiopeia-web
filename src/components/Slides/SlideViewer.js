@@ -30,7 +30,6 @@ class SlideViewer extends Component {
 			previousButton: 'previous',
 			showNavigator: true,
 			navigatorAutoFade:  false,
-			//navigatorPosition: "BOTTOM_RIGHT",
 			navigatorId:   'osd-navigator',
 			tileSources: 'deepZoomImages/' + slideId + '.dzi'
 		});
