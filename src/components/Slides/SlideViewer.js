@@ -6,7 +6,12 @@ import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
 
 class SlideViewer extends Component {
 
-	initSeaDragon(){
+	constructor(props) {
+		super(props);
+		this.noSlidesFound = this.noSlidesFound.bind(this);
+	}
+
+	initSeaDragon() {
 		let self = this;
 		let { selectedPatient } = this.props;
 		let slideId = selectedPatient[0].id;
@@ -25,13 +30,21 @@ class SlideViewer extends Component {
 			previousButton: 'previous',
 			showNavigator: true,
 			navigatorAutoFade:  false,
-			navigatorPosition: "BOTTOM_RIGHT",
+			//navigatorPosition: "BOTTOM_RIGHT",
+			navigatorId:   'osd-navigator',
 			tileSources: 'deepZoomImages/' + slideId + '.dzi'
 		});
 	}
 
+    noSlidesFound() {
+        return Object.keys(this.props.selectedPatient).length === 0
+            && this.props.selectedPatient.constructor === Object;
+    }
+
 	componentDidMount(){
-		this.initSeaDragon();
+		if(!this.noSlidesFound()) {
+            this.initSeaDragon();
+		}
 	}
 
 	shouldComponentUpdate(nextProps, nextState){
@@ -42,16 +55,23 @@ class SlideViewer extends Component {
 		return (
 			<div id="slide-viewer">
 				<Menu />
-				<div className="osd-div" ref={node => {this.el = node;}}>
-					<div className="openseadragon" id={this.props.selectedPatient[0].id}></div>
-					<ul className="osd-toolbar">
-						<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
-						<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
-						<li><button id="reset"><FontAwesomeIcon icon={faBullseye} /></button></li>
-					</ul>
-				</div>
+				{ this.noSlidesFound() ? (
+					null
+				) : (
+					<div className="osd-div" ref={node => {this.el = node;}}>
+						<div className="openseadragon" id={this.props.selectedPatient[0].id}></div>
+						<ul className="osd-toolbar">
+							<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
+							<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
+							<li><button id="reset"><FontAwesomeIcon icon={faBullseye} /></button></li>
+						</ul>
+						<div className="osd-navigator-wrapper">
+							<div id="osd-navigator"></div>
+						</div>
+					</div>
+				) }
 			</div>
-		);
+		)
 	}
 }
 
