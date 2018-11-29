@@ -44,10 +44,10 @@ class SlideViewer extends Component {
 				<div className="osd-div" ref={node => {this.el = node;}}>
 					<div className="openseadragon" id={this.props.selectedPatient[0].id}></div>
 					<ul className="osd-toolbar">
-						<li><a id="zoom-in"><FontAwesomeIcon icon={faPlus} /></a></li>
-						<li><a id="reset"><FontAwesomeIcon icon={faCircle} /></a></li>
-						<li><a id="zoom-out"><FontAwesomeIcon icon={faMinus} /></a></li>
-						<li><a id="full-page"><FontAwesomeIcon icon={faCog}/> </a></li>
+						<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
+						<li><button id="reset"><FontAwesomeIcon icon={faCircle} /></button></li>
+						<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
+						<li><button id="full-page"><FontAwesomeIcon icon={faCog}/> </button></li>
 					</ul>
 				</div>
 			</div>
