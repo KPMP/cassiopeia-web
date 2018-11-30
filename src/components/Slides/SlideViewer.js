@@ -12,10 +12,9 @@ class SlideViewer extends Component {
 	}
 
 	initSeaDragon() {
-		let self = this;
 		let { selectedPatient } = this.props;
 		let slideId = selectedPatient[0].id;
-		self.viewer =  OpenSeadragon({
+		this.viewer =  OpenSeadragon({
 			id: slideId,
 			visibilityRatio: 0.5,
 			constrainDuringPan: false,
@@ -53,7 +52,6 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
-				<Menu />
 				{ this.noSlidesFound() ? (
 					null
 				) : (
@@ -69,6 +67,7 @@ class SlideViewer extends Component {
 						</div>
 					</div>
 				) }
+				<Menu />
 			</div>
 		)
 	}
