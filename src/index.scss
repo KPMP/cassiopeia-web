@@ -293,11 +293,30 @@ a:hover {
 		height: 100%;
 	}
 
+	.osd-navigator-wrapper {
+		position: fixed;
+		right: 5px;
+		bottom: 5px;
+		background: #000;
+		overflow: hidden;
+		width: 166px;
+		height: 178px;
+		border: solid 1px #000000;
+		z-index: 3100
+	}
+
+	#osd-navigator {
+		width: 166px;
+		height: 178px;
+		position: absolute;
+		top: 0;
+	}
+
 	.osd-toolbar {
 		width: 30px;
 		display: block;
 		position: fixed;
-		top: 50%;
+		bottom: 185px;
 		right: 1px;
 		list-style: none;
 		z-index: 110;
@@ -305,6 +324,10 @@ a:hover {
 
 		> li {
 			list-style: none;
+		}
+
+		#reset {
+			margin-top: 5px;
 		}
 
 		a {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Menu from './Menu';
 import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus, faCircle, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
 
 class SlideViewer extends Component {
 
@@ -29,8 +29,9 @@ class SlideViewer extends Component {
 			nextButton: 'next',
 			previousButton: 'previous',
 			showNavigator: true,
-			navigatorPosition: "BOTTOM_RIGHT",
-			tileSources: 'deepZoomImages/' + slideId + '.dzi' //.json'
+			navigatorAutoFade:  false,
+			navigatorId:   'osd-navigator',
+			tileSources: 'deepZoomImages/' + slideId + '.dzi'
 		});
 	}
 
@@ -52,19 +53,21 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
-            	<Menu />
+				<Menu />
 				{ this.noSlidesFound() ? (
 					null
 				) : (
-                    <div className="osd-div" ref={node => {this.el = node;}}>
-                        <div className="openseadragon" id={this.props.selectedPatient[0].id} />
-                        <ul className="osd-toolbar">
-                            <li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
-                            <li><button id="reset"><FontAwesomeIcon icon={faCircle} /></button></li>
-                            <li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
-                            <li><button id="full-page"><FontAwesomeIcon icon={faCog}/> </button></li>
-                        </ul>
-                    </div>
+					<div className="osd-div" ref={node => {this.el = node;}}>
+						<div className="openseadragon" id={this.props.selectedPatient[0].id}></div>
+						<ul className="osd-toolbar">
+							<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
+							<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
+							<li><button id="reset"><FontAwesomeIcon icon={faBullseye} /></button></li>
+						</ul>
+						<div className="osd-navigator-wrapper">
+							<div id="osd-navigator"></div>
+						</div>
+					</div>
 				) }
 			</div>
 		)
