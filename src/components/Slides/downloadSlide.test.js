@@ -11,15 +11,33 @@ describe("downloadSlide", () => {
 
 	});
 	
-	it("replaces the href on the a tag with 'stuff'", () => {
+	it("sets the href and download attributes on the a tag with 'stuff' in non-IE browser", () => {
 		mockCanvas(window, 'stuff');
 		var canvas = document.getElementById("myCanvas");
 		var context = canvas.getContext('2d');
 		
-		downloadSlide();
+		downloadSlide('slideName');
 
 		let result = document.getElementById("download");
 		expect(result.href).toEqual('http://localhost/stuff');
+		expect(result.download).toEqual('slideName');
+	});
+	
+	it('uses msSaveOrOpenBlob in IE browser', () => {
+		navigator.__defineGetter__('userAgent', function() {
+			return 'MSIE';
+		});
+		let ieSave = jest.fn();
+		window.navigator.msSaveOrOpenBlob = ieSave;
+		mockCanvas(window, 'stuff');
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext('2d');
+		
+		downloadSlide('slideName');
+
+		expect(ieSave).toHaveBeenCalledTimes(1);
+		var blob = new Blob([canvas.toDataURL()], { type: "image/jpeg" });
+		expect(ieSave).toHaveBeenCalledWith(blob, 'slideName');
 	});
 });
 

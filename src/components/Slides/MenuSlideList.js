@@ -9,6 +9,7 @@ class MenuSlideList extends Component {
     constructor(props) {
         super(props);
         this.noSlidesFound = this.noSlidesFound.bind(this);
+        this.handleDownload = this.handleDownload.bind(this);
     }
 
     noSlidesFound() {
@@ -17,11 +18,11 @@ class MenuSlideList extends Component {
     }
     
     handleDownload() {
-    	downloadSlide()
+    	let downloadFileName = this.props.selectedPatient[0].slideName + ".jpg";
+    	downloadSlide(downloadFileName);
     }
 
     render() {
-    	let downloadFileName = this.props.selectedPatient[0].slideName + ".jpg";
     	return this.noSlidesFound() ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">
@@ -38,8 +39,8 @@ class MenuSlideList extends Component {
             	</Row>
                 <Row className="prev-next-buttons" noGutters>
                     <Col>
-                        <Button outline color={'secondary'}>
-                            <a id="download" download={downloadFileName} onClick={this.handleDownload} //eslint-disable-line
+                        <Button outline color={'secondary'} onClick={this.handleDownload}>
+                            <a id="download" //eslint-disable-line
                             ><FontAwesomeIcon icon={faDownload} size="2x" className="clickable"/></a>
                         </Button>
                         <Button outline color={'secondary'}>
