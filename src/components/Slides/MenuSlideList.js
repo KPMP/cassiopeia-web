@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { downloadSlide } from './downloadSlide';
 
 class MenuSlideList extends Component {
 
@@ -14,8 +15,13 @@ class MenuSlideList extends Component {
         return Object.keys(this.props.selectedPatient).length === 0
             && this.props.selectedPatient.constructor === Object;
     }
+    
+    handleDownload() {
+    	downloadSlide()
+    }
 
     render() {
+    	let downloadFileName = this.props.selectedPatient[0].slideName + ".jpg";
     	return this.noSlidesFound() ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">
@@ -33,7 +39,8 @@ class MenuSlideList extends Component {
                 <Row className="prev-next-buttons" noGutters>
                     <Col>
                         <Button outline color={'secondary'}>
-                            <FontAwesomeIcon icon={faDownload} size="2x"/>
+                            <a id="download" download={downloadFileName} onClick={this.handleDownload} //eslint-disable-line
+                            ><FontAwesomeIcon icon={faDownload} size="2x" className="clickable"/></a>
                         </Button>
                         <Button outline color={'secondary'}>
                             <FontAwesomeIcon icon={faPrint} size="2x"/>
