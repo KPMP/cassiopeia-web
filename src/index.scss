@@ -30,6 +30,16 @@ a:hover {
 	cursor: pointer;
 }
 
+//https://stackoverflow.com/questions/7615009/disable-interpolation-when-scaling-a-canvas
+canvas {
+	image-rendering: optimizeSpeed;             /* Older versions of FF          */
+	image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+	image-rendering: -webkit-optimize-contrast; /* Safari                        */
+	image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated;                 /* Awesome future-browsers       */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
 .divider {
 	border-bottom: 2px solid silver;
 	margin-right: 15px !important;
@@ -356,4 +366,40 @@ a:hover {
 			}
 		}
 	}
+}
+
+@media only print {
+
+	body {
+
+		padding: 0.5in;
+		overflow: hidden;
+
+		#slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
+			display: none !important;
+		}
+
+		#print-slide-type, #print-slide-title {
+			position: absolute;
+			display: block;
+			left: 0.5in;
+			bottom: 0.5in;
+		}
+
+		#print-slide-type {
+			bottom: 1in;
+		}
+
+		#print-slide-image {
+			position: absolute;
+			top: 0.5in;
+			left: 0.5in;
+			right: 0.5in;
+		}
+	}
+}
+
+@page {
+	size: landscape;
+	margin: 0;
 }
