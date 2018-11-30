@@ -8,10 +8,11 @@ describe("downloadSlide", () => {
 				'<canvas id="myCanvas" width="500" height="500"></canvas>'+
 			 '</div></div><div class="openseadragon">second one for navigator pane</div>';
 		const window = document.defaultView;
-		mockCanvas(window);
+
 	});
 	
-	it("", () => {
+	it("replaces the href on the a tag with 'stuff'", () => {
+		mockCanvas(window, 'stuff');
 		var canvas = document.getElementById("myCanvas");
 		var context = canvas.getContext('2d');
 		
@@ -22,7 +23,7 @@ describe("downloadSlide", () => {
 	});
 });
 
-const mockCanvas = (window) => {
+const mockCanvas = (window, toDataUrlReturn) => {
     window.HTMLCanvasElement.prototype.getContext = function () {
         return {
             fillRect: function() {},
@@ -59,6 +60,6 @@ const mockCanvas = (window) => {
     }
 
     window.HTMLCanvasElement.prototype.toDataURL = function () {
-        return "stuff";
+        return toDataUrlReturn;
     }
 }
