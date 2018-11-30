@@ -50,7 +50,6 @@ class SlideViewer extends Component {
 	}
 
 	render() {
-		let slideId = this.props.selectedPatient.selectedSlide.id;
 		return (
 			<div id="slide-viewer">
             	<Menu />
