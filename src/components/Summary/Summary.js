@@ -69,32 +69,24 @@ class Summary extends Component {
                         <Row  className="row-summary-question">
                             What am I seeing in these images?
                         </Row>
-                        <Row className="row-summary-info">
+                        <Row className="row-summary-info row-summary-organ-images">
                             <Col className="light-border">
+                                <img alt="Photograph of a glomerulus with tubules" src="/img/summary/col1-glomerulus.png" />
                                 <p>
                                     Looking at this example of a biopsy slide image, a pathologist would look at the components of the kidney such as glomeruli and tubules. This can reveal evidence of disease and tissue damage.
                                 </p>
                             </Col>
                             <Col className="light-border">
+                                <img alt="Diagram of a nephron" src="/img/summary/col2-nephron.png" />
                                 <p>
                                     A glomerulus and tubule is part of a nephron. Nephrons are the filtration workhorses of the kidney. Each kidney has around 1 million nephrons.
                                 </p>
                             </Col>
                             <Col className="light-border">
+                                <img alt="Diagram of the renal cortex of the kidney" src="/img/summary/col3-renal-cortex.png" />
                                 <p>
                                     Nephrons are located in the renal cortex. During the biopsy procedure, the doctor aims to capture multiple nephrons.
                                 </p>
-                            </Col>
-                        </Row>
-                        <Row  className="row-summary-info row-summary-organ-images">
-                            <Col>
-                                <img alt="Photograph of a glomerulus with tubules" src="/img/summary/col1-glomerulus.png" />
-                            </Col>
-                            <Col>
-                                <img alt="Diagram of a nephron" src="/img/summary/col2-nephron.png" />
-                            </Col>
-                            <Col>
-                                <img alt="Diagram of the renal cortex of the kidney" src="/img/summary/col3-renal-cortex.png" />
                             </Col>
                         </Row>
                     </Col>
