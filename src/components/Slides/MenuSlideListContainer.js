@@ -9,8 +9,8 @@ const mapStateToProps = (state, props) =>
 
 const mapDispatchToProps = (dispatch, props) =>
     ({
-        setSelectedSlide(slideId) {
-            dispatch(setSelectedSlide(slideId))
+        setSelectedSlide(slide) {
+            dispatch(setSelectedSlide(slide))
         }
     });
 

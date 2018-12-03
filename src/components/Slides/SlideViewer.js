@@ -47,6 +47,7 @@ class SlideViewer extends Component {
 
 	componentDidUpdate(){
 		this.viewer.destroy();
+		this.viewer.navigator.destroy();
 		this.initSeaDragon();
 	}
 
@@ -57,7 +58,7 @@ class SlideViewer extends Component {
 					null
 				) : (
 
-					<div className="os-div" ref={node => {this.el = node;}}>
+					<div className="osd-div" ref={node => {this.el = node;}}>
 						<div className="openseadragon" id="osdId"></div>
 						<ul className="osd-toolbar">
 							<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>

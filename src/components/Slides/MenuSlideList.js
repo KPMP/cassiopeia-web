@@ -18,12 +18,12 @@ class MenuSlideList extends Component {
             && this.props.selectedPatient.slides.constructor === Object;
     }
 
-    handleSelectSlide(slideId) {
-        this.props.setSelectedSlide(slideId);
+    handleSelectSlide(slide) {
+        this.props.setSelectedSlide(slide);
     }
     
     handleDownload() {
-    	let downloadFileName = this.props.selectedPatient[0].slideName + ".jpg";
+    	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
     	downloadSlide(downloadFileName);
     }
 
