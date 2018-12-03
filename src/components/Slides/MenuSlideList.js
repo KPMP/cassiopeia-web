@@ -3,6 +3,7 @@ import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { downloadSlide } from './downloadSlide';
+import Parser from 'html-react-parser';
 
 class MenuSlideList extends Component {
 
@@ -75,11 +76,13 @@ class MenuSlideList extends Component {
             	</div>
             	<Row className="divider" />
             	<Row>
-                    <div id="slide-stain-text">
-                        <h2>Slide Title</h2>
-                        <h3>Slide Stain Name</h3>
-                        <p>Slide Stain Flava Text</p>
-                    </div>
+            		<Col>
+	                    <div id="slide-stain-text">
+	                        <div className="slide-name-stain-text">{Parser(this.props.selectedPatient.selectedSlide.slideName)}</div>
+	                        <div className="slide-title">{Parser(this.props.selectedPatient.selectedSlide.stain.title)}</div>
+	                        <div>{Parser(this.props.selectedPatient.selectedSlide.stain.description)}</div>
+	                    </div>
+                    </Col>
                 </Row>
             </Col>
         )
