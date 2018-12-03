@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
-import { downloadSlide } from './downloadSlide';
+import { noSlidesFound, downloadSlide } from './slideHelpers';
+import Parser from 'html-react-parser';
 import SlidePrintManager from './SlidePrintManager';
 
 class MenuSlideList extends Component {
@@ -10,7 +11,6 @@ class MenuSlideList extends Component {
     constructor(props) {
         super(props);
         this.onPrint = this.onPrint.bind(this);
-        this.noSlidesFound = this.noSlidesFound.bind(this);
         this.handleSelectSlide = this.handleSelectSlide.bind(this);
         this.handleDownload = this.handleDownload.bind(this);
     }
@@ -18,11 +18,6 @@ class MenuSlideList extends Component {
     onPrint() {
         SlidePrintManager.getInstance().beforePrint();
         setTimeout(window.print, 10);
-    }
-
-    noSlidesFound() {
-        return Object.keys(this.props.selectedPatient.slides).length === 0
-            && this.props.selectedPatient.slides.constructor === Object;
     }
 
     handleSelectSlide(slide) {
@@ -35,8 +30,7 @@ class MenuSlideList extends Component {
     }
 
     render() {
-        let selectedSlideId = this.props.selectedPatient.selectedSlide.id;
-    	return this.noSlidesFound() ? (
+    	return noSlidesFound(this.props.selectedPatient) ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">
                     <Col sm="12"> There are no slides to show. </Col>
@@ -72,7 +66,7 @@ class MenuSlideList extends Component {
             	<div id="menu-slide-list-slides">
                     {
                         this.props.selectedPatient.slides.map(function(slide, index) {
-                            let highlightedClass = selectedSlideId === slide.id ? " slide-highlighted" : "";
+                            let highlightedClass = this.props.selectedPatient.selectedSlide.id === slide.id ? " slide-highlighted" : "";
                             return <Row className={"slide-menu-item " + highlightedClass} onClick={() => this.handleSelectSlide(slide)}>
                                 <Col sm="2"><div className="thumbnail" /></Col>
                                 <Col sm="10" className="slide-name">{slide.slideName}</Col>
@@ -82,11 +76,13 @@ class MenuSlideList extends Component {
             	</div>
             	<Row className="divider" />
             	<Row>
-                    <div id="menu-slide-stain-text" class="slide-stain-text">
-                        <h2>Slide Title</h2>
-                        <h3>Slide Stain Name</h3>
-                        <p>Slide Stain Flava Text</p>
-                    </div>
+            		<Col>
+	                    <div id="slide-stain-text">
+	                        <div className="slide-name-stain-text">{Parser(this.props.selectedPatient.selectedSlide.slideName)}</div>
+	                        <div className="stain-title">{Parser(this.props.selectedPatient.selectedSlide.stain.title)}</div>
+	                        <div className="stain-description">{Parser(this.props.selectedPatient.selectedSlide.stain.description)}</div>
+	                    </div>
+                    </Col>
                 </Row>
             </Col>
         )

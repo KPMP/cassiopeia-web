@@ -71,7 +71,7 @@ class SlidePrintManager {
         }
 
         let slideTitleText = spm.getReduxStore().getState().selectedPatient.selectedSlide.slideName;
-        let slideTypeText = spm.getReduxStore().getState().selectedPatient.selectedSlide.stain;
+        let slideTypeText = spm.getReduxStore().getState().selectedPatient.selectedSlide.stain.title;
 
         let openseadragon = document.getElementsByClassName('openseadragon')[0];
         let canvasDiv = openseadragon.getElementsByClassName('openseadragon-canvas')[0];

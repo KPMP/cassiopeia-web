@@ -16,3 +16,11 @@ export const downloadSlide = (downloadFileName) => {
 		window.navigator.msSaveOrOpenBlob(blob, downloadFileName);
 	}
 }
+
+export const noSlidesFound = (selectedPatient) => {
+	if (selectedPatient === null || selectedPatient === undefined) {
+		return true;
+	} else {
+		return Object.keys(selectedPatient.slides).length === 0;
+	}
+}

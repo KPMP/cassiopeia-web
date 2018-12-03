@@ -1,4 +1,23 @@
-import { downloadSlide } from './downloadSlide';
+import { noSlidesFound, downloadSlide } from './slideHelpers';
+
+describe("noSlidesFound", () => {
+	it("should return true when the object contains an empty array", () => {
+		expect(noSlidesFound({ slides: [] })).toBe(true);
+	});
+	
+	it("should return true when the object passed in is null", () => {
+		expect(noSlidesFound(null)).toBe(true);
+	});
+	
+	it("should return true when the object passed in is undefined", () => {
+		expect(noSlidesFound(undefined)).toBe(true);
+	});
+
+	it("should return false when the object passed in has items in the array", () => {
+		expect(noSlidesFound( { slides: [ {key: "value" }]})).toBe(false);
+	});
+	
+});
 
 describe("downloadSlide", () => {
 	beforeEach(() => {
