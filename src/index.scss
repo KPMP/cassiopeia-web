@@ -277,13 +277,22 @@ a:hover {
 			
 			#slide-stain-text {
 				.slide-name-stain-text {
+					padding-top: 10px;
+					padding-bottom: 15px;
 					font-weight: 700;
 					font-size: 16px;
 				}
 				
-				.slide-title {
+				.stain-title {
 					font-weight: 700;
 					font-size: 18px;
+				}
+				
+				.stain-description {
+					a {
+						text-decoration: underline;
+						color: #0275D8;
+					}
 				}
 			}
 		}

@@ -79,8 +79,8 @@ class MenuSlideList extends Component {
             		<Col>
 	                    <div id="slide-stain-text">
 	                        <div className="slide-name-stain-text">{Parser(this.props.selectedPatient.selectedSlide.slideName)}</div>
-	                        <div className="slide-title">{Parser(this.props.selectedPatient.selectedSlide.stain.title)}</div>
-	                        <div>{Parser(this.props.selectedPatient.selectedSlide.stain.description)}</div>
+	                        <div className="stain-title">{Parser(this.props.selectedPatient.selectedSlide.stain.title)}</div>
+	                        <div className="stain-description">{Parser(this.props.selectedPatient.selectedSlide.stain.description)}</div>
 	                    </div>
                     </Col>
                 </Row>
