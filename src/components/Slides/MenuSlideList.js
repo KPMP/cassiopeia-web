@@ -15,8 +15,8 @@ class MenuSlideList extends Component {
     }
 
     noSlidesFound() {
-        return Object.keys(this.props.selectedPatient.slides).length === 0
-            && this.props.selectedPatient.slides.constructor === Object;
+    	console.log(this.props.selectedPatient.slides.length);
+        return Object.keys(this.props.selectedPatient.slides).length === 0;
     }
 
     handleSelectSlide(slide) {
@@ -29,7 +29,6 @@ class MenuSlideList extends Component {
     }
 
     render() {
-        let selectedSlideId = this.props.selectedPatient.selectedSlide.id;
     	return this.noSlidesFound() ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">
@@ -66,7 +65,7 @@ class MenuSlideList extends Component {
             	<div id="menu-slide-list-slides">
                     {
                         this.props.selectedPatient.slides.map(function(slide, index) {
-                            let highlightedClass = selectedSlideId === slide.id ? " slide-highlighted" : "";
+                            let highlightedClass = this.props.selectedPatient.selectedSlide.id === slide.id ? " slide-highlighted" : "";
                             return <Row className={"slide-menu-item " + highlightedClass} onClick={() => this.handleSelectSlide(slide)}>
                                 <Col sm="2"><div className="thumbnail" /></Col>
                                 <Col sm="10" className="slide-name">{slide.slideName}</Col>

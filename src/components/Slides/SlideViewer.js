@@ -35,8 +35,7 @@ class SlideViewer extends Component {
 	}
 
     noSlidesFound() {
-        return Object.keys(this.props.selectedPatient.slides).length === 0
-            && this.props.selectedPatient.slides.constructor === Object;
+        return Object.keys(this.props.selectedPatient.slides).length === 0;
     }
 
 	componentDidMount(){
