@@ -53,7 +53,6 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
-				<Menu />
 				{ this.noSlidesFound() ? (
 					null
 				) : (
@@ -70,6 +69,7 @@ class SlideViewer extends Component {
 						</div>
 					</div>
 				) }
+				<Menu />
 			</div>
 		)
 	}

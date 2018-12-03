@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { downloadSlide } from './downloadSlide';
 
 class MenuSlideList extends Component {
 
@@ -9,6 +10,7 @@ class MenuSlideList extends Component {
         super(props);
         this.noSlidesFound = this.noSlidesFound.bind(this);
         this.handleSelectSlide = this.handleSelectSlide.bind(this);
+        this.handleDownload = this.handleDownload.bind(this);
     }
 
     noSlidesFound() {
@@ -18,6 +20,11 @@ class MenuSlideList extends Component {
 
     handleSelectSlide(slideId) {
         this.props.setSelectedSlide(slideId);
+    }
+    
+    handleDownload() {
+    	let downloadFileName = this.props.selectedPatient[0].slideName + ".jpg";
+    	downloadSlide(downloadFileName);
     }
 
     render() {
@@ -38,8 +45,9 @@ class MenuSlideList extends Component {
             	</Row>
                 <Row className="prev-next-buttons" noGutters>
                     <Col>
-                        <Button outline color={'secondary'}>
-                            <FontAwesomeIcon icon={faDownload} size="2x"/>
+                        <Button outline color={'secondary'} onClick={this.handleDownload}>
+                            <a id="download" //eslint-disable-line
+                            ><FontAwesomeIcon icon={faDownload} size="2x" className="clickable"/></a>
                         </Button>
                         <Button outline color={'secondary'}>
                             <FontAwesomeIcon icon={faPrint} size="2x"/>
