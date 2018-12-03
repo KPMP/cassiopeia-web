@@ -13,10 +13,9 @@ class SlideViewer extends Component {
 
 	initSeaDragon() {
 		let self = this;
-		let { selectedPatient } = this.props;
-		let slideId = selectedPatient[0].id;
+		let slideId = this.props.selectedPatient.selectedSlide.id;
 		self.viewer =  OpenSeadragon({
-			id: slideId,
+			id: "osdId",
 			visibilityRatio: 0.5,
 			constrainDuringPan: false,
 			defaultZoomLevel: 1,
@@ -36,8 +35,8 @@ class SlideViewer extends Component {
 	}
 
     noSlidesFound() {
-        return Object.keys(this.props.selectedPatient).length === 0
-            && this.props.selectedPatient.constructor === Object;
+        return Object.keys(this.props.selectedPatient.slides).length === 0
+            && this.props.selectedPatient.slides.constructor === Object;
     }
 
 	componentDidMount(){
@@ -46,19 +45,21 @@ class SlideViewer extends Component {
 		}
 	}
 
-	shouldComponentUpdate(nextProps, nextState){
-		return false;
+	componentDidUpdate(){
+		this.viewer.destroy();
+		this.viewer.navigator.destroy();
+		this.initSeaDragon();
 	}
 
 	render() {
 		return (
 			<div id="slide-viewer">
-				<Menu />
 				{ this.noSlidesFound() ? (
 					null
 				) : (
+
 					<div className="osd-div" ref={node => {this.el = node;}}>
-						<div className="openseadragon" id={this.props.selectedPatient[0].id}></div>
+						<div className="openseadragon" id="osdId"></div>
 						<ul className="osd-toolbar">
 							<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
 							<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
@@ -69,6 +70,7 @@ class SlideViewer extends Component {
 						</div>
 					</div>
 				) }
+				<Menu />
 			</div>
 		)
 	}
