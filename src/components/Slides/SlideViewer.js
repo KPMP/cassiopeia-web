@@ -7,10 +7,6 @@ import { noSlidesFound } from './slideHelpers';
 
 class SlideViewer extends Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	initSeaDragon() {
 		let self = this;
 		let slideId = this.props.selectedPatient.selectedSlide.id;
