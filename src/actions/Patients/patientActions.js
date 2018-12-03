@@ -9,10 +9,10 @@ export const setSelectedPatient = (patient) => {
     }
 }
 
-export const setSelectedSlide = (slideId) => {
+export const setSelectedSlide = (slide) => {
 	return {
 		type: actionNames.SET_SELECTED_SLIDE,
-		payload: slideId
+		payload: slide
 	}
 }
 
