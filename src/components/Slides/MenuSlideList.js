@@ -3,14 +3,21 @@ import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { downloadSlide } from './downloadSlide';
+import SlidePrintManager from './SlidePrintManager';
 
 class MenuSlideList extends Component {
 
     constructor(props) {
         super(props);
+        this.onPrint = this.onPrint.bind(this);
         this.noSlidesFound = this.noSlidesFound.bind(this);
         this.handleSelectSlide = this.handleSelectSlide.bind(this);
         this.handleDownload = this.handleDownload.bind(this);
+    }
+
+    onPrint() {
+        SlidePrintManager.getInstance().beforePrint();
+        setTimeout(window.print, 10);
     }
 
     noSlidesFound() {
@@ -49,8 +56,8 @@ class MenuSlideList extends Component {
                             <a id="download" //eslint-disable-line
                             ><FontAwesomeIcon icon={faDownload} size="2x" className="clickable"/></a>
                         </Button>
-                        <Button outline color={'secondary'}>
-                            <FontAwesomeIcon icon={faPrint} size="2x"/>
+                        <Button outline color={'secondary'} onClick={this.onPrint}>
+                            <FontAwesomeIcon icon={faPrint} size="2x" />
                         </Button>
                     </Col>
                     <Col>
@@ -75,7 +82,7 @@ class MenuSlideList extends Component {
             	</div>
             	<Row className="divider" />
             	<Row>
-                    <div id="slide-stain-text">
+                    <div id="menu-slide-stain-text" class="slide-stain-text">
                         <h2>Slide Title</h2>
                         <h3>Slide Stain Name</h3>
                         <p>Slide Stain Flava Text</p>
