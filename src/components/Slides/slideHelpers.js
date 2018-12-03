@@ -1,6 +1,3 @@
-import findIndex from 'lodash/findIndex';
-import bind from 'lodash/bind';
-
 const getSlideIndex = (slideArray, selectedSlide) => {
     return slideArray.findIndex((slide) => {
         return slide.id === selectedSlide.id;
