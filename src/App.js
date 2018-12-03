@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 import loadedState from './initialState';
 import rootReducer from './reducers';
 import { HashRouter, Switch, Route } from 'react-router-dom';
+import SlidePrintManager from './components/Slides/SlidePrintManager';
 
 const cacheStore = window.sessionStorage.getItem("redux-store");
 const initialState = cacheStore ?
@@ -22,7 +23,10 @@ const saveState = () => {
 store.subscribe(function () {
     console.log(store.getState())
 });
+
 store.subscribe(saveState);
+
+SlidePrintManager.getInstance().setReduxStore(store);
 
 class App extends Component {
     render() {

@@ -4,13 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { noSlidesFound, downloadSlide } from './slideHelpers';
 import Parser from 'html-react-parser';
+import SlidePrintManager from './SlidePrintManager';
 
 class MenuSlideList extends Component {
 
     constructor(props) {
         super(props);
+        this.onPrint = this.onPrint.bind(this);
         this.handleSelectSlide = this.handleSelectSlide.bind(this);
         this.handleDownload = this.handleDownload.bind(this);
+    }
+
+    onPrint() {
+        SlidePrintManager.getInstance().beforePrint();
+        setTimeout(window.print, 10);
     }
 
     handleSelectSlide(slide) {
@@ -43,8 +50,8 @@ class MenuSlideList extends Component {
                             <a id="download" //eslint-disable-line
                             ><FontAwesomeIcon icon={faDownload} size="2x" className="clickable"/></a>
                         </Button>
-                        <Button outline color={'secondary'}>
-                            <FontAwesomeIcon icon={faPrint} size="2x"/>
+                        <Button outline color={'secondary'} onClick={this.onPrint}>
+                            <FontAwesomeIcon icon={faPrint} size="2x" />
                         </Button>
                     </Col>
                     <Col>
