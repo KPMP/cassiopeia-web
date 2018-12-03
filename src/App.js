@@ -26,8 +26,7 @@ store.subscribe(function () {
 
 store.subscribe(saveState);
 
-const printManager = SlidePrintManager.getInstance();
-printManager.setReduxStore(store);
+SlidePrintManager.getInstance().setReduxStore(store);
 
 class App extends Component {
     render() {

@@ -6,7 +6,6 @@ class SlidePrintManager {
     static getInstance() {
         if(this.instance == null) {
             this.instance = new SlidePrintManager();
-            console.log('+++ Instancing SlidePrintManager');
 
             if (window.matchMedia) {
                 let mediaQueryList = window.matchMedia('print');
@@ -38,13 +37,11 @@ class SlidePrintManager {
     }
 
     appendPrintContainer(container) {
-        //let spm = SlidePrintManager.getInstance();
         this.printContainer = container;
         document.body.appendChild(container);
     }
 
     destroyPrintContainer() {
-        //let spm = SlidePrintManager.getInstance();
         document.body.removeChild(this.printContainer);
         this.printContainer = null;
     }
@@ -54,7 +51,6 @@ class SlidePrintManager {
     }
 
     isSlideViewer() {
-        //TODO check to see if this is the slide viewer page
         let matches =  window.location.href.match(/slides/);
         return matches != null && matches.length;
     }
@@ -63,21 +59,16 @@ class SlidePrintManager {
         let spm = SlidePrintManager.getInstance();
 
         if(spm.isPrinting()) {
-            console.log('In mid-print; returning');
             return;
         }
 
         if(!spm.isSlideViewer()) {
-            console.log('Not prepping to print a non-slideviewer page');
             return;
         }
 
         if(spm.getReduxStore() == null) {
-            console.log('Not able to access redux store');
             return;
         }
-
-        console.log('+++ Printing');
 
         let slideTitleText = spm.getReduxStore().getState().selectedPatient.selectedSlide.slideName;
         let slideTypeText = spm.getReduxStore().getState().selectedPatient.selectedSlide.stain;
@@ -105,8 +96,6 @@ class SlidePrintManager {
         printContainer.setAttribute('id', 'print-container');
         printContainer.appendChild(imageContainer);
         printContainer.appendChild(textContainer);
-
-        console.log('+++ Printing all ready');
     }
 
     afterPrint() {

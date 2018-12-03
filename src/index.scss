@@ -369,6 +369,9 @@ canvas {
 
 @media only print {
 	body {
+
+		background: white;
+
 		#patient-select-wrapper, #slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
 			display: none !important;
 		}
@@ -382,6 +385,7 @@ canvas {
 			margin: 0px auto auto auto !important;
 			border: 1px solid;
 			overflow: hidden;
+			background: white;
 
 			#print-slide-text {
 				position: absolute;
