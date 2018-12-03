@@ -9,20 +9,26 @@ class MenuSlideList extends Component {
     constructor(props) {
         super(props);
         this.noSlidesFound = this.noSlidesFound.bind(this);
+        this.handleSelectSlide = this.handleSelectSlide.bind(this);
         this.handleDownload = this.handleDownload.bind(this);
     }
 
     noSlidesFound() {
-        return Object.keys(this.props.selectedPatient).length === 0
-            && this.props.selectedPatient.constructor === Object;
+        return Object.keys(this.props.selectedPatient.slides).length === 0
+            && this.props.selectedPatient.slides.constructor === Object;
+    }
+
+    handleSelectSlide(slide) {
+        this.props.setSelectedSlide(slide);
     }
     
     handleDownload() {
-    	let downloadFileName = this.props.selectedPatient[0].slideName + ".jpg";
+    	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
     	downloadSlide(downloadFileName);
     }
 
     render() {
+        let selectedSlideId = this.props.selectedPatient.selectedSlide.id;
     	return this.noSlidesFound() ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">
@@ -58,12 +64,13 @@ class MenuSlideList extends Component {
                 </Row>
             	<div id="menu-slide-list-slides">
                     {
-                        this.props.selectedPatient.map(function(slide, index) {
-                            return <Row className="slide-menu-item">
+                        this.props.selectedPatient.slides.map(function(slide, index) {
+                            let highlightedClass = selectedSlideId === slide.id ? " slide-highlighted" : "";
+                            return <Row className={"slide-menu-item " + highlightedClass} onClick={() => this.handleSelectSlide(slide)}>
                                 <Col sm="2"><div className="thumbnail" /></Col>
                                 <Col sm="10" className="slide-name">{slide.slideName}</Col>
                             </Row>
-                        })
+                        }, this)
                     }
             	</div>
             	<Row className="divider" />
