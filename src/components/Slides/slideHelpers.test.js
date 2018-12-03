@@ -47,7 +47,7 @@ describe("downloadSlide", () => {
 			return 'MSIE';
 		});
 		let ieSave = jest.fn();
-		window.navigator.msSaveOrOpenBlob = ieSave;
+		window.navigator.msSaveBlob = ieSave;
 		mockCanvas(window, 'stuff');
 		var canvas = document.getElementById("myCanvas");
 		var context = canvas.getContext('2d');
@@ -55,7 +55,7 @@ describe("downloadSlide", () => {
 		downloadSlide('slideName');
 
 		expect(ieSave).toHaveBeenCalledTimes(1);
-		var blob = new Blob([canvas.toDataURL()], { type: "image/jpeg" });
+		var blob = canvas.msToBlob();
 		expect(ieSave).toHaveBeenCalledWith(blob, 'slideName');
 	});
 });
@@ -141,3 +141,4 @@ describe('getPreviousSlide', () => {
         expect(prevSlide).toEqual({ id: 1234567 });
     });
 });
+
