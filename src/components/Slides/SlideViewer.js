@@ -3,12 +3,12 @@ import Menu from './Menu';
 import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
+import { noSlidesFound } from './slideHelpers';
 
 class SlideViewer extends Component {
 
 	constructor(props) {
 		super(props);
-		this.noSlidesFound = this.noSlidesFound.bind(this);
 	}
 
 	initSeaDragon() {
@@ -34,12 +34,8 @@ class SlideViewer extends Component {
 		});
 	}
 
-    noSlidesFound() {
-        return Object.keys(this.props.selectedPatient.slides).length === 0;
-    }
-
 	componentDidMount(){
-		if(!this.noSlidesFound()) {
+		if(!noSlidesFound(this.props.selectedPatient)) {
             this.initSeaDragon();
 		}
 	}
@@ -53,7 +49,7 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
-				{ this.noSlidesFound() ? (
+				{ noSlidesFound(this.props.selectedPatient) ? (
 					null
 				) : (
 

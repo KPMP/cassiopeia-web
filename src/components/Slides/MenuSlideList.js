@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
-import { downloadSlide } from './downloadSlide';
+import { noSlidesFound, downloadSlide } from './slideHelpers';
 import Parser from 'html-react-parser';
 
 class MenuSlideList extends Component {
 
     constructor(props) {
         super(props);
-        this.noSlidesFound = this.noSlidesFound.bind(this);
         this.handleSelectSlide = this.handleSelectSlide.bind(this);
         this.handleDownload = this.handleDownload.bind(this);
-    }
-
-    noSlidesFound() {
-    	console.log(this.props.selectedPatient.slides.length);
-        return Object.keys(this.props.selectedPatient.slides).length === 0;
     }
 
     handleSelectSlide(slide) {
@@ -29,7 +23,7 @@ class MenuSlideList extends Component {
     }
 
     render() {
-    	return this.noSlidesFound() ? (
+    	return noSlidesFound(this.props.selectedPatient) ? (
             <Col id="menu-slide-list">
                 <Row className="slide-menu-item">
                     <Col sm="12"> There are no slides to show. </Col>
