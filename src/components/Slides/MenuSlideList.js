@@ -17,6 +17,7 @@ class MenuSlideList extends Component {
     }
 
     onPrint() {
+        console.log('!!! SlideTitle and SlideType are dummy vars; need to bring in state from redux');
         let slideTitleText = 'Slide Title';
         let slideTypeText = 'Slide Type';
 
