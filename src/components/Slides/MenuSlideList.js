@@ -23,24 +23,30 @@ class MenuSlideList extends Component {
         let openseadragon = document.getElementsByClassName('openseadragon')[0];
         let canvasDiv = openseadragon.getElementsByClassName('openseadragon-canvas')[0];
         let canvas = canvasDiv.getElementsByTagName('canvas')[0];
+        let printContainer = document.createElement('div');
         let imageContainer = document.createElement('img');
-        let slideTitle = document.createElement('h1');
+        let textContainer = document.createElement('div');
+        let slideTitle = document.createElement('h3');
         let slideType = document.createElement ('h2');
+
         slideTitle.setAttribute('id', 'print-slide-title');
-        slideType.setAttribute('id', 'print-slide-type');
         slideTitle.innerHTML = slideTitleText;
+        slideType.setAttribute('id', 'print-slide-type');
         slideType.innerHTML = slideTypeText;
+        textContainer.setAttribute('id', 'print-slide-text');
+        textContainer.appendChild(slideType);
+        textContainer.appendChild(slideTitle);
 
         imageContainer.setAttribute('id', 'print-slide-image');
         imageContainer.setAttribute('src', canvas.toDataURL('image/jpeg'));
 
-        document.body.appendChild(imageContainer);
-        document.body.appendChild(slideTitle);
-        document.body.appendChild(slideType);
+        document.body.appendChild(printContainer);
+        printContainer.setAttribute('id', 'print-container');
+        printContainer.appendChild(imageContainer);
+        printContainer.appendChild(textContainer);
+
         window.print();
-        document.body.removeChild(imageContainer);
-        document.body.removeChild(slideTitle);
-        document.body.removeChild(slideType);
+        document.body.removeChild(printContainer);
     }
 
     render() {
