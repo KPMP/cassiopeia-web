@@ -368,15 +368,12 @@ canvas {
 }
 
 @media only print {
-
 	body {
-
-		#slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
+		#patient-select-wrapper, #slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
 			display: none !important;
 		}
 
 		#print-container {
-
 			width: 100%;
 			height: 100%;
 			position: absolute;

@@ -9,8 +9,6 @@ class MenuSlideList extends Component {
     constructor(props) {
         super(props);
         this.noSlidesFound = this.noSlidesFound.bind(this);
-
-        this.onPrint = this.onPrint.bind(this);
         this.handleSelectSlide = this.handleSelectSlide.bind(this);
         this.handleDownload = this.handleDownload.bind(this);
     }
@@ -27,40 +25,6 @@ class MenuSlideList extends Component {
     handleDownload() {
     	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
     	downloadSlide(downloadFileName);
-    }
-
-    onPrint() {
-        console.log('!!! SlideTitle and SlideType are dummy vars; need to bring in state from redux');
-        let slideTitleText = 'Slide Title';
-        let slideTypeText = 'Slide Type';
-
-        let openseadragon = document.getElementsByClassName('openseadragon')[0];
-        let canvasDiv = openseadragon.getElementsByClassName('openseadragon-canvas')[0];
-        let canvas = canvasDiv.getElementsByTagName('canvas')[0];
-        let printContainer = document.createElement('div');
-        let imageContainer = document.createElement('img');
-        let textContainer = document.createElement('div');
-        let slideTitle = document.createElement('h3');
-        let slideType = document.createElement ('h2');
-
-        slideTitle.setAttribute('id', 'print-slide-title');
-        slideTitle.innerHTML = slideTitleText;
-        slideType.setAttribute('id', 'print-slide-type');
-        slideType.innerHTML = slideTypeText;
-        textContainer.setAttribute('id', 'print-slide-text');
-        textContainer.appendChild(slideType);
-        textContainer.appendChild(slideTitle);
-
-        imageContainer.setAttribute('id', 'print-slide-image');
-        imageContainer.setAttribute('src', canvas.toDataURL('image/jpeg'));
-
-        document.body.appendChild(printContainer);
-        printContainer.setAttribute('id', 'print-container');
-        printContainer.appendChild(imageContainer);
-        printContainer.appendChild(textContainer);
-
-        window.print();
-        document.body.removeChild(printContainer);
     }
 
     render() {
@@ -85,7 +49,7 @@ class MenuSlideList extends Component {
                             <a id="download" //eslint-disable-line
                             ><FontAwesomeIcon icon={faDownload} size="2x" className="clickable"/></a>
                         </Button>
-                        <Button outline color={'secondary'} onClick={this.onPrint}>
+                        <Button outline color={'secondary'}>
                             <FontAwesomeIcon icon={faPrint} size="2x" />
                         </Button>
                     </Col>
