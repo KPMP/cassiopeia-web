@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
-import { noSlidesFound, downloadSlide } from './slideHelpers';
+import { getNextSlide, getPreviousSlide, noSlidesFound, downloadSlide } from './slideHelpers.js';
 import Parser from 'html-react-parser';
 import SlidePrintManager from './SlidePrintManager';
 
@@ -27,6 +27,16 @@ class MenuSlideList extends Component {
     handleDownload() {
     	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
     	downloadSlide(downloadFileName);
+    }
+
+    handleNextSlide() {
+        let nextSlide = getNextSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
+        this.props.setSelectedSlide(nextSlide);
+    }
+
+    handlePreviousSlide() {
+        let previousSlide = getPreviousSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
+        this.props.setSelectedSlide(previousSlide);
     }
 
     render() {
@@ -55,10 +65,10 @@ class MenuSlideList extends Component {
                         </Button>
                     </Col>
                     <Col>
-                        <Button outline color={'secondary'}>
+                        <Button outline color={'secondary'} onClick={() => this.handlePreviousSlide()}>
                             <FontAwesomeIcon icon={faChevronLeft} size="2x"/>
                         </Button>
-                        <Button outline color={'secondary'}>
+                        <Button outline color={'secondary'} onClick={() => this.handleNextSlide()}>
                             <FontAwesomeIcon icon={faChevronRight} size="2x"/>
                         </Button>
                     </Col>
