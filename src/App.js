@@ -10,6 +10,8 @@ import loadedState from './initialState';
 import rootReducer from './reducers';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/SlidePrintManager';
+import ReactGA from 'react-ga';
+import createHistory from 'history/createBrowserHistory';
 
 const cacheStore = window.sessionStorage.getItem("redux-store");
 const initialState = cacheStore ?
@@ -19,6 +21,17 @@ const store = applyMiddleware(thunk)(createStore)(rootReducer, initialState, win
 const saveState = () => {
     window.sessionStorage.setItem("redux-store", JSON.stringify(store.getState()));
 };
+const GA_TRACKING_ID = 'UA-124331187-3';
+
+ReactGA.initialize(GA_TRACKING_ID);
+function logPageView(location, action) {
+    ReactGA.set({ page: location.pathname + location.search });
+    ReactGA.pageview(location.pathname + location.search);
+}
+const history = createHistory();
+history.listen((location, action) => {
+    logPageView(location, action);
+});
 
 store.subscribe(function () {
     console.log(store.getState())
@@ -29,6 +42,11 @@ store.subscribe(saveState);
 SlidePrintManager.getInstance().setReduxStore(store);
 
 class App extends Component {
+
+    componentWillMount() {
+        logPageView(window.location, "");
+    }
+
     render() {
         return (
             <Provider store={store}>
