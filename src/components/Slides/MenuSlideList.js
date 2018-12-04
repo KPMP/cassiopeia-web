@@ -5,6 +5,7 @@ import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from 
 import { getNextSlide, getPreviousSlide, noSlidesFound, downloadSlide } from './slideHelpers.js';
 import Parser from 'html-react-parser';
 import SlidePrintManager from './SlidePrintManager';
+import ReactGA from 'react-ga';
 
 class MenuSlideList extends Component {
 
@@ -16,6 +17,11 @@ class MenuSlideList extends Component {
     }
 
     onPrint() {
+        ReactGA.event({
+            category: 'Slide View',
+            action: 'Print Slide',
+            label: this.props.selectedPatient.selectedSlide.slideName
+        });
         SlidePrintManager.getInstance().beforePrint();
         setTimeout(window.print, 10);
     }
@@ -25,6 +31,11 @@ class MenuSlideList extends Component {
     }
     
     handleDownload() {
+        ReactGA.event({
+            category: 'Slide View',
+            action: 'Download Slide',
+            label: this.props.selectedPatient.selectedSlide.slideName
+        });
     	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
     	downloadSlide(downloadFileName);
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import PatientListDropDown from './PatientListDropDown';
+import ReactGA from 'react-ga';
 
 class PatientSelect extends Component {
 
@@ -10,6 +11,11 @@ class PatientSelect extends Component {
     }
 
     handlePatientSelect = (patientId) => {
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'View Slides',
+            label: patientId
+        });
         this.setState({patientId: patientId});
         this.setState({buttonDisabled: false});
     };
