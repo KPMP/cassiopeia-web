@@ -24,7 +24,6 @@
     "react-ga": "2.5.6",
     "react-redux": "5.1.1",
     "react-router-dom": "4.3.1",
-    "react-select": "2.1.1",
     "reactstrap": "6.5.0",
     "redux": "4.0.1",
     "redux-thunk": "2.3.0"
