@@ -85,6 +85,7 @@ canvas {
 	padding-left: 0px !important;
 }
 
+
 #summary-page {
 	max-width: 1150px;
 	position: relative;
@@ -101,6 +102,7 @@ canvas {
 		top: 60px;
 		z-index: 1000;
 		background: white;
+		width: 100%;
 
 		.patient-select {
 			width: 230px;

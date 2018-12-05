@@ -16,9 +16,10 @@ class PatientListDropDown extends Component {
             }
         );
         return (
-        	<Select size="large" className="patient-select-dropdown" labelInValue defaultValue={{ key: 'Select a KPMP ID' }} onChange={this.handleChange} placeholder="Select a KPMP ID">
-        		{options}
-        	</Select>
+	        	<Select size="large" className="patient-select-dropdown" labelInValue defaultValue={{ key: 'Select a KPMP ID' }} onChange={this.handleChange} 
+	        		placeholder="Select a KPMP ID" getPopupContainer={() => document.getElementById("patient-select-wrapper")}>
+	        		{options}
+	        	</Select>
         );
     }
 
