@@ -5,10 +5,16 @@ export const downloadSlide = (downloadFileName) => {
 
     var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
     if (!isIE) {
-        let image = canvas.toDataURL("image/jpeg");
+        let image = canvas.toDataURL("image/jpeg", 1.0);
         let downloadLink = document.getElementById("download");
-        downloadLink.setAttribute("href", image);
         downloadLink.setAttribute("download", downloadFileName);
+        downloadLink.setAttribute("href", image);
+
+        
+        // For some reason, we need to click the button again in firefox for the download to happen
+        if (navigator.userAgent.match(/Firefox/g)) {
+        	downloadLink.click();
+        }
     }
 
     if (isIE) {
