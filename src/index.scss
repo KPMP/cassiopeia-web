@@ -1,3 +1,4 @@
+
 $header-height: 60px;
 $menu-margin: 15px;
 
@@ -100,11 +101,16 @@ canvas {
 		top: 60px;
 		z-index: 1000;
 		background: white;
-		width: 100%;
 
 		.patient-select {
 			width: 230px;
 			margin-right: 10px;
+		}
+		
+		.patient-select-dropdown {
+			line-height: 15.4333px;
+			padding-right: 15px;
+			width: 230px;
 		}
 
 		p {

@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
+import { Select } from 'antd';
+import 'antd/es/select/style/index.css';
 
 class PatientListDropDown extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { selectedOption: null }
-    }
-
     handleChange = (selectedOption) => {
-        this.setState({selectedOption: selectedOption});
-        this.props.handlePatientSelect(selectedOption.value);
+        this.props.handlePatientSelect(selectedOption.key);
     };
 
     render() {
-        let { selectedOption, patients } = this.props;
+        const Option = Select.Option
+    	let { patients } = this.props;
         let options = patients.map((patient) => {
-                return {value: patient.id, label: patient.label}
+                return <Option value={patient.id}>{patient.label}</Option>
             }
         );
         return (
-            <Select className="patient-select" value={selectedOption} onChange={this.handleChange} options={options} placeholder="Select a KPMP ID"/>
+        	<Select size="large" className="patient-select-dropdown" labelInValue defaultValue={{ key: 'Select a KPMP ID' }} onChange={this.handleChange} placeholder="Select a KPMP ID">
+        		{options}
+        	</Select>
         );
     }
 
