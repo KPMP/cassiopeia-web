@@ -15,21 +15,21 @@
 }
 
 .bm-cross {
-  background: #bdc3c7;
+  background: white;
 }
 
 .bm-menu {
-  background: #373a47;
+  background: white;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: white;
 }
 
 .bm-item-list {
-  color: #b8b7ad;
+  color: black;
 }
 
 .bm-item {
@@ -47,4 +47,101 @@
 .bm-burger-bars {
 	background: black;
 	
+}
+
+// Old styles from the original menu, leaving them here so we can adjust as needed in the next card
+
+#side-menu {
+	max-width: 32vw;
+	margin: $menu-margin;
+	min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+	z-index: 1000;
+	position: relative;
+
+	#menu-bar {
+		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
+		min-width: 2vw;
+		border: 1px solid black;
+		background: white;
+		padding-top: 15px;
+
+		a {
+			display: block;
+			width: 36px;
+			height: 36px;
+			text-align: center;
+		}
+
+		.btn-link {
+			color: black;
+		}
+	}
+
+	#menu-slide-list {
+		background: white;
+		border: 1px solid black;
+		border-left: none;
+
+		.menu-slide-list-header {
+			background-color: lightgray;	
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid black;
+		}
+	
+		#menu-slide-list-slides {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	
+		.slide-menu-item {
+			padding-bottom: 10px;
+		}
+	
+		.slide-name {
+			display: table-cell;
+			vertical-align: middle;
+			line-height: 56px;	
+		}
+
+		.prev-next-buttons {
+			margin: 15px auto;
+			max-width: 350px;
+			text-align: center;
+
+			.btn {
+				margin: 0px 5px;
+
+			}
+		}
+
+		.btn-slide-nav {
+			margin-right: 10px;
+		}
+
+		.slide-highlighted {
+			background-color: lightgray;
+		}
+		
+		#slide-stain-text {
+			.slide-name-stain-text {
+				padding-top: 10px;
+				padding-bottom: 15px;
+				font-weight: 700;
+				font-size: 16px;
+			}
+			
+			.stain-title {
+				font-weight: 700;
+				font-size: 18px;
+			}
+			
+			.stain-description {
+				a {
+					text-decoration: underline;
+					color: #0275D8;
+				}
+			}
+		}
+	}
 }

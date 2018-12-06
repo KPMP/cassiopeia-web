@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Menu from './Menu';
 import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
