@@ -6,6 +6,7 @@
   height: 30px;
   left: 36px;
   top: calc(#{$header-height + 15px});
+  background-color: white;
 }
 
 .bm-cross-button {
@@ -45,4 +46,5 @@
 
 .bm-burger-bars {
 	background: black;
+	
 }
