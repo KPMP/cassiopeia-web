@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import MenuHeader from './MenuHeader';
-import { setSelectedSlide } from '../../actions/Patients/patientActions';
+import Header from './Header';
+import { setSelectedSlide } from '../../../actions/Patients/patientActions';
 
 const mapStateToProps = (state, props) =>
     ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch, props) =>
         }
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

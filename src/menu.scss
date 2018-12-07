@@ -91,9 +91,6 @@
 	
 
 	#menu-bar {
-		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
-		min-width: 2vw;
-		border: 1px solid black;
 		background: white;
 		padding-top: 15px;
 
@@ -111,7 +108,6 @@
 
 	#menu-slide-list {
 		background: white;
-		border: 1px solid black;
 		border-left: none;
 	
 		#menu-slide-list-slides {
@@ -127,17 +123,6 @@
 			display: table-cell;
 			vertical-align: middle;
 			line-height: 56px;	
-		}
-
-		.prev-next-buttons {
-			margin: 15px auto;
-			max-width: 350px;
-			text-align: center;
-
-			.btn {
-				margin: 0px 5px;
-
-			}
 		}
 
 		.btn-slide-nav {

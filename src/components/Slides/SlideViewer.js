@@ -3,7 +3,7 @@ import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
 import { noSlidesFound } from './slideHelpers';
-import Menu from './Menu';
+import Menu from './Menu/Menu';
 
 class SlideViewer extends Component {
 

@@ -4,9 +4,9 @@ import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from 
 import { Col, Row } from 'reactstrap';
 import ReactGA from 'react-ga';
 import SlidePrintManager from './SlidePrintManager';
-import { getNextSlide, getPreviousSlide, downloadSlide } from './slideHelpers.js';
+import { getNextSlide, getPreviousSlide, downloadSlide } from '../slideHelpers.js';
 
-class MenuHeader extends Component {
+class Header extends Component {
 	
 	constructor(props) {
 		super(props);
@@ -45,7 +45,6 @@ class MenuHeader extends Component {
     }
     
 	render() {
-		console.log(this.props);
 		return(
 			<div className="menu-slide-list-header">
 				<Row>
@@ -71,4 +70,4 @@ class MenuHeader extends Component {
 	
 }
 
-export default MenuHeader;
+export default Header;

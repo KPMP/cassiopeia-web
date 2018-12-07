@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 import loadedState from './initialState';
 import rootReducer from './reducers';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import SlidePrintManager from './components/Slides/SlidePrintManager';
+import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
 

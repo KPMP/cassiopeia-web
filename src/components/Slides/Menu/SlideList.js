@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
-import { noSlidesFound } from './slideHelpers.js';
+import { noSlidesFound } from '../slideHelpers.js';
 import Parser from 'html-react-parser';
 
-class MenuSlideList extends Component {
+class SlideList extends Component {
 
     constructor(props) {
         super(props);
@@ -35,7 +35,6 @@ class MenuSlideList extends Component {
                         }, this)
                     }
             	</div>
-            	<Row className="divider" />
             	<Row>
             		<Col>
 	                    <div id="slide-stain-text">
@@ -50,4 +49,4 @@ class MenuSlideList extends Component {
     }
 }
 
-export default MenuSlideList;
+export default SlideList;

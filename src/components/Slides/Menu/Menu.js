@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { slide as BurgerMenu } from 'react-burger-menu';
-import MenuSlideListContainer from './MenuSlideListContainer';
+import SlideListContainer from './SlideListContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import MenuHeaderContainer from './MenuHeaderContainer';
+import HeaderContainer from './HeaderContainer';
 
 class Menu extends Component {
 	
@@ -23,8 +23,8 @@ class Menu extends Component {
 			<div id="side-menu">
 				<BurgerMenu isOpen={ this.state.isOpen } width={ '450px' } noOverlay customBurgerIcon={ <FontAwesomeIcon icon={faBars} /> }
 					customCrossIcon={ false } >
-					<MenuHeaderContainer toggleMenu={this.toggleMenu}/>
-					<MenuSlideListContainer />
+					<HeaderContainer toggleMenu={this.toggleMenu}/>
+					<SlideListContainer />
 				</BurgerMenu>
                 <Link id="btn-home" to="/">
                     <FontAwesomeIcon icon={faHome} size="2x"/>
