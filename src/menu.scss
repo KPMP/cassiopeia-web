@@ -30,7 +30,6 @@
 
 .bm-menu {
   background: white;
-  padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
@@ -61,12 +60,35 @@
 
 // Old styles from the original menu, leaving them here so we can adjust as needed in the next card
 
+
 #side-menu {
-	max-width: 32vw;
-	margin: $menu-margin;
-	min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 	z-index: 1000;
-	position: relative;
+	
+	.menu-slide-list-header {
+		background-color: rgba(40, 60, 94, 1);
+		color: white;
+		
+		a:hover, a:visited, a {
+			color: white;
+		}
+		
+		.row {
+			margin-right: 0px !important;
+			margin-left: 0px !important;
+			padding-bottom: 7px;
+		}
+		
+		.pad-right {
+			margin-right: 15px;
+		}
+		
+		.menu-title {
+			font-weight: 400;
+			font-size: 15px;
+			padding-top: 5px;
+		}
+	}
+	
 
 	#menu-bar {
 		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
@@ -91,13 +113,6 @@
 		background: white;
 		border: 1px solid black;
 		border-left: none;
-
-		.menu-slide-list-header {
-			background-color: lightgray;	
-			padding-top: 5px;
-			padding-bottom: 5px;
-			border-bottom: 1px solid black;
-		}
 	
 		#menu-slide-list-slides {
 			padding-top: 15px;
