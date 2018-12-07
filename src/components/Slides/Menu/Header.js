@@ -58,9 +58,9 @@ class Header extends Component {
 					</Col>
 				    <Col sm="6">
 				    	<div className="float-right">
-				    		<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable" size="lg"/>
+				    		<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable  pad-right" size="lg"/>
 				            <a id="download" //eslint-disable-line
-				            ><FontAwesomeIcon icon={faDownload} className="clickable pad-right" onClick={this.handleDownload} size="lg" /></a>
+				            ><FontAwesomeIcon icon={faDownload} className="clickable" onClick={this.handleDownload} size="lg" /></a>
 			            </div>
 				    </Col>
 				</Row>
