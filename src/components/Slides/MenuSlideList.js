@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { getNextSlide, getPreviousSlide, noSlidesFound, downloadSlide } from './slideHelpers.js';
 import Parser from 'html-react-parser';
 import SlidePrintManager from './SlidePrintManager';
