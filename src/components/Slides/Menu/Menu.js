@@ -13,8 +13,11 @@ class Menu extends Component {
 		this.state = { isOpen: true };
 	}
 	
-	toggleMenu = () => {
+	toggleMenu = (newState) => {
 		let openState = !this.state.isOpen;
+		if (newState !== undefined || newState !== null) {
+			openState = newState;
+		}
 		this.setState( { isOpen: openState } );
 	}
 	

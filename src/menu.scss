@@ -1,4 +1,6 @@
 @import "common-values.scss";
+$menu-header-height: 80px;
+
 
 .bm-burger-button {
   position: fixed;
@@ -76,13 +78,14 @@
 	.menu-slide-list-header {
 		background-color: rgba(40, 60, 94, 1);
 		color: white;
+		height: $menu-header-height;
 		
 		a:hover, a:visited, a {
 			color: white;
 		}
 		
 		.row {
-			padding-bottom: 7px;
+			padding-bottom: 20px;
 		}
 		
 		.pad-right {
@@ -126,6 +129,7 @@
 				.slide-name {
 					padding-left: 10px;
 					margin: auto;
+					color: $link-blue;
 				}
 
 				.thumbnail {
@@ -167,11 +171,11 @@
 			.stain-description {
 				a:hover {
 					text-decoration: underline;
-					color: #0275D8;
+					color: $link-blue;
 				}
 				a {
 					text-decoration: none;
-					color: #0275D8;
+					color: $link-blue;
 				}					
 			}
 		}
