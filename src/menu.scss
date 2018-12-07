@@ -8,7 +8,7 @@
   top: calc(#{$header-height + $standard-padding});
   background-color: white;
   border-radius: 50%;
-  filter: drop-shadow(3px 4px 2px gray);
+  box-shadow: 3px 3px 5px gray;
   
   svg {
   	width: $menu-button-width !important;
