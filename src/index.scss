@@ -1,7 +1,5 @@
-
-$header-height: 60px;
-$menu-margin: 15px;
-
+@import "menu.scss";
+@import "common-values.scss";
 
 /***  These are some throwaway classes until we have more real stuff in their place ***/
 
@@ -214,6 +212,25 @@ canvas {
 	}
 }
 
+#btn-home {
+	position: fixed;
+	width: 45px;
+	height: 45px;
+	left: $standard-padding;
+	top: calc(#{$header-height + $standard-padding});
+	background-color: white;
+	z-index: 1000;
+	border-radius: 50%;
+    box-shadow: 3px 3px 5px gray;
+	
+	svg {
+	  	width: $menu-button-width !important;
+  		height: 30px !important;
+  		margin-top: 6px;
+  		margin-left: 4px;
+	}
+}
+
 #slide-viewer {
 	position: absolute;
 	top: $header-height;
@@ -221,101 +238,7 @@ canvas {
 	left: 0px;
 	right: 0px;
 
-	#side-menu {
-		max-width: 32vw;
-		margin: $menu-margin;
-		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
-		z-index: 1000;
-		position: relative;
-
-		#menu-bar {
-			min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
-			min-width: 2vw;
-			border: 1px solid black;
-			background: white;
-			padding-top: 15px;
-
-			a {
-				display: block;
-				width: 36px;
-				height: 36px;
-				text-align: center;
-			}
-
-			.btn-link {
-				color: black;
-			}
-		}
-
-		#menu-slide-list {
-			background: white;
-			border: 1px solid black;
-			border-left: none;
-
-			.menu-slide-list-header {
-				background-color: lightgray;	
-				padding-top: 5px;
-				padding-bottom: 5px;
-				border-bottom: 1px solid black;
-			}
-		
-			#menu-slide-list-slides {
-				padding-top: 15px;
-				padding-bottom: 15px;
-			}
-		
-			.slide-menu-item {
-				padding-bottom: 10px;
-			}
-		
-			.slide-name {
-				display: table-cell;
-				vertical-align: middle;
-				line-height: 56px;	
-			}
-
-			.prev-next-buttons {
-				margin: 15px auto;
-				max-width: 350px;
-				text-align: center;
-
-				.btn {
-					margin: 0px 5px;
-
-				}
-			}
-
-			.btn-slide-nav {
-				margin-right: 10px;
-			}
-
-			.slide-highlighted {
-				background-color: lightgray;
-			}
-			
-			#slide-stain-text {
-				.slide-name-stain-text {
-					padding-top: 10px;
-					padding-bottom: 15px;
-					font-weight: 700;
-					font-size: 16px;
-				}
-				
-				.stain-title {
-					font-weight: 700;
-					font-size: 18px;
-				}
-				
-				.stain-description {
-					a {
-						text-decoration: underline;
-						color: #0275D8;
-					}
-				}
-			}
-		}
-	}
-
+	
 }
 
 .osd-div {

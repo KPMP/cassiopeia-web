@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Menu from './Menu';
 import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
 import { noSlidesFound } from './slideHelpers';
+import BurgerMenu from './BurgerMenu';
 
 class SlideViewer extends Component {
 
@@ -45,6 +45,7 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
+				<BurgerMenu />
 				{ noSlidesFound(this.props.selectedPatient) ? (
 					null
 				) : (
@@ -61,7 +62,6 @@ class SlideViewer extends Component {
 						</div>
 					</div>
 				) }
-				<Menu />
 			</div>
 		)
 	}
