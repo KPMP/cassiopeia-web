@@ -1,15 +1,6 @@
 @import "menu.scss";
 @import "common-values.scss";
 
-/***  These are some throwaway classes until we have more real stuff in their place ***/
-
-.thumbnail {
-	height: 56px;
-	width: 56px;
-	border: 1px solid black;
-}
-
-/* Start of real classes */
 
 body {
 	overflow: auto;
