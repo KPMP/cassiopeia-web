@@ -32,7 +32,6 @@ $menu-header-height: 80px;
 
 .bm-menu {
   background: white;
-  font-size: 1.15em;
   border-right: 1px solid silver;
 }
 
@@ -97,6 +96,10 @@ $menu-header-height: 80px;
 			font-size: 15px;
 			padding-top: 5px;
 		}
+		
+		.menu-control {
+			padding-top: 5px;
+		}
 	}
 	
 	#menu-slide-list {
@@ -112,7 +115,6 @@ $menu-header-height: 80px;
 			max-height: calc(60vh - #{$header-height});
 			min-height: calc(60vh - #{$header-height});
 			overflow: auto;
-			
 			
 			.slide-highlighted {
 				background-color: rgba(230, 241, 255, 1);
@@ -160,12 +162,13 @@ $menu-header-height: 80px;
 				padding-top: 10px;
 				padding-bottom: 15px;
 				font-weight: 700;
-				font-size: 16px;
+				font-size: 14px;
 			}
 			
 			.stain-title {
 				font-weight: 700;
 				font-size: 18px;
+				padding-bottom: 5px;
 			}
 			
 			.stain-description {

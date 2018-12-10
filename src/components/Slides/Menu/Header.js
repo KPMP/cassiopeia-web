@@ -17,11 +17,13 @@ class Header extends Component {
     handleNextSlide() {
         let nextSlide = getNextSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
         this.props.setSelectedSlide(nextSlide);
+        this.props.toggleMenu(true);
     }
 
     handlePreviousSlide() {
         let previousSlide = getPreviousSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
         this.props.setSelectedSlide(previousSlide);
+        this.props.toggleMenu(true);
     }
     
     handleDownload() {
@@ -49,7 +51,7 @@ class Header extends Component {
 			<div className="menu-slide-list-header">
 				<Row>
 					<Col sm="11" className="menu-title">WHOLE SLIDE IMAGES</Col>
-					<Col sm="1"><FontAwesomeIcon icon={faCaretLeft} className="clickable" onClick={this.props.toggleMenu} size="lg"/></Col>
+					<Col sm="1" className="menu-control"><FontAwesomeIcon icon={faCaretLeft} className="clickable" onClick={this.props.toggleMenu} size="lg"/></Col>
 				</Row>
 				<Row>
 					<Col className="float-left" sm="6">

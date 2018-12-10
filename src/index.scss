@@ -4,6 +4,16 @@
 
 body {
 	overflow: auto;
+	color: rgb(51, 51, 51);
+	font-family: "Arial";
+	font-feature-settings: "kern";
+	font-kerning: normal;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-rendering: optimizelegibility;
+	text-transform: none;
 }
 
 a {
@@ -97,22 +107,13 @@ canvas {
 		}
 
 		p {
-			color: rgb(51, 51, 51);
-			font-family: "Arial";
-			font-feature-settings: "kern";
-			font-kerning: normal;
-			font-size: 13px;
-			font-style: normal;
-			font-weight: 400;
-			letter-spacing: normal;
 			line-height: 15.4333px;
+			font-size: 13px;
 			text-align: left;
 			text-decoration: none;
 			text-decoration-color: rgb(51, 51, 51);
 			text-decoration-line: none;
 			text-decoration-style: solid;
-			text-rendering: optimizelegibility;
-			text-transform: none;
 			white-space: nowrap;
 		}
 	}
