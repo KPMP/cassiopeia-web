@@ -2,6 +2,21 @@
 @import "common-values.scss";
 
 
+// Temporary classes
+.content-warning {
+	font-size: 16px;
+	font-weight: 600;
+	margin-left: -10px;
+	margin-top: 13px;
+	width: 1150px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+// End temporary classes
+
 body {
 	overflow: auto;
 	color: rgb(51, 51, 51);
@@ -119,7 +134,7 @@ canvas {
 	}
 
 	#summary-content-wrapper {
-		margin-top: 160px;
+		margin-top: 200px;
 		z-index: 0;
 	}
 
