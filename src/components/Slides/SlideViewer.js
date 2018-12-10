@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus, faBullseye, faCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus, faCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import { noSlidesFound } from './slideHelpers';
 import BurgerMenu from './BurgerMenu';
 
