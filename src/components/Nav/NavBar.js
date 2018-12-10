@@ -6,7 +6,7 @@ class NavBar extends Component {
 		return (
 			<Row className="nav-container container-fluid">
 				<NavbarBrand href="/">
-					<img src="img/kpmp-logo-trans-small.png" alt="Patient Slide Viewer" className="logo"/>
+					<img src="img/logo.png" alt="Patient Slide Viewer" className="logo"/>
 				</NavbarBrand>
 			</Row>
 			
