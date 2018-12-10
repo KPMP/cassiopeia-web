@@ -218,6 +218,10 @@ canvas {
 	}
 }
 
+#btn-home:hover {
+	opacity: 0.6;
+}
+
 #slide-viewer {
 	position: absolute;
 	top: $header-height;
