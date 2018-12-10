@@ -10,13 +10,14 @@ $menu-header-height: 80px;
   top: calc(#{$header-height + $standard-padding});
   background-color: white;
   border-radius: 50%;
-  box-shadow: 3px 3px 5px gray;
+  box-shadow: 0px 3px 5px gray;
   
   svg {
-  	width: $menu-button-width !important;
-  	height: 30px !important;
-  	margin-top: 8px;
-  	margin-left: 4px;
+  	width: 23px !important;
+  	height: 23px !important;
+  	margin-top: 11px;
+  	margin-left: 11px;
+  	color: $kpmp-blue;
   }
   
 }
@@ -75,7 +76,7 @@ $menu-header-height: 80px;
 	}
 	
 	.menu-slide-list-header {
-		background-color: rgba(40, 60, 94, 1);
+		background-color: $kpmp-blue;
 		color: white;
 		height: $menu-header-height;
 		
