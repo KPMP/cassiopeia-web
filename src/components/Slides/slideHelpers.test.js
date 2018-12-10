@@ -1,20 +1,32 @@
 import { noSlidesFound, downloadSlide, getNextSlide, getPreviousSlide } from './slideHelpers';
 
 describe("noSlidesFound", () => {
-	it("should return true when the object contains an empty array", () => {
-		expect(noSlidesFound({ slides: [] })).toBe(true);
+	beforeEach(() => {
+		const window = document.defaultView;
+		window.location.assign = jest.fn();
+	})
+	
+	it("should redirect when the object contains an empty array", () => {
+		noSlidesFound({ slides: [] });
+		expect(window.location.assign).toHaveBeenCalledTimes(1);
+		expect(window.location.assign).toHaveBeenCalledWith("/");
 	});
 
-	it("should return true when the object passed in is null", () => {
-		expect(noSlidesFound(null)).toBe(true);
+	it("should redirect when the object passed in is null", () => {
+		noSlidesFound(null);
+		expect(window.location.assign).toHaveBeenCalledTimes(1);
+		expect(window.location.assign).toHaveBeenCalledWith("/");
 	});
 
-	it("should return true when the object passed in is undefined", () => {
-		expect(noSlidesFound(undefined)).toBe(true);
+	it("should redirect when the object passed in is undefined", () => {
+		noSlidesFound(undefined);
+		expect(window.location.assign).toHaveBeenCalledTimes(1);
+		expect(window.location.assign).toHaveBeenCalledWith("/");
 	});
 
-	it("should return false when the object passed in has items in the array", () => {
-		expect(noSlidesFound( { slides: [ {key: "value" }]})).toBe(false);
+	it("should do nothing when the object passed in has items in the array", () => {
+		noSlidesFound( { slides: [ {key: "value" }]});
+		expect(window.location.assign).toHaveBeenCalledTimes(0);
 	});
 
 });
