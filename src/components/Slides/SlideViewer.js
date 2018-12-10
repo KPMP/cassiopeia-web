@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus, faCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import { noSlidesFound } from './slideHelpers';
 import Menu from './Menu/Menu';
 
@@ -10,6 +10,7 @@ class SlideViewer extends Component {
 	initSeaDragon() {
 		let self = this;
 		let slideId = this.props.selectedPatient.selectedSlide.id;
+		OpenSeadragon.setString("Tooltips.Home","Reset pan & zoom");
 		self.viewer =  OpenSeadragon({
 			id: "osdId",
 			visibilityRatio: 0.5,
@@ -53,9 +54,9 @@ class SlideViewer extends Component {
 					<div className="osd-div" ref={node => {this.el = node;}}>
 						<div className="openseadragon" id="osdId"></div>
 						<ul className="osd-toolbar">
-							<li><button id="zoom-in"><FontAwesomeIcon icon={faPlus} /></button></li>
-							<li><button id="zoom-out"><FontAwesomeIcon icon={faMinus} /></button></li>
-							<li><button id="reset"><FontAwesomeIcon icon={faBullseye} /></button></li>
+							<li><div className="osd-button" id="zoom-in"><FontAwesomeIcon icon={faPlus} /></div></li>
+							<li><div className="osd-button" id="zoom-out"><FontAwesomeIcon icon={faMinus} /></div></li>
+							<li><div className="osd-button" id="reset"><FontAwesomeIcon icon={faCrosshairs} /></div></li>
 						</ul>
 						<div className="osd-navigator-wrapper">
 							<div id="osd-navigator"></div>
