@@ -11,6 +11,7 @@ class Summary extends Component {
                         Select a KPMP ID and click view slides to get started:
                     </p>
                     <PatientSelectContainer />
+                    <div className="alert-info content-warning">The whole slide images currently available are from KPMP pilot nephrectomies and non-KPMP biopsy tissue.</div>
                 </div>
                 <div id="summary-content-wrapper">
                     <Col>
