@@ -55,14 +55,14 @@ class Header extends Component {
 				</Row>
 				<Row>
 					<Col className="float-left" sm="6">
-						<FontAwesomeIcon icon={faChevronLeft} className="clickable pad-right" onClick={() => this.handlePreviousSlide()} size="lg"/>
-						<FontAwesomeIcon icon={faChevronRight} className="clickable" onClick={() => this.handleNextSlide()} size="lg"/>
+						<FontAwesomeIcon icon={faChevronLeft} className="clickable hoverable pad-right" onClick={() => this.handlePreviousSlide()} size="lg"/>
+						<FontAwesomeIcon icon={faChevronRight} className="clickable hoverable" onClick={() => this.handleNextSlide()} size="lg"/>
 					</Col>
 				    <Col sm="6">
 				    	<div className="float-right">
-				    		<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable  pad-right" size="lg"/>
+				    		<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable hoverable pad-right" size="lg"/>
 				            <a id="download" //eslint-disable-line
-				            ><FontAwesomeIcon icon={faDownload} className="clickable" onClick={this.handleDownload} size="lg" /></a>
+				            ><FontAwesomeIcon icon={faDownload} className="clickable hoverable" onClick={this.handleDownload} size="lg" /></a>
 			            </div>
 				    </Col>
 				</Row>

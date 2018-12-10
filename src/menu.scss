@@ -105,6 +105,10 @@ $menu-header-height: 80px;
 		.menu-control {
 			padding-top: 5px;
 		}
+		
+		.menu-control:hover {
+			opacity: 0.6;
+		}
 	}
 	
 	#menu-slide-list {
