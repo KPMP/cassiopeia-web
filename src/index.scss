@@ -45,6 +45,10 @@ a:hover {
 	cursor: pointer;
 }
 
+.hoverable:hover {
+	opacity: 0.6;
+}
+
 //https://stackoverflow.com/questions/7615009/disable-interpolation-when-scaling-a-canvas
 canvas {
 	image-rendering: optimizeSpeed;             /* Older versions of FF          */
