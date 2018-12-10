@@ -41,28 +41,24 @@ class SlideViewer extends Component {
 		this.viewer.destroy();
 		this.viewer.navigator.destroy();
 		this.initSeaDragon();
+		noSlidesFound(this.props.selectedPatient)
 	}
 
 	render() {
 		return (
 			<div id="slide-viewer">
 				<Menu selectedPatient={this.props.selectedPatient}/>
-				{ noSlidesFound(this.props.selectedPatient) ? (
-					null
-				) : (
-
-					<div className="osd-div" ref={node => {this.el = node;}}>
-						<div className="openseadragon" id="osdId"></div>
-						<ul className="osd-toolbar">
-							<li><div className="osd-button" id="zoom-in"><FontAwesomeIcon icon={faPlus} /></div></li>
-							<li><div className="osd-button" id="zoom-out"><FontAwesomeIcon icon={faMinus} /></div></li>
-							<li><div className="osd-button" id="reset"><FontAwesomeIcon icon={faCrosshairs} /></div></li>
-						</ul>
-						<div className="osd-navigator-wrapper">
-							<div id="osd-navigator"></div>
-						</div>
+				<div className="osd-div" ref={node => {this.el = node;}}>
+					<div className="openseadragon" id="osdId"></div>
+					<ul className="osd-toolbar">
+						<li><div className="osd-button" id="zoom-in"><FontAwesomeIcon icon={faPlus} /></div></li>
+						<li><div className="osd-button" id="zoom-out"><FontAwesomeIcon icon={faMinus} /></div></li>
+						<li><div className="osd-button" id="reset"><FontAwesomeIcon icon={faCrosshairs} /></div></li>
+					</ul>
+					<div className="osd-navigator-wrapper">
+						<div id="osd-navigator"></div>
 					</div>
-				) }
+				</div>
 			</div>
 		)
 	}

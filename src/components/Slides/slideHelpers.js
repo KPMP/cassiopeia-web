@@ -24,11 +24,9 @@ export const downloadSlide = (downloadFileName) => {
 }
 
 export const noSlidesFound = (selectedPatient) => {
-    if (selectedPatient === null || selectedPatient === undefined) {
-        return true;
-    } else {
-        return Object.keys(selectedPatient.slides).length === 0;
-    }
+    if (selectedPatient === null || selectedPatient === undefined || Object.keys(selectedPatient.slides).length === 0) {
+        window.location.assign("/");
+    } 
 }
 
 const getSlideIndex = (slideArray, selectedSlide) => {
