@@ -136,12 +136,14 @@ $menu-header-height: 80px;
 				.slide-name {
 					padding-left: 10px;
 					margin: auto;
+					height: $thumbnail-height;
+					line-height: $thumbnail-height;
 					color: $link-blue;
 				}
 
 				.thumbnail {
-					height: 70px;
-					width: 70px;
+					height: $thumbnail-height;
+					width: $thumbnail-width;
 				}
 			}
 			
