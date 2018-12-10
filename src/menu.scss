@@ -1,4 +1,6 @@
 @import "common-values.scss";
+$menu-header-height: 80px;
+
 
 .bm-burger-button {
   position: fixed;
@@ -30,8 +32,7 @@
 
 .bm-menu {
   background: white;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  border-right: 1px solid silver;
 }
 
 .bm-overlay {
@@ -61,76 +62,99 @@
 
 // Old styles from the original menu, leaving them here so we can adjust as needed in the next card
 
+
 #side-menu {
-	max-width: 32vw;
-	margin: $menu-margin;
-	min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
 	z-index: 1000;
-	position: relative;
-
-	#menu-bar {
-		min-height: calc(100vh - (#{$header-height} + #{$menu-margin} + #{$menu-margin}));
-		min-width: 2vw;
-		border: 1px solid black;
-		background: white;
-		padding-top: 15px;
-
-		a {
-			display: block;
-			width: 36px;
-			height: 36px;
-			text-align: center;
+	max-height: calc(100vh - #{$header-height});
+	overflow: hidden;
+	border-right: 1px solid silver;
+	
+	.row {
+		margin-right: 0px !important;
+		margin-left: 0px !important;
+	}
+	
+	.menu-slide-list-header {
+		background-color: rgba(40, 60, 94, 1);
+		color: white;
+		height: $menu-header-height;
+		
+		a:hover, a:visited, a {
+			color: white;
 		}
-
-		.btn-link {
-			color: black;
+		
+		.row {
+			padding-bottom: 20px;
+		}
+		
+		.pad-right {
+			margin-right: 15px;
+		}
+		
+		.menu-title {
+			font-weight: 400;
+			font-size: 15px;
+			padding-top: 5px;
+		}
+		
+		.menu-control {
+			padding-top: 5px;
 		}
 	}
-
+	
 	#menu-slide-list {
 		background: white;
-		border: 1px solid black;
-		border-left: none;
-
-		.menu-slide-list-header {
-			background-color: lightgray;	
-			padding-top: 5px;
-			padding-bottom: 5px;
-			border-bottom: 1px solid black;
+		border-bottom: 1px solid silver;
+		
+		.col {
+			padding-left: 0px;
+			padding-right: 0px;
 		}
-	
+
 		#menu-slide-list-slides {
-			padding-top: 15px;
-			padding-bottom: 15px;
-		}
-	
-		.slide-menu-item {
-			padding-bottom: 10px;
-		}
-	
-		.slide-name {
-			display: table-cell;
-			vertical-align: middle;
-			line-height: 56px;	
-		}
-
-		.prev-next-buttons {
-			margin: 15px auto;
-			max-width: 350px;
-			text-align: center;
-
-			.btn {
-				margin: 0px 5px;
-
+			max-height: calc(60vh - #{$header-height});
+			min-height: calc(60vh - #{$header-height});
+			overflow: auto;
+			
+			.slide-highlighted {
+				background-color: rgba(230, 241, 255, 1);
 			}
-		}
 
-		.btn-slide-nav {
-			margin-right: 10px;
-		}
+			.slide-menu-item {
+				cursor: pointer;	
+				border-bottom: 1px solid silver;
+				
+				.no-padding {
+					padding-left: 0px;
+				}
+				
+				.slide-name {
+					padding-left: 10px;
+					margin: auto;
+					color: $link-blue;
+				}
 
-		.slide-highlighted {
-			background-color: lightgray;
+				.thumbnail {
+					height: 70px;
+					width: 70px;
+				}
+			}
+			
+		}
+		
+	}
+	
+	
+	#stain-information {
+	
+		min-height: calc(40vh - #{$header-height});
+		max-height: calc(40vh - #{$header-height});
+		overflow: auto;
+		padding-left: 10px;
+
+		.col {
+			padding-left: 0px;
+			padding-right: 10px;
 		}
 		
 		#slide-stain-text {
@@ -138,19 +162,24 @@
 				padding-top: 10px;
 				padding-bottom: 15px;
 				font-weight: 700;
-				font-size: 16px;
+				font-size: 14px;
 			}
 			
 			.stain-title {
 				font-weight: 700;
 				font-size: 18px;
+				padding-bottom: 5px;
 			}
 			
 			.stain-description {
-				a {
+				a:hover {
 					text-decoration: underline;
-					color: #0275D8;
+					color: $link-blue;
 				}
+				a {
+					text-decoration: none;
+					color: $link-blue;
+				}					
 			}
 		}
 	}

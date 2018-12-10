@@ -3,7 +3,7 @@ import OpenSeadragon from 'openseadragon';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faBullseye } from '@fortawesome/free-solid-svg-icons';
 import { noSlidesFound } from './slideHelpers';
-import BurgerMenu from './BurgerMenu';
+import Menu from './Menu/Menu';
 
 class SlideViewer extends Component {
 
@@ -45,7 +45,7 @@ class SlideViewer extends Component {
 	render() {
 		return (
 			<div id="slide-viewer">
-				<BurgerMenu />
+				<Menu selectedPatient={this.props.selectedPatient}/>
 				{ noSlidesFound(this.props.selectedPatient) ? (
 					null
 				) : (

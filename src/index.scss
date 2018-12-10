@@ -1,18 +1,19 @@
 @import "menu.scss";
 @import "common-values.scss";
 
-/***  These are some throwaway classes until we have more real stuff in their place ***/
-
-.thumbnail {
-	height: 56px;
-	width: 56px;
-	border: 1px solid black;
-}
-
-/* Start of real classes */
 
 body {
 	overflow: auto;
+	color: rgb(51, 51, 51);
+	font-family: "Arial";
+	font-feature-settings: "kern";
+	font-kerning: normal;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-rendering: optimizelegibility;
+	text-transform: none;
 }
 
 a {
@@ -38,14 +39,6 @@ canvas {
 	image-rendering: pixelated;                 /* Awesome future-browsers       */
 	-ms-interpolation-mode: nearest-neighbor;   /* IE                            */
 }
-
-.divider {
-	border-bottom: 2px solid silver;
-	margin-right: 15px !important;
-	margin-left: 5px;
-	margin-bottom: 5px;
-}
-
 
 .nav-container {
 	border-width: 1px;
@@ -114,22 +107,13 @@ canvas {
 		}
 
 		p {
-			color: rgb(51, 51, 51);
-			font-family: "Arial";
-			font-feature-settings: "kern";
-			font-kerning: normal;
-			font-size: 13px;
-			font-style: normal;
-			font-weight: 400;
-			letter-spacing: normal;
 			line-height: 15.4333px;
+			font-size: 13px;
 			text-align: left;
 			text-decoration: none;
 			text-decoration-color: rgb(51, 51, 51);
 			text-decoration-line: none;
 			text-decoration-style: solid;
-			text-rendering: optimizelegibility;
-			text-transform: none;
 			white-space: nowrap;
 		}
 	}

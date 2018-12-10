@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import MenuSlideList from './MenuSlideList';
-import { setSelectedSlide } from '../../actions/Patients/patientActions';
+import SlideList from './SlideList';
+import { setSelectedSlide } from '../../../actions/Patients/patientActions';
 
 const mapStateToProps = (state, props) =>
     ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch, props) =>
         }
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuSlideList);
+export default connect(mapStateToProps, mapDispatchToProps)(SlideList);
