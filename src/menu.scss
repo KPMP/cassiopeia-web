@@ -157,9 +157,11 @@ $menu-header-height: 80px;
 	
 	
 	#stain-information {
-	
-		min-height: calc(40vh - #{$header-height});
-		max-height: calc(40vh - #{$header-height});
+		// for some reason, we need to remove a little more height
+		// so that we don't cut the bottom off the stain info box
+		min-height: calc(40vh - (#{$header-height} + 21px));
+		max-height: calc(40vh - (#{$header-height} + 21px) );
+		overflow-x: hidden;
 		overflow: auto;
 		padding-left: 10px;
 
