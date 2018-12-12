@@ -28,7 +28,7 @@ class SlideList extends Component {
     				{
     					this.props.selectedPatient.slides.map(function(slide, index) {
     						let highlightedClass = this.props.selectedPatient.selectedSlide.id === slide.id ? " slide-highlighted" : "";
-    						let thumbnailSrc = "/img/thumbnail_stain_" + slide.stain.type + ".png";
+    						let thumbnailSrc = "/img/thumbnail_stain_" + slide.stain.type.toLowerCase() + ".png";
     						return (
 	    						<Row className={"slide-menu-item " + highlightedClass} onClick={() => this.handleSelectSlide(slide)}>
 		    						<Col sm="2" className="no-padding"><img className="thumbnail" src={thumbnailSrc} alt=""/></Col>
