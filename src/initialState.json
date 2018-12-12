@@ -1,0 +1,14 @@
+{
+  "patients": [
+  	{"id": "17-1606", "label": "17-1606 (Pilot 1)"}, 
+  	{"id": "18-139", "label": "18-139 (Pilot 1)"}, 
+  	{"id": "KPMP-Ex1", "label": "KPMP Example 1"}, 
+  	{"id": "KPMP-Ex2", "label": "KPMP Example 2"}, 
+  	{"id": "KPMP-Ex3", "label": "KPMP Example 3"}, 
+  	{"id": "KPMP-Ex4", "label": "KPMP Example 4"},
+  	{"id": "KPMP-Ex5", "label": "KPMP Example 5"},
+  	{"id": "KPMP-Ex6", "label": "KPMP Example 6"}
+  ],
+  "selectedPatient": {"id": "", "slides": [], "selectedSlide": ""}
+
+}

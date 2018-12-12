@@ -1,0 +1,199 @@
+@import "common-values.scss";
+$menu-header-height: 80px;
+
+
+.bm-burger-button {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  left: calc(#{$standard-padding + $standard-padding + $menu-button-width});
+  top: calc(#{$header-height + $standard-padding});
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px gray;
+   
+  svg {
+  	width: 23px !important;
+  	height: 23px !important;
+  	margin-top: 11px;
+  	margin-left: 11px;
+  	color: $kpmp-blue;
+  }
+  
+}
+
+.bm-burger-button:hover {
+  opacity: 0.6;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: white;
+}
+
+.bm-menu {
+  background: white;
+  border-right: 1px solid silver;
+}
+
+.bm-overlay {
+  background: white;
+}
+
+.bm-item-list {
+  color: black;
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-burger-bars {
+	background: black;
+	
+}
+
+// Old styles from the original menu, leaving them here so we can adjust as needed in the next card
+
+
+#side-menu {
+	z-index: 1000;
+	max-height: calc(100vh - #{$header-height});
+	overflow: hidden;
+	border-right: 1px solid silver;
+	
+	.row {
+		margin-right: 0px !important;
+		margin-left: 0px !important;
+	}
+	
+	.menu-slide-list-header {
+		background-color: $kpmp-blue;
+		color: white;
+		height: $menu-header-height;
+		
+		a:hover, a:visited, a {
+			color: white;
+		}
+		
+		.row {
+			padding-bottom: 20px;
+		}
+		
+		.pad-right {
+			margin-right: 15px;
+		}
+		
+		.menu-title {
+			font-weight: 400;
+			font-size: 15px;
+			padding-top: 5px;
+		}
+		
+		.menu-control {
+			padding-top: 5px;
+		}
+		
+		.menu-control:hover {
+			opacity: 0.6;
+		}
+	}
+	
+	#menu-slide-list {
+		background: white;
+		border-bottom: 1px solid silver;
+		
+		.col {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		#menu-slide-list-slides {
+			max-height: calc(60vh - #{$header-height});
+			min-height: calc(60vh - #{$header-height});
+			overflow: auto;
+			
+			.slide-highlighted {
+				background-color: rgba(230, 241, 255, 1);
+			}
+
+			.slide-menu-item {
+				cursor: pointer;	
+				border-bottom: 1px solid silver;
+				
+				.no-padding {
+					padding-left: 0px;
+				}
+				
+				.slide-name {
+					padding-left: 10px;
+					margin: auto;
+					height: $thumbnail-height;
+					line-height: $thumbnail-height;
+					color: $link-blue;
+				}
+
+				.thumbnail {
+					height: $thumbnail-height;
+					width: $thumbnail-width;
+				}
+			}
+			
+		}
+		
+	}
+	
+	
+	#stain-information {
+		// for some reason, we need to remove a little more height
+		// so that we don't cut the bottom off the stain info box
+		min-height: calc(40vh - (#{$header-height} + 21px));
+		max-height: calc(40vh - (#{$header-height} + 21px) );
+		overflow-x: hidden;
+		overflow: auto;
+		padding-left: 10px;
+
+		.col {
+			padding-left: 0px;
+			padding-right: 10px;
+		}
+		
+		#slide-stain-text {
+			.slide-name-stain-text {
+				padding-top: 10px;
+				padding-bottom: 15px;
+				font-weight: 700;
+				font-size: 14px;
+			}
+			
+			.stain-title {
+				font-weight: 700;
+				font-size: 18px;
+				padding-bottom: 5px;
+			}
+			
+			.stain-description {
+				a:hover {
+					text-decoration: underline;
+					color: $link-blue;
+				}
+				a {
+					text-decoration: none;
+					color: $link-blue;
+				}					
+			}
+		}
+	}
+}

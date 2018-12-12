@@ -1,0 +1,372 @@
+@import "menu.scss";
+@import "common-values.scss";
+
+
+// Temporary classes
+.content-warning {
+	font-size: 16px;
+	font-weight: 600;
+	margin-left: -10px;
+	margin-top: 13px;
+	width: 1150px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+// End temporary classes
+
+body {
+	overflow: auto;
+	color: rgb(51, 51, 51);
+	font-family: "Arial";
+	font-feature-settings: "kern";
+	font-kerning: normal;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	text-rendering: optimizelegibility;
+	text-transform: none;
+}
+
+body.slide-viewer-body {
+	ms-overflow-style: none;
+    overflow: hidden;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.hoverable:hover {
+	opacity: 0.6;
+}
+
+//https://stackoverflow.com/questions/7615009/disable-interpolation-when-scaling-a-canvas
+canvas {
+	image-rendering: optimizeSpeed;             /* Older versions of FF          */
+	image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+	image-rendering: -webkit-optimize-contrast; /* Safari                        */
+	image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+	image-rendering: pixelated;                 /* Awesome future-browsers       */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+.nav-container {
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(121, 121, 121, 1);
+	border-radius: 0px;
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+	height: $header-height;
+	position: fixed;
+	top: 0px;
+	z-index: 1000;
+	background: white;
+	
+	.logo {
+		margin-top: 10px;
+		margin-left: 10px;
+		height: 40px;
+	}
+
+	.navbar-brand {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+	}
+}
+
+#landing-page {
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+
+.container-fluid {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+
+
+#summary-page {
+	max-width: 1150px;
+	position: relative;
+	margin: auto;
+
+	.btn-primary {
+		background-color: #BB0606;
+		border-color: #BB0606;
+	}
+
+	#patient-select-wrapper {
+		padding: 10px;
+		position: fixed;
+		top: 60px;
+		z-index: 1000;
+		background: white;
+		width: 100%;
+
+		.patient-select {
+			width: 230px;
+			margin-right: 10px;
+		}
+		
+		.patient-select-dropdown {
+			line-height: 15.4333px;
+			padding-right: 15px;
+			width: 230px;
+		}
+
+		p {
+			line-height: 15.4333px;
+			font-size: 13px;
+			text-align: left;
+			text-decoration: none;
+			text-decoration-color: rgb(51, 51, 51);
+			text-decoration-line: none;
+			text-decoration-style: solid;
+			white-space: nowrap;
+		}
+	}
+
+	#summary-content-wrapper {
+		margin-top: 200px;
+		z-index: 0;
+	}
+
+	.light-border {
+		border: 1px solid rgba(212, 212, 212, 1);
+		border-radius: 5px;
+		padding: 18px;
+		margin: 15px;
+
+		p {
+			color: rgb(51, 51, 51);
+			font-family: "ArialMT", "Arial";
+			font-feature-settings: "kern";
+			font-kerning: normal;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			letter-spacing: normal;
+			line-height: 16.45px;
+			overflow-wrap: break-word;
+			text-align: left;
+			text-decoration: none;
+			text-decoration-color: rgb(51, 51, 51);
+			text-decoration-style: solid;
+			text-rendering: optimizelegibility;
+			text-transform: none;
+		}
+
+		p.center {
+			text-align: center;
+		}
+	}
+
+	.row-summary-question {
+		background: #283C5E;
+		font-size: x-large;
+		color: white;
+		padding: 12px 10px;
+	}
+
+	.row-summary-process {
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: 591px;
+			max-height: 177px;
+			display: block;
+			margin: 0px auto;
+		}
+	}
+
+	.row-summary-steps {
+		img {
+			max-width: 150px;
+			margin: auto;
+		}
+
+		.light-border {
+			margin-top: 10px;
+		}
+	}
+
+	.row-summary-info {
+		margin: 25px 30px 15px 30px;
+	}
+
+	.row-summary-organ-images {
+		img {
+			text-align: center;
+			margin: 25px 30px 15px;
+			height: 240px;
+			margin: auto;
+		}
+	}
+}
+
+#btn-home {
+	position: fixed;
+	width: 45px;
+	height: 45px;
+	left: $standard-padding;
+	top: calc(#{$header-height + $standard-padding});
+	background-color: white;
+	z-index: 1000;
+	border-radius: 50%;
+    box-shadow: 0px 3px 5px gray;
+	
+	svg {
+	  	width: 27px !important;
+  		height: 27px !important;
+  		margin-top: 8px;
+  		margin-left: 9px;
+  		color: $kpmp-blue;
+	}
+}
+
+#btn-home:hover {
+	opacity: 0.6;
+}
+
+#slide-viewer {
+	position: absolute;
+	top: $header-height;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.osd-div {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 500; // less than the z-index of #side-menu
+
+	.openseadragon {
+		width: 100%;
+		height: 100%;
+	}
+
+	.osd-navigator-wrapper {
+		position: fixed;
+		right: 5px;
+		bottom: 5px;
+		background: #000;
+		overflow: hidden;
+		width: 166px;
+		height: 178px;
+		border: solid 1px #000000;
+		z-index: 3100
+	}
+
+	#osd-navigator {
+		width: 166px;
+		height: 178px;
+		position: absolute;
+		top: 0;
+	}
+
+	.osd-toolbar {
+		width: 30px;
+		display: block;
+		position: fixed;
+		bottom: 185px;
+		right: 20px;
+		list-style: none;
+		z-index: 110;
+		padding: 0;
+
+		> li {
+			list-style: none;
+		}
+
+		.osd-button {
+			width: 40px;
+			height: 40px;
+			font-height: 40px;
+			padding-top: 7px;
+			font-size: 14pt;
+			display: block !important;
+			background: white;
+			color: black;
+			margin-bottom: 1px;
+			cursor: pointer;
+			text-align: center;
+			box-shadow: 0px 5px 5px -1px #666;
+		}
+
+		.osd-button:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+@media only print {
+	body {
+
+		background: white;
+
+		#patient-select-wrapper, #slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
+			display: none !important;
+		}
+
+		#print-container {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			margin: 0px auto auto auto !important;
+			border: 1px solid;
+			overflow: hidden;
+			background: white;
+
+			#print-slide-text {
+				position: absolute;
+				bottom: 0.5in;
+				left: 0.5in;
+				padding: 0.25in;
+				background-color: white;
+				opacity: 0.75;
+			}
+
+			img#print-slide-image {
+				display: block;
+				position: relative;
+				margin: auto;
+				padding: 0.5in;
+				max-width: 100%;
+				max-height: 100%;
+				page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+				page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+				page-break-inside: avoid; /* or 'auto' */
+				object-fit: scale-down;
+			}
+		}
+	}
+}
+
+@page {
+	size: landscape;
+	margin: 0;
+}
