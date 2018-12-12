@@ -35,6 +35,7 @@ class SlideViewer extends Component {
 		if(!noSlidesFound(this.props.selectedPatient)) {
             this.initSeaDragon();
 		}
+		document.body.classList.add('slide-viewer-body');
 	}
 
 	componentDidUpdate(){
