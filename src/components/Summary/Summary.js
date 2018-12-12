@@ -3,6 +3,11 @@ import { Col, Row } from 'reactstrap';
 import PatientSelectContainer from './PatientSelectContainer';
 
 class Summary extends Component {
+	
+	componentDidMount() {
+		document.body.classList.remove('slide-viewer-body');
+	}
+	
     render() {
         return (
             <div id="summary-page">
