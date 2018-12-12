@@ -18,7 +18,6 @@
 // End temporary classes
 
 body {
-	-ms-overflow-style: none;
 	overflow: auto;
 	color: rgb(51, 51, 51);
 	font-family: "Arial";
@@ -30,6 +29,11 @@ body {
 	letter-spacing: normal;
 	text-rendering: optimizelegibility;
 	text-transform: none;
+}
+
+body.slide-viewer-body {
+	ms-overflow-style: none;
+    overflow: hidden;
 }
 
 a {
