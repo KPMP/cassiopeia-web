@@ -73,6 +73,16 @@ $menu-header-height: 80px;
 	max-height: calc(100vh - #{$header-height});
 	overflow: hidden;
 	border-right: 1px solid silver;
+	width: 33%;
+
+	#bm-menu-wrap {
+		@media only screen and (max-width: 767px) {
+			width: 66% !important;
+		}
+		@media only screen and (min-width: 768px) {
+			width: 33% !important;
+		}
+	}
 	
 	.row {
 		margin-right: 0px !important;
@@ -114,8 +124,8 @@ $menu-header-height: 80px;
 	#menu-slide-list {
 		background: white;
 		border-bottom: 1px solid silver;
-		
-		.col {
+
+		#slides-col {
 			padding-left: 0px;
 			padding-right: 0px;
 		}
@@ -138,8 +148,7 @@ $menu-header-height: 80px;
 				}
 				
 				.slide-name {
-					padding-left: 10px;
-					margin: auto;
+					text-align: left;
 					height: $thumbnail-height;
 					line-height: $thumbnail-height;
 					color: $link-blue;
