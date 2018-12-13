@@ -73,7 +73,6 @@ $menu-header-height: 80px;
 	max-height: calc(100vh - #{$header-height});
 	overflow: hidden;
 	border-right: 1px solid silver;
-	width: 33%;
 
 	#bm-menu-wrap {
 		@media only screen and (max-width: 767px) {
