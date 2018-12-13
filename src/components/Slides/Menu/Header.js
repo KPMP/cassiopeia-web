@@ -50,15 +50,17 @@ class Header extends Component {
 		return(
 			<div className="menu-slide-list-header">
 				<Row>
-					<Col sm="11" className="menu-title">WHOLE SLIDE IMAGES</Col>
-					<Col sm="1" className="menu-control"><FontAwesomeIcon icon={faCaretLeft} className="clickable" onClick={this.props.toggleMenu} size="lg"/></Col>
-				</Row>
+					<Col className="menu-title">WHOLE SLIDE IMAGES</Col>
+                    <div className="float-right">
+					    <Col className="menu-control"><FontAwesomeIcon icon={faCaretLeft} className="clickable" onClick={this.props.toggleMenu} size="lg"/></Col>
+				    </div>
+                </Row>
 				<Row>
-					<Col className="float-left" sm="6">
+					<Col className="float-left" xs="6">
 						<FontAwesomeIcon icon={faChevronLeft} className="clickable hoverable pad-right" onClick={() => this.handlePreviousSlide()} size="lg"/>
 						<FontAwesomeIcon icon={faChevronRight} className="clickable hoverable" onClick={() => this.handleNextSlide()} size="lg"/>
 					</Col>
-				    <Col sm="6">
+				    <Col xs="6">
 				    	<div className="float-right">
 				    		<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable hoverable pad-right" size="lg"/>
 				            <a id="download" //eslint-disable-line
