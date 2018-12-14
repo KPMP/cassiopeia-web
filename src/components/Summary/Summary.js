@@ -68,7 +68,7 @@ class Summary extends Component {
                                     <b>Step 4: Scan</b>
                                 </p>
                                 <p>
-                                    The slides are scanned into digital images and uploaded to the patient biopsy image repository.
+                                    The slides are scanned into digital images and uploaded to the participant biopsy image repository.
                                 </p>
                             </Col>
                         </Row>
