@@ -24,7 +24,7 @@ class Menu extends Component {
 	render() {
 		return (
 			<div id="side-menu">
-				<BurgerMenu isOpen={ this.state.isOpen } width={ '450px' } noOverlay customBurgerIcon={ <FontAwesomeIcon icon={faBars} /> }
+				<BurgerMenu id={ "bm-menu-wrap" } width={"33%"} isOpen={ this.state.isOpen } noOverlay customBurgerIcon={ <FontAwesomeIcon icon={faBars} /> }
 					customCrossIcon={ false } >
 					<SlideListContainer toggleMenu={this.toggleMenu}/>
 					<StainInformationContainer />
