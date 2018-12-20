@@ -5,7 +5,7 @@ export const downloadSlide = (downloadFileName) => {
 
     var isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
     if (!isIE) {
-        let image = canvas.toDataURL("image/jpeg", 1.0);
+        let image = canvas.toDataURL("image/jpeg");
         let downloadLink = document.getElementById("download");
         downloadLink.setAttribute("download", downloadFileName);
         downloadLink.setAttribute("href", image);
