@@ -10,8 +10,8 @@ const mapStateToProps = (state, props) =>
 const mapDispatchToProps = (dispatch, props) =>
     ({
         setSelectedPatient(patient) {
-            dispatch(getPatientSlides(patient));
-            dispatch(() => props.history.push('/slides'));
+            dispatch(getPatientSlides(patient, props));
+            //dispatch(() => props.history.push('/slides'));
         }
     });
 
