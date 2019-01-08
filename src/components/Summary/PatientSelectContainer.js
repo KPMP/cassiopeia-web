@@ -11,7 +11,6 @@ const mapDispatchToProps = (dispatch, props) =>
     ({
         setSelectedPatient(patient) {
             dispatch(getPatientSlides(patient, props));
-            //dispatch(() => props.history.push('/slides'));
         }
     });
 
