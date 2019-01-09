@@ -16,16 +16,16 @@ export const setSelectedSlide = (slide) => {
 	}
 }
 
-export const getPatientSlides = (patientId) => {
+export const getPatientSlides = (patientId, props) => {
 	return (dispatch) => {
 		axios.get('/api/v1/slides/' + patientId)
 			.then(result => {
 				let slides = patientSelectSorter(result.data);
 				dispatch(setSelectedPatient({id: patientId, slides: slides, selectedSlide: slides[0]}));
-				window.location.href = "/#/slides";
+				props.history.push("/slides");
 			})
 			.catch(err => {
-				
+
 			});
 	}
 }

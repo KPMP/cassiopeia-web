@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import PatientSelect from './PatientSelect';
+import { withRouter } from 'react-router';
 import { getPatientSlides } from '../../actions/Patients/patientActions'
 const mapStateToProps = (state, props) =>
     ({
@@ -9,8 +10,8 @@ const mapStateToProps = (state, props) =>
 const mapDispatchToProps = (dispatch, props) =>
     ({
         setSelectedPatient(patient) {
-            dispatch(getPatientSlides(patient));
+            dispatch(getPatientSlides(patient, props));
         }
     });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PatientSelect);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PatientSelect));
