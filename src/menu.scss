@@ -1,5 +1,6 @@
 @import "common-values.scss";
 $menu-header-height: 80px;
+$menu-header-height-mobile: 40px;
 
 
 .bm-burger-button {
@@ -91,6 +92,10 @@ $menu-header-height: 80px;
 	.menu-slide-list-header {
 		background-color: $kpmp-blue;
 		color: white;
+		
+		@media only screen and (max-device-width: 768px) {
+			height: $menu-header-height-mobile;
+		}
 		height: $menu-header-height;
 		
 		a:hover, a:visited, a {
@@ -120,7 +125,7 @@ $menu-header-height: 80px;
 		}
 		
 		@media only screen and (max-device-width: 768px) {
-			.arrowKey {
+			.hideOnMobile {
 				display:none;
 			}
 		}
