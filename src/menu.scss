@@ -118,6 +118,12 @@ $menu-header-height: 80px;
 		.menu-control:hover {
 			opacity: 0.6;
 		}
+		
+		@media only screen and (max-device-width: 768px) {
+			.arrowKey {
+				display:none;
+			}
+		}
 	}
 	
 	#menu-slide-list {

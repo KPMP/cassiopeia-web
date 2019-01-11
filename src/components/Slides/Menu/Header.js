@@ -57,8 +57,8 @@ class Header extends Component {
                 </Row>
 				<Row>
 					<Col className="float-left" xs="6">
-						<FontAwesomeIcon icon={faChevronLeft} className="clickable hoverable pad-right" onClick={() => this.handlePreviousSlide()} size="lg"/>
-						<FontAwesomeIcon icon={faChevronRight} className="clickable hoverable" onClick={() => this.handleNextSlide()} size="lg"/>
+						<FontAwesomeIcon icon={faChevronLeft} className="clickable hoverable pad-right arrowKey" onClick={() => this.handlePreviousSlide()} size="lg"/>
+						<FontAwesomeIcon icon={faChevronRight} className="clickable hoverable arrowKey" onClick={() => this.handleNextSlide()} size="lg"/>
 					</Col>
 				    <Col xs="6">
 				    	<div className="float-right">
