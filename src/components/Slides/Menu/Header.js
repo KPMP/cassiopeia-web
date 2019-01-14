@@ -5,6 +5,7 @@ import { Col, Row } from 'reactstrap';
 import ReactGA from 'react-ga';
 import SlidePrintManager from './SlidePrintManager';
 import { getNextSlide, getPreviousSlide, downloadSlide } from '../slideHelpers.js';
+import { isMobile } from 'react-device-detect';
 
 class Header extends Component {
 	
@@ -55,18 +56,25 @@ class Header extends Component {
 					    <Col className="menu-control"><FontAwesomeIcon icon={faCaretLeft} className="clickable" onClick={this.props.toggleMenu} size="lg"/></Col>
 				    </div>
                 </Row>
-				<Row className="hideOnMobile">
+				<Row>
 					<Col className="float-left" xs="6">
-						<FontAwesomeIcon icon={faChevronLeft} className="clickable hoverable pad-right" onClick={() => this.handlePreviousSlide()} size="lg"/>
-						<FontAwesomeIcon icon={faChevronRight} className="clickable hoverable" onClick={() => this.handleNextSlide()} size="lg"/>
+						{ !isMobile &&
+							<span>
+								<FontAwesomeIcon icon={faChevronLeft} className="clickable hoverable pad-right" onClick={() => this.handlePreviousSlide()} size="lg"/>
+								<FontAwesomeIcon icon={faChevronRight} className="clickable hoverable" onClick={() => this.handleNextSlide()} size="lg"/>
+							</span>
+						}
 					</Col>
 				    <Col xs="6">
 				    	<div className="float-right">
-				    		<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable hoverable pad-right" size="lg"/>
+				    		{ !isMobile && 
+				    			<FontAwesomeIcon icon={faPrint} onClick={this.onPrint} className="clickable hoverable pad-right" size="lg"/>
+				    		}
 				            <a id="download" //eslint-disable-line
 				            ><FontAwesomeIcon icon={faDownload} className="clickable hoverable" onClick={this.handleDownload} size="lg" /></a>
 			            </div>
 				    </Col>
+					
 				</Row>
         	</div>
 		);
