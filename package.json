@@ -21,6 +21,7 @@
     "openseadragon": "2.4.0",
     "react": "16.6.3",
     "react-burger-menu": "2.5.4",
+    "react-device-detect": "1.6.1",
     "react-dom": "16.6.3",
     "react-ga": "2.5.6",
     "react-redux": "5.1.1",

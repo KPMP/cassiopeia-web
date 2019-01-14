@@ -120,13 +120,7 @@ $menu-header-height-mobile: 40px;
 			opacity: 0.6;
 		}
 		
-		@media only screen and (max-device-width: 768px) {
-			.hideOnMobile {
-				display:none;
-			}
-		}
-	}
-	
+	}	
 	#menu-slide-list {
 		background: white;
 		border-bottom: 1px solid silver;
