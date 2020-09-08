@@ -72,15 +72,12 @@ canvas {
 	margin-left: 0px !important;
 	padding-left: 0px !important;
 	height: $header-height;
-	position: fixed;
 	top: 0px;
 	z-index: 1000;
 	background: white;
 	
 	.logo {
-		margin-top: 10px;
-		margin-left: 10px;
-		height: 40px;
+		height: 30px;
 	}
 
 	.navbar-brand {
@@ -364,6 +361,12 @@ canvas {
 			}
 		}
 	}
+}
+
+#title-text {
+	font-size: 20px;
+	font-weight: 500;
+	color: $kpmp-blue;
 }
 
 @page {
