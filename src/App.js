@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Landing from './components/Landing/Landing';
 import NavBar from './components/Nav/NavBar';
 import Summary from './components/Summary/Summary';
 import Slides from './components/Slides/Slides';
@@ -55,8 +56,9 @@ class App extends Component {
                         <div>
                             <NavBar/>
                             <Switch>
-                                <Route exact path="/" component={Summary}/>
+                                <Route exact path="/" component={Landing}/>
                                 <Route path="/slides" component={Slides}/>
+                                <Route path="/summary" component={Summary}/>
                             </Switch>
                         </div>
                     </Router>
