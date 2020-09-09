@@ -9,7 +9,6 @@ class NavBar extends Component {
 					<img src="img/logo.png" alt="Participant Slide Viewer" className="logo"/>
 				</NavbarBrand>
 			</Row>
-			
 		);
 	}
 }
