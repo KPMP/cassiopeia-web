@@ -3,10 +3,6 @@ import { NavbarBrand, Button } from 'reactstrap';
 
 class NavBar extends Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	handleLogout = () => {
 		this.props.setLoggedIn(false)
 	};
@@ -25,7 +21,7 @@ class NavBar extends Component {
 				<ul className="navbar-nav">
 					{ this.props.loggedIn ?
 						<li className="nav-item small">
-							About &nbsp;|&nbsp; <a onClick={this.handleLogout} href="#">Sign Out</a>
+							About &nbsp;|&nbsp; <a onClick={this.handleLogout}>Sign Out</a>
 						</li> : <Button color="primary" className="px-5" onClick={this.handleLogin}>SIGN IN</Button>
 					}
 				</ul>
