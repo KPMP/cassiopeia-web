@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import { Row, NavbarBrand } from 'reactstrap';
+import { NavbarBrand } from 'reactstrap';
 
 class NavBar extends Component {
 	render() {
 		return (
-			<Row className="nav-container container-fluid">
-				<NavbarBrand href="/">
-					<img src="img/logo.png" alt="Participant Slide Viewer" className="logo"/>
+			<nav id="navbar" className="nav-container fixed-top navbar navbar-expand-* px-4 py-2">
+				<NavbarBrand d-flex align-items-center href="/">
+					<img src="img/logo.png" className="logo" alt="Participant Slide Viewer"/>
+					<span id="title-text" className="ml-4">Participant Portal</span>
 				</NavbarBrand>
-			</Row>
+				<ul className="navbar-nav">
+					<li className="nav-item small">
+						About &nbsp;|&nbsp; Sign Out
+					</li>
+				</ul>
+			</nav>
 		);
 	}
 }
