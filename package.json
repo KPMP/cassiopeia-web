@@ -17,7 +17,7 @@
     "es6-shim": "0.35.4",
     "history": "4.7.2",
     "html-react-parser": "0.4.7",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "openseadragon": "2.4.0",
     "react": "16.6.3",
     "react-burger-menu": "2.5.4",
