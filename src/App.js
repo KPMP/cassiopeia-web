@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Landing from './components/Landing/Landing';
-import NavBar from './components/Nav/NavBar';
+import NavBarContainer from './components/Nav/NavBarContainer';
 import Summary from './components/Summary/Summary';
 import Slides from './components/Slides/Slides';
 import { Container } from 'reactstrap';
@@ -54,7 +54,7 @@ class App extends Component {
                 <Container fluid>
                     <Router history={history}>
                         <div>
-                            <NavBar/>
+                            <NavBarContainer/>
                             <Switch>
                                 <Route exact path="/" component={Landing}/>
                                 <Route path="/slides" component={Slides}/>

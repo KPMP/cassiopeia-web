@@ -83,6 +83,21 @@ canvas {
 		padding-top: 0px !important;
 		padding-bottom: 0px !important;
 	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+    .btn-link {
+		font-size: 99%  !important;
+		font-weight: 400  !important;
+		color: $kpmp-blue  !important;
+		padding: 0px;
+	}
+
+	.nav-item {
+		color: $kpmp-blue;
+	}
 }
 
 #landing-page {
