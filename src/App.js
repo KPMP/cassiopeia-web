@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Landing from './components/Landing/Landing';
 import NavBarContainer from './components/Nav/NavBarContainer';
 import Summary from './components/Summary/Summary';
+import About from './components/About/About';
 import Slides from './components/Slides/Slides';
 import { Container } from 'reactstrap';
 import { Provider } from 'react-redux';
@@ -59,6 +60,7 @@ class App extends Component {
                                 <Route exact path="/" component={Landing}/>
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/summary" component={Summary}/>
+                                <Route path="/about" component={About}/>
                             </Switch>
                         </div>
                     </Router>
