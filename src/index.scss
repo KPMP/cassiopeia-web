@@ -1,7 +1,6 @@
 @import "menu.scss";
 @import "common-values.scss";
 
-
 // Temporary classes
 .content-warning {
 	font-size: 16px;
@@ -372,4 +371,13 @@ canvas {
 @page {
 	size: landscape;
 	margin: 0;
+}
+
+#landing-page {
+  margin-top: 150px;
+
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
 }
