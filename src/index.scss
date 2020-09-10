@@ -64,33 +64,33 @@ canvas {
 }
 
 .nav-container {
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(121, 121, 121, 1);
-  border-radius: 0px;
-  margin-left: 0px !important;
-  padding-left: 0px !important;
-  height: $header-height;
-  top: 0px;
-  z-index: 1000;
-  background: white;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(121, 121, 121, 1);
+	border-radius: 0px;
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+	height: $header-height;
+	top: 0px;
+	z-index: 1000;
+	background: white;
 
-  .logo {
-    height: 30px;
-  }
+	.logo {
+		height: 30px;
+	}
 
-  .navbar-brand {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-  }
+	.navbar-brand {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+	}
 
-  .navbar-nav {
-    a:hover {
-      text-decoration: underline;
-    }
-  }
+	.navbar-nav {
+		a:hover {
+			text-decoration: underline;
+		}
+	}
 
-    .btn-link {
+	.btn-link {
 		font-size: 99%  !important;
 		font-weight: 400  !important;
 		color: $kpmp-blue  !important;
