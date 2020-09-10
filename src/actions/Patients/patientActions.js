@@ -9,6 +9,13 @@ export const setSelectedPatient = (patient) => {
     }
 }
 
+export const setParticipants = (participants) => {
+	return {
+		type: actionNames.SET_PARTICIPANTS,
+		payload: participants
+	}
+}
+
 export const setSelectedSlide = (slide) => {
 	return {
 		type: actionNames.SET_SELECTED_SLIDE,
@@ -25,7 +32,21 @@ export const getPatientSlides = (patientId, props) => {
 				props.history.push("/slides");
 			})
 			.catch(err => {
+				console.log("unable to retrieve slides for participant: " + patientId)
+			});
+	}
+}
 
+export const getAllParticipants = () => {
+	return (dispatch) => {
+		var config = { headers: {'Content-Type': 'application/json', 'Cache-control': 'no-cache'}}
+		axios.get('/api/v1/slides', config)
+			.then(result => {
+				let participants = result.data;
+				dispatch(setParticipants(participants));
+			})
+			.catch(err => {
+				console.log("We were unable to get the slides.");
 			});
 	}
 }

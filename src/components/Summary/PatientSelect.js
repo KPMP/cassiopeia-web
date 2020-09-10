@@ -24,10 +24,14 @@ class PatientSelect extends Component {
         this.props.setSelectedPatient(this.state.patientId);
     };
 
+    componentDidMount() {
+        this.props.getAllParticipants();
+    }
+    
     render() {
         return (
             <div className="patient-select-controls pull-left input-group">
-                <PatientListDropDown patients={this.props.patients} handlePatientSelect={this.handlePatientSelect}/>
+                <PatientListDropDown participants={this.props.participants} handlePatientSelect={this.handlePatientSelect}/>
                 <Button color="primary" onClick={this.handleClick} disabled={this.state.buttonDisabled}>View Slides</Button>
             </div>
         );
