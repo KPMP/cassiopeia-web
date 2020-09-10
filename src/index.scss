@@ -74,7 +74,7 @@ canvas {
 	top: 0px;
 	z-index: 1000;
 	background: white;
-	
+
 	.logo {
 		height: 30px;
 	}
@@ -84,11 +84,13 @@ canvas {
 		padding-bottom: 0px !important;
 	}
 
-	a:hover {
-		text-decoration: underline;
+	.navbar-nav {
+		a:hover {
+			text-decoration: underline;
+		}
 	}
 
-    .btn-link {
+	.btn-link {
 		font-size: 99%  !important;
 		font-weight: 400  !important;
 		color: $kpmp-blue  !important;
@@ -158,6 +160,10 @@ canvas {
 	#summary-content-wrapper {
 		margin-top: 100px;
 		z-index: 0;
+
+		.row {
+			margin-left: 20px;
+		}
 	}
 
 	.light-border {
