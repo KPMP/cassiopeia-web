@@ -21,7 +21,7 @@ class NavBar extends Component {
 				<ul className="navbar-nav">
 					{ this.props.loggedIn ?
 						<li className="nav-item small">
-							<Button color="link" onClick={() => window.location.href="/about"}>About</Button>&nbsp;|&nbsp;<Button color="link" onClick={this.handleLogout}>Sign Out</Button>
+							<Button color="link" onClick={() => window.location.href="/about"}>About</Button> &nbsp;|&nbsp; <Button color="link" onClick={this.handleLogout}>Sign Out</Button>
 						</li> : <Button color="primary" className="px-5" onClick={this.handleLogin}>SIGN IN</Button>
 					}
 				</ul>
