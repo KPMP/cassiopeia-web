@@ -23,6 +23,7 @@ export const setSelectedSlide = (slide) => {
 	}
 }
 
+
 export const getParticipantSlidesWithId = (patientId, props) => {
 	return (dispatch) => {
 		axios.get('/api/v1/slides/' + patientId)
@@ -44,6 +45,9 @@ export const getParticipantSlides = (props) => {
 			let slides = patientSelectSorter(result.data);
 			if (slides.length === 0) {
 				props.history.push("/about");
+			} else {
+				dispatch(setSelectedPatient({id: "", slides: slides, selectedSlide: slides[0]}));
+				props.history.push("/slides");
 			}
 		})
 		.catch(err => {
