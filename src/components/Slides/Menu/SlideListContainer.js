@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SlideList from './SlideList';
-import { setSelectedSlide } from '../../../actions/Patients/patientActions';
+import { setSelectedSlide } from '../../../actions/Patients/participantActions';
 
 const mapStateToProps = (state, props) =>
     ({

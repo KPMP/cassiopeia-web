@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Landing from './components/Landing/Landing';
+import LandingContainer from './components/Landing/LandingContainer';
 import NavBarContainer from './components/Nav/NavBarContainer';
 import Summary from './components/Summary/Summary';
 import About from './components/About/About';
@@ -14,6 +14,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
+
 
 const cacheStore = window.sessionStorage.getItem("redux-store");
 const initialState = cacheStore ?
@@ -44,9 +45,9 @@ store.subscribe(saveState);
 SlidePrintManager.getInstance().setReduxStore(store);
 
 class App extends Component {
-
-    componentWillMount() {
-        logPageView(window.location, "");
+	
+    componentDidMount() {
+    	logPageView(window.location, "");
     }
 
     render() {
@@ -57,7 +58,7 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route exact path="/" component={Landing}/>
+                                <Route exact path="/" component={LandingContainer}/>
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/summary" component={Summary}/>
                                 <Route path="/about" component={About}/>
