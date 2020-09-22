@@ -44,4 +44,9 @@ describe('patientSelectSorter', () => {
         expect(sortedSlides[3].slideName).toEqual('18-139-4');
         expect(sortedSlides[4].slideName).toEqual('18-139-5');
     });
+    it('should handle an empty array', () => {
+    	let slides = [];
+    	let sortedSlides = patientSelectSorter(slides);
+    	expect(slides).toEqual(sortedSlides);
+    })
 });
