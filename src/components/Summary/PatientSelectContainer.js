@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PatientSelect from './PatientSelect';
 import { withRouter } from 'react-router';
-import { getPatientSlides, getAllParticipants } from '../../actions/Patients/patientActions'
+import { getParticipantSlidesWithId, getAllParticipants } from '../../actions/Patients/participantActions'
 const mapStateToProps = (state, props) =>
     ({
     	 participants: state.participants
@@ -9,8 +9,8 @@ const mapStateToProps = (state, props) =>
 
 const mapDispatchToProps = (dispatch, props) =>
     ({
-        setSelectedPatient(patient) {
-            dispatch(getPatientSlides(patient, props));
+        setSelectedParticipant(participant) {
+            dispatch(getParticipantSlidesWithId(participant, props));
         },
         getAllParticipants() {
             dispatch(getAllParticipants());

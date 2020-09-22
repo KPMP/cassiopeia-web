@@ -1,4 +1,4 @@
-import { setSelectedPatient } from './patientActions';
+import { setSelectedPatient } from './participantActions';
 import actionNames from '../actionNames';
 
 

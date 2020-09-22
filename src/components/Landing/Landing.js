@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class Landing extends Component {
+	
+	componentDidMount() {
+		this.props.getParticipantSlides();
+	}
+	
     render() {
         return (
             <div id="landing-page">

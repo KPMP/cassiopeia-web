@@ -21,7 +21,7 @@ class PatientSelect extends Component {
     };
 
     handleClick = () => {
-        this.props.setSelectedPatient(this.state.patientId);
+        this.props.setSelectedParticipant(this.state.patientId);
     };
 
     componentDidMount() {
