@@ -14,6 +14,7 @@ import { Router, Switch, Route } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
+import ErrorBoundaryContainer from "./components/Error/ErrorBoundaryContainer";
 
 
 const cacheStore = window.sessionStorage.getItem("redux-store");
@@ -55,6 +56,7 @@ class App extends Component {
             <Provider store={store}>
                 <Container fluid>
                     <Router history={history}>
+                        <ErrorBoundaryContainer>
                         <div>
                             <NavBarContainer/>
                             <Switch>
@@ -64,6 +66,7 @@ class App extends Component {
                                 <Route path="/about" component={About}/>
                             </Switch>
                         </div>
+                        </ErrorBoundaryContainer>
                     </Router>
                 </Container>
             </Provider>
