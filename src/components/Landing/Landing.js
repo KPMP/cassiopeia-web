@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getParticipantSlides } from '../../actions/Patients/participantActions';
 
 class Landing extends Component {
 	
