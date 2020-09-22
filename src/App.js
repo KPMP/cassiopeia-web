@@ -15,6 +15,7 @@ import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
 import ErrorBoundaryContainer from "./components/Error/ErrorBoundaryContainer";
+import ErrorPage from "./components/Error/ErrorPage";
 
 
 const cacheStore = window.sessionStorage.getItem("redux-store");
@@ -64,6 +65,7 @@ class App extends Component {
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/summary" component={Summary}/>
                                 <Route path="/about" component={About}/>
+                                <Route exact path="/errorPage" component={ErrorPage} />
                             </Switch>
                         </div>
                         </ErrorBoundaryContainer>
