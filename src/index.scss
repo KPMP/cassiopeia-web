@@ -405,27 +405,3 @@ canvas {
 		font-size: 32px;
 	}
 }
-
-.sidebar-icon {
-	vertical-align: middle;
-}
-
-.sidebar-toggle {
-	line-height: 25px;
-	margin-left: -15px;
-	float: left;
-	position: absolute;
-	height: 100%;
-	padding-top: 12px;
-	padding-bottom: 5px;
-	background: $kpmp-blue;
-	padding-right: 5px;
-	cursor: pointer;
-	z-index: 999;
-}
-
-.sidebar-toggle.closed {
-	margin-left: -15px;
-}
-
-
