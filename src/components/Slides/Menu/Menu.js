@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { slide as BurgerMenu } from 'react-burger-menu';
 import SlideListContainer from './SlideListContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import StainInformationContainer from './StainInformationContainer';
 
 class Menu extends Component {
@@ -24,14 +23,11 @@ class Menu extends Component {
 	render() {
 		return (
 			<div id="side-menu">
-				<BurgerMenu id={ "bm-menu-wrap" } width={"33%"} isOpen={ this.state.isOpen } noOverlay customBurgerIcon={ <FontAwesomeIcon icon={faBars} /> }
+				<BurgerMenu id={ "bm-menu-wrap" } width={"33%"} isOpen={ this.state.isOpen } noOverlay customBurgerIcon={ <div><FontAwesomeIcon size="lg" icon={faCaretRight} /></div> }
 					customCrossIcon={ false } >
 					<SlideListContainer toggleMenu={this.toggleMenu}/>
 					<StainInformationContainer />
 				</BurgerMenu>
-                <Link id="btn-home" to="/">
-                    <FontAwesomeIcon icon={faHome} size="2x"/>
-                </Link>
             </div>
 		);
 	}
