@@ -20,6 +20,7 @@
     "lodash": "4.17.20",
     "openseadragon": "2.4.0",
     "react": "16.6.3",
+    "react-app-polyfill": "1.0.6",
     "react-burger-menu": "2.5.4",
     "react-device-detect": "1.6.1",
     "react-dom": "16.6.3",
