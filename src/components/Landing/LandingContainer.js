@@ -8,7 +8,7 @@ const mapStateToProps = (state, props) =>
 
 const mapDispatchToProps = (dispatch, props) =>
     ({
-    	getParticipantSlides: function() {
+    	getParticipantSlides() {
     		dispatch(getParticipantSlides(props));
     	}
     });
