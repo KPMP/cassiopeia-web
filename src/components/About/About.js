@@ -8,10 +8,17 @@ class About extends Component {
     }
 
     render() {
+    	let slideMessage = "";
+    	if (this.props.slides === undefined || this.props.slides.length === 0) {
+    		slideMessage= <Row><Col xs-12><div class="alert alert-primary">No images or data have been processed from your biopsy 
+    		sample yet. Keep checking back.<br/>If you have questions or need help, please contact your study coordinator.</div></Col></Row>;
+    	}
+    	
         return (
             <div id="summary-page">
                 <div id="summary-content-wrapper">
                     <Col>
+                    	{slideMessage}
                         <Row>
                             <h3 className="my-4">About the Participant Portal</h3>
                         </Row>
