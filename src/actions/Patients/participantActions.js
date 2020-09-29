@@ -1,6 +1,7 @@
 import actionNames from '../actionNames';
 import axios from 'axios';
 import patientSelectSorter from '../../components/Summary/patientSelectSorter';
+import { sendMessageToBackend }  from '../Error/errorActions';
 
 export const setSelectedPatient = (patient) => {
     return {
@@ -33,7 +34,8 @@ export const getParticipantSlidesWithId = (patientId, props) => {
 				props.history.push("/slides");
 			})
 			.catch(err => {
-				console.log("unable to retrieve slides for participant: " + patientId)
+				console.log("unable to retrieve slides for participant: " + patientId);
+				dispatch(sendMessageToBackend(err));
 			});
 	}
 }
@@ -52,6 +54,7 @@ export const getParticipantSlides = (props) => {
 		})
 		.catch(err => {
 			console.log("unable to retrieve slides for participant: " + err);
+			dispatch(sendMessageToBackend(err));
 		});
 	}
 }
@@ -66,6 +69,7 @@ export const getAllParticipants = () => {
 			})
 			.catch(err => {
 				console.log("We were unable to get the slides.");
+				dispatch(sendMessageToBackend(err));
 			});
 	}
 }
