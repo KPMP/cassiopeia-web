@@ -61,7 +61,7 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route exact path="/" component={LandingContainer}/>
+                                <Route exact path="/login" component={LandingContainer}/>
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/summary" component={Summary}/>
                                 <Route path="/about" component={AboutContainer}/>

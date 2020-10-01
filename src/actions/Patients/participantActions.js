@@ -54,7 +54,7 @@ export const getParticipantSlides = (props) => {
 		})
 		.catch(err => {
 			console.log("unable to retrieve slides for participant: " + err);
-			dispatch(sendMessageToBackend(err));
+			props.history.push("/login");
 		});
 	}
 }
