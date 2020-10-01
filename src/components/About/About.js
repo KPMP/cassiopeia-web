@@ -4,9 +4,10 @@ import { Col, Row } from 'reactstrap';
 class About extends Component {
 
     componentDidMount() {
+    	this.props.getParticipantSlides();
         document.body.classList.remove('slide-viewer-body');
     }
-
+    
     render() {
     	let slideMessage = "";
     	if (this.props.slides === undefined || this.props.slides.length === 0) {
