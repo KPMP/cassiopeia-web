@@ -61,10 +61,9 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route exact path="/" component={LandingContainer}/>
-                                <Route path="/secure/slides" component={Slides}/>
-                                <Route path="/secure/summary" component={Summary}/>
-                                <Route path="/secure/about" component={AboutContainer}/>
+                                <Route path="/slides" component={Slides}/>
+                                <Route path="/summary" component={Summary}/>
+                                <Route path="/about" component={AboutContainer}/>
                                 <Route exact path="/errorPage" component={ErrorPage} />
                             </Switch>
                         </div>
