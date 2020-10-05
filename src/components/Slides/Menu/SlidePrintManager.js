@@ -51,7 +51,7 @@ class SlidePrintManager {
     }
 
     isSlideViewer() {
-        let matches =  window.location.href.match(/slides/);
+        let matches =  window.location.href.match(/secure\/slides/);
         return matches != null && matches.length;
     }
 

@@ -31,7 +31,7 @@ export const getParticipantSlidesWithId = (patientId, props) => {
 			.then(result => {
 				let slides = patientSelectSorter(result.data);
 				dispatch(setSelectedPatient({id: patientId, slides: slides, selectedSlide: slides[0]}));
-				props.history.push("/slides");
+				props.history.push(process.env.PUBLIC_URL + "/slides");
 			})
 			.catch(err => {
 				console.log("unable to retrieve slides for participant: " + patientId);
@@ -46,10 +46,10 @@ export const getParticipantSlides = (props) => {
 		.then(result => {
 			let slides = patientSelectSorter(result.data);
 			if (slides.length === 0) {
-				props.history.push("/about");
+				props.history.push(process.env.PUBLIC_URL + "/about");
 			} else {
 				dispatch(setSelectedPatient({id: "", slides: slides, selectedSlide: slides[0]}));
-				props.history.push("/slides");
+				props.history.push(process.env.PUBLIC_URL + "/slides");
 			}
 		})
 		.catch(err => {

@@ -61,10 +61,10 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route path="/slides" component={Slides}/>
-                                <Route path="/summary" component={Summary}/>
-                                <Route path="/about" component={AboutContainer}/>
-                                <Route exact path="/errorPage" component={ErrorPage} />
+                                <Route path={process.env.PUBLIC_URL + "/slides"} component={Slides}/>
+                                <Route path={process.env.PUBLIC_URL +"/summary"} component={Summary}/>
+                                <Route path={process.env.PUBLIC_URL + "/about"} component={AboutContainer}/>
+                                <Route exact path={process.env.PUBLIC_URL + "/errorPage"} component={ErrorPage} />
                             </Switch>
                         </div>
                         </ErrorBoundaryContainer>
