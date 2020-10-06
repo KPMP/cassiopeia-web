@@ -56,15 +56,15 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Container fluid>
-                    <Router history={history}>
+                    <Router history={history}  basename={process.env.PUBLIC_URL}>
                         <ErrorBoundaryContainer>
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route path={process.env.PUBLIC_URL + "/slides"} component={Slides}/>
-                                <Route path={process.env.PUBLIC_URL +"/summary"} component={Summary}/>
-                                <Route path={process.env.PUBLIC_URL + "/about"} component={AboutContainer}/>
-                                <Route exact path={process.env.PUBLIC_URL + "/errorPage"} component={ErrorPage} />
+                                <Route path="/slides" component={Slides}/>
+                                <Route path="/summary" component={Summary}/>
+                                <Route path="/about" component={AboutContainer}/>
+                                <Route exact path="/errorPage" component={ErrorPage} />
                             </Switch>
                         </div>
                         </ErrorBoundaryContainer>
