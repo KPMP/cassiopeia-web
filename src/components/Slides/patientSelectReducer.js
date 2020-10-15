@@ -10,12 +10,3 @@ export const selectedPatient = (state = {}, action) => {
             return state;
     }
 }
-
-export const participants = (state = [], action) => {
-    switch(action.type) {
-        case actionNames.SET_PARTICIPANTS:
-            return action.payload;
-        default:
-            return state;
-    }
-};
