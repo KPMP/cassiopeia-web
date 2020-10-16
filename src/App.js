@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LandingContainer from './components/Landing/LandingContainer';
 import NavBarContainer from './components/Nav/NavBarContainer';
-import Summary from './components/Summary/Summary';
 import AboutContainer from './components/About/AboutContainer';
 import Slides from './components/Slides/Slides';
 import { Container } from 'reactstrap';
@@ -63,7 +62,6 @@ class App extends Component {
                             <Switch>
                                 <Route exact path="/" component={LandingContainer}/>
                                 <Route path="/slides" component={Slides}/>
-                                <Route path="/summary" component={Summary}/>
                                 <Route path="/about" component={AboutContainer}/>
                                 <Route exact path="/errorPage" component={ErrorPage} />
                             </Switch>
