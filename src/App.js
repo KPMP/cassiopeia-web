@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LandingContainer from './components/Landing/LandingContainer';
 import NavBarContainer from './components/Nav/NavBarContainer';
 import AboutContainer from './components/About/AboutContainer';
+import NotFound from './components/Error/NotFound'
 import Slides from './components/Slides/Slides';
 import { Container } from 'reactstrap';
 import { Provider } from 'react-redux';
@@ -64,6 +65,7 @@ class App extends Component {
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/about" component={AboutContainer}/>
                                 <Route exact path="/errorPage" component={ErrorPage} />
+                                <Route component={NotFound} />
                             </Switch>
                         </div>
                         </ErrorBoundaryContainer>

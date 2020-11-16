@@ -397,11 +397,20 @@ canvas {
 
 	margin-top: 150px;
 
+	.error-huge {
+		font-size: 130px;
+		color: $kpmp-blue;
+	}
+
 	.error-big {
 		font-size: 72px;
 	}
 
 	.error-small {
 		font-size: 32px;
+	}
+
+	.not-found-text {
+		margin-top: 45+px;
 	}
 }
