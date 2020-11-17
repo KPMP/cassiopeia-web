@@ -12,7 +12,7 @@ class NavBar extends Component {
 				</NavbarBrand>
 				<ul className="navbar-nav">
 						<li className="nav-item small">
-							<Button color="link" onClick={() => window.location.href="/about"}>About</Button> &nbsp;|&nbsp; <Button color="link" onClick={}>Sign Out</Button>
+							<Button color="link" onClick={() => window.location.href="/about"}>About</Button> &nbsp;|&nbsp; <Button color="link">Sign Out</Button>
 						</li>
 				</ul>
 			</nav>
