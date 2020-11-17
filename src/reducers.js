@@ -5,7 +5,6 @@ import { selectedPatient } from './components/Slides/patientSelectReducer';
 
 const appReducer = combineReducers({
     selectedPatient,
-    loggedIn
 });
 
 const rootReducer = (state, action) => {
