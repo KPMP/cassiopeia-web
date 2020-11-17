@@ -397,6 +397,11 @@ canvas {
 
 	margin-top: 150px;
 
+	.error-huge {
+		font-size: 130px;
+		color: $kpmp-blue;
+	}
+
 	.error-big {
 		font-size: 72px;
 	}
@@ -404,4 +409,5 @@ canvas {
 	.error-small {
 		font-size: 32px;
 	}
+
 }
