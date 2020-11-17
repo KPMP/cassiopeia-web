@@ -8,7 +8,7 @@ class NotFound extends Component {
                 <Row id="error-content">
                     <Col md={2} lg={4}>&nbsp;</Col>
                     <Col md={4} lg={2} className={"ml-auto"}>
-                        <img src="img/404.svg" alt="Page not found" id="oops-image"/>
+                        <img src="img/404.svg" alt="Page not found"/>
                     </Col>
                     <Col md={6} lg={6} className="not-found-text">
                         <p className="error-small">Sorry. We couldn't find the <br/>
