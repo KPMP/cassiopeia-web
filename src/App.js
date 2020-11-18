@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LandingContainer from './components/Landing/LandingContainer';
 import NavBarContainer from './components/Nav/NavBarContainer';
 import AboutContainer from './components/About/AboutContainer';
 import NotFound from './components/Error/NotFound'
@@ -61,7 +60,6 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route exact path="/" component={LandingContainer}/>
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/about" component={AboutContainer}/>
                                 <Route exact path="/errorPage" component={ErrorPage} />

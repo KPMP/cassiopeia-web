@@ -2,11 +2,9 @@ import { combineReducers } from 'redux';
 import actionNames from './actions/actionNames';
 import loadedState from './initialState';
 import { selectedPatient } from './components/Slides/patientSelectReducer';
-import { loggedIn } from './components/Nav/loginReducer'
 
 const appReducer = combineReducers({
     selectedPatient,
-    loggedIn
 });
 
 const rootReducer = (state, action) => {
