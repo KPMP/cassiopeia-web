@@ -4,10 +4,10 @@ import {Button, Col, Row} from "reactstrap";
 class NotFound extends Component {
     render() {
         return (
-            <article className="container-fluid">
+            <article className="container-fluid" id="error-container">
                 <Row id="error-content">
-                    <Col md={2} lg={4}>&nbsp;</Col>
-                    <Col md={4} lg={2} className={"ml-auto"}>
+                    <Col md={2} lg={3}>&nbsp;</Col>
+                    <Col md={4} lg={3} className={"ml-auto text-center"}>
                         <img src="img/404.svg" alt="Page not found"/>
                     </Col>
                     <Col md={6} lg={6} className="not-found-text">

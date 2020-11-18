@@ -4,7 +4,7 @@ import { Col, Row, Button } from 'reactstrap';
 class ErrorPage extends Component {
     render() {
         return (
-            <article className="container-fluid">
+            <article className="container-fluid" id="error-container">
                 <Row id="error-content">
                     <Col xs={0} md={2}>&nbsp;</Col>
                     <Col xs={12} md={6}>
