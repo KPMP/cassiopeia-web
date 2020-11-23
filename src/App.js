@@ -60,6 +60,9 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
+                                <Route path="/">
+                                    <Redirect to="/about" />
+                                </Route>
                                 <Route path="/slides" component={Slides}/>
                                 <Route path="/about" component={AboutContainer}/>
                                 <Route exact path="/errorPage" component={ErrorPage} />
