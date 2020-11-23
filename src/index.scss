@@ -112,6 +112,23 @@ canvas {
 	padding-left: 15px !important;
 	margin-right: auto !important;
 	margin-left: auto !important;
+
+	a {
+		color: blue;
+	}
+
+	a:link {
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	a:active {
+		text-decoration: underline;
+	}
 }
 
 #summary-page {
@@ -398,6 +415,7 @@ canvas {
 		margin-right: 0px;
 	}
 }
+
 
 #error-content {
 
