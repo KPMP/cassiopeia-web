@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import loadedState from './initialState';
 import rootReducer from './reducers';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
@@ -60,8 +60,11 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route path="/slides" component={Slides}/>
-                                <Route path="/about" component={AboutContainer}/>
+                                <Route exact path="/">
+                                    <Redirect to="/about" />
+                                </Route>
+                                <Route exact path="/slides" component={Slides}/>
+                                <Route exact path="/about" component={AboutContainer}/>
                                 <Route exact path="/errorPage" component={ErrorPage} />
                                 <Route component={NotFound} />
                             </Switch>
