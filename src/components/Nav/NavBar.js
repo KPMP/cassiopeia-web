@@ -13,7 +13,7 @@ class NavBar extends Component {
 				<ul className="navbar-nav">
 						<li className="nav-item small">
 							<Button color="link" onClick={() => window.location.href="/about"}>About</Button> &nbsp;|&nbsp; 
-							<Button color="link" onClick={() => window.location.href="https://login.dev-mydata.kpmp.org/idp/shibboleth"}>Sign Out</Button>
+							<Button color="link" onClick={() => window.location.href="https://login.dev-mydata.kpmp.org/idp/Shibboleth.sso/Logout"}>Sign Out</Button>
 						</li>
 				</ul>
 			</nav>
