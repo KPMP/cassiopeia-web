@@ -15,6 +15,7 @@ import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
 import ErrorBoundaryContainer from "./components/Error/ErrorBoundaryContainer";
 import ErrorPage from "./components/Error/ErrorPage";
+import { getParticipantSlides } from './actions/Patients/participantActions';
 
 
 const cacheStore = window.sessionStorage.getItem("redux-store");
@@ -49,6 +50,7 @@ class App extends Component {
 	
     componentDidMount() {
     	logPageView(window.location, "");
+        this.props.dispatch(getParticipantSlides());
     }
 
     render() {
