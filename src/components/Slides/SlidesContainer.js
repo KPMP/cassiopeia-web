@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import About from './About';
+import Slides from './Slides';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, props) =>
@@ -9,6 +9,7 @@ const mapStateToProps = (state, props) =>
 
 const mapDispatchToProps = (dispatch, props) =>
 ({
+	
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(About));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Slides));
