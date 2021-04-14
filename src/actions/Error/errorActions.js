@@ -15,6 +15,7 @@ export const sendMessageToBackend = (error) => {
 			}
 		}
 	} else {
+		console.log(error)
 		let errorMessage = { error: error.message , stackTrace: error.stack };
 		return (dispatch) => {
 			axios.post('/api/v1/error', errorMessage)

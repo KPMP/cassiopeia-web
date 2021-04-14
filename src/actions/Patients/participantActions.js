@@ -16,16 +16,16 @@ export const setSelectedSlide = (slide) => {
 	}
 }
 
-export const getParticipantSlides = (props) => {
+export const getParticipantSlides = (history) => {
 	return (dispatch) => {
 		axios.get('/api/v1/slides/')
 		.then(result => {
 			let slides = result.data;
 			if (slides.length === 0) {
-				props.history.push("/about");
+				history.push("/about");
 			} else {
 				dispatch(setSelectedPatient({id: "", slides: slides, selectedSlide: slides[0]}));
-				props.history.push("/slides");
+				history.push("/slides");
 			}
 		})
 		.catch(err => {
