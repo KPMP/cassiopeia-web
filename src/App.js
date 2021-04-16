@@ -13,19 +13,19 @@ import { Router, Switch, Route } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
-import ErrorBoundaryContainer from "./components/Error/ErrorBoundaryContainer";
-import ErrorPage from "./components/Error/ErrorPage";
-import { getParticipantSlides } from './actions/Patients/participantActions';
+import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
+import ErrorPage from './components/Error/ErrorPage';
+import HomePageContainer from './components/Home/HomePageContainer';
 
 
 
-const cacheStore = window.sessionStorage.getItem("redux-store");
+const cacheStore = window.sessionStorage.getItem('redux-store');
 const initialState = cacheStore ?
     JSON.parse(cacheStore) :
     loadedState;
 const store = applyMiddleware(thunk)(createStore)(rootReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 const saveState = () => {
-    window.sessionStorage.setItem("redux-store", JSON.stringify(store.getState()));
+    window.sessionStorage.setItem('redux-store', JSON.stringify(store.getState()));
 };
 const GA_TRACKING_ID = 'UA-124331187-3';
 
@@ -48,16 +48,9 @@ store.subscribe(saveState);
 SlidePrintManager.getInstance().setReduxStore(store);
 
 class App extends Component {
-
-    constructor(props) {
-        super(props);
-        if (!store.getState().selectedPatient.slides) {
-            store.dispatch(getParticipantSlides(history));
-        }
-    }
 	
     componentDidMount() {
-    	logPageView(window.location, "");
+    	logPageView(window.location, '');
     }
 
     render() {
@@ -69,9 +62,10 @@ class App extends Component {
                         <div>
                             <NavBarContainer/>
                             <Switch>
-                                <Route exact path="/slides" component={SlidesContainer}/>
-                                <Route exact path="/about" component={AboutContainer}/>
-                                <Route exact path="/errorPage" component={ErrorPage} />
+                                <Route exact path='/' component={HomePageContainer}/>
+                                <Route exact path='/slides' component={SlidesContainer}/>
+                                <Route exact path='/about' component={AboutContainer}/>
+                                <Route exact path='/oops' component={ErrorPage} />
                                 <Route component={NotFound} />
                             </Switch>
                         </div>

@@ -8,6 +8,7 @@ class ErrorPage extends Component {
                 <Row id="error-content">
                     <Col xs={0} md={2}>&nbsp;</Col>
                     <Col xs={12} md={6}>
+                        <p className="error-big">Oops...</p>
                         <p className="error-small">Looks like something went wrong.<br/>We&#39;re working on it.</p>
                         <p className="error-button-container">
                             <Button className="btn btn-primary"

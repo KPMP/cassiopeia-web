@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const handleError = (statusCode) => {
 	return (dispatch) => {
-		window.location.href = '/errorPage';
+		window.location.href = '/oops';
 	}
 };
 
@@ -10,7 +10,7 @@ export const sendMessageToBackend = (error) => {
 	if (error.response && error.response.status && error.response.status >= 400) {
 		return (dispatch) => {
 			let href = window.location.href;
-			if (!href.includes('/errorPage')) {
+			if (!href.includes('/oops')) {
 				dispatch(handleError(error.response.status));
 			}
 		}
