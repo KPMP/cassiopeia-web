@@ -16,16 +16,20 @@ export const setSelectedSlide = (slide) => {
 	}
 }
 
-export const getParticipantSlides = (history) => {
+export const getParticipantSlides = (props) => {
 	return (dispatch) => {
 		axios.get('/api/v1/slides/')
 		.then(result => {
 			let slides = result.data;
 			if (slides.length === 0) {
-				history.push("/about");
+				sleep(1000).then(() => {
+					props.history.push("/about");
+				});
 			} else {
 				dispatch(setSelectedPatient({id: "", slides: slides, selectedSlide: slides[0]}));
-				history.push("/slides");
+				sleep(1000).then(() => {
+					props.history.push("/slides");
+				});
 			}
 		})
 		.catch(err => {
@@ -33,4 +37,8 @@ export const getParticipantSlides = (history) => {
 			dispatch(sendMessageToBackend(err));
 		});
 	}
+}
+
+const sleep = (milliseconds) => {
+	return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
