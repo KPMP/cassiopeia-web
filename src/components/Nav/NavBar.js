@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 class NavBar extends Component {
 
 	render() {
+		let activePage = this.props.location.pathname
+		let className = '';
+		if (activePage === '/about') {
+			className= 'active';
+		}
 		return (
 			<nav id='navbar' className='nav-container fixed-top navbar navbar-expand-* px-4 py-2'>
 				<Link to='/' className='navbar-header'>
@@ -15,7 +20,7 @@ class NavBar extends Component {
 				</Link>
 				<ul className='navbar-nav'>
 						<li className='nav-item small'>
-							<Button color='link' onClick={() => window.location.href='/about'}>About</Button> &nbsp;|&nbsp; 
+							<Button color='link' className={className} onClick={() => window.location.href='/about'}>About</Button> &nbsp;|&nbsp; 
 							<Button color='link' onClick={() => window.location.href='https://dev-mydata.kpmp.org/Shiboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'}>Sign Out</Button>
 						</li>
 				</ul>

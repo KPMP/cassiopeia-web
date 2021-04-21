@@ -429,3 +429,15 @@ canvas {
 	}
 
 }
+
+#navbar {
+	.nav-item {
+		.active {
+			padding-bottom: 5px;
+			border-bottom: 3px solid #007bff;
+			margin-bottom: -6px;
+			content: " ";
+		}
+	}
+
+}
