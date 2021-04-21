@@ -21,7 +21,7 @@ class NavBar extends Component {
 				<ul className='navbar-nav'>
 						<li className='nav-item small'>
 							<Button color='link' className={className} onClick={() => window.location.href='/about'}>About</Button> &nbsp;|&nbsp; 
-							<Button color='link' onClick={() => window.location.href='https://dev-mydata.kpmp.org/Shiboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'}>Sign Out</Button>
+							<Button color='link' onClick={() => window.location.href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'}>Sign Out</Button>
 						</li>
 				</ul>
 			</nav>
