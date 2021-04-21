@@ -20,8 +20,12 @@ class NavBar extends Component {
 				</Link>
 				<ul className='navbar-nav'>
 						<li className='nav-item small'>
-							<Button color='link' className={className} onClick={() => window.location.href='/about'}>About</Button> &nbsp;|&nbsp; 
-							<Button color='link' onClick={() => window.location.href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'}>Sign Out</Button>
+							<a className={className} href='/about'>
+								<span class="nav-text px-1">About</span>
+							</a> &nbsp;|&nbsp; 
+							<a color='link' href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>
+								<span class="nav-text px-1">Sign Out</span>
+							</a>
 						</li>
 				</ul>
 			</nav>
