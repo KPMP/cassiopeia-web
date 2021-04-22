@@ -431,13 +431,18 @@ canvas {
 }
 
 #navbar {
+	
 	.nav-item {
-		.active {
-			padding-bottom: 5px;
-			border-bottom: 3px solid #007bff;
-			margin-bottom: -6px;
-			content: " ";
+		font-size: 16px;
+		a:hover {
+			text-decoration: none;
+			color: #0275d8;
 		}
+		.active .nav-text{
+			color: #0082f3;
+			font-weight: 600;
+		}
+
 	}
 
 }
