@@ -17,7 +17,7 @@
     "es6-shim": "0.35.4",
     "history": "4.7.2",
     "html-react-parser": "0.13.0",
-    "lodash": "4.17.20",
+    "lodash": "4.17.21",
     "openseadragon": "2.4.0",
     "react": "16.6.3",
     "react-app-polyfill": "1.0.6",
