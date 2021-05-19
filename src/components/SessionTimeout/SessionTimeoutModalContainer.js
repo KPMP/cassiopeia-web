@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch, props) =>
         restartTimer() {
             dispatch(sessionTimedOut(false));
             startTimer(dispatch);
+        },
+        sessionTimedOut(isTimedOut) {
+            dispatch(sessionTimedOut(isTimedOut));
         }
     });
 
