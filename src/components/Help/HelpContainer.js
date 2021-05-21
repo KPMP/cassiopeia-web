@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import About from './About';
+import Help from './Help';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, props) =>
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch, props) =>
 ({
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(About));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Help));

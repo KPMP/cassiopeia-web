@@ -25,7 +25,7 @@ export const downloadSlide = (downloadFileName) => {
 
 export const noSlidesFound = (selectedPatient) => {
     if (selectedPatient === null || selectedPatient === undefined || Object.keys(selectedPatient.slides).length === 0) {
-        window.location.assign("/about");
+        window.location.assign("/help");
     } 
 }
 
