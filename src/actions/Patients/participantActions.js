@@ -23,7 +23,7 @@ export const getParticipantSlides = (props) => {
 			let slides = result.data;
 			if (slides.length === 0) {
 				sleep(1000).then(() => {
-					props.history.push("/about");
+					props.history.push("/help");
 				});
 			} else {
 				dispatch(setSelectedPatient({id: "", slides: slides, selectedSlide: slides[0]}));

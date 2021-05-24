@@ -7,7 +7,7 @@ class NavBar extends Component {
 	render() {
 		let activePage = this.props.location.pathname
 		let className = '';
-		if (activePage === '/about') {
+		if (activePage === '/help') {
 			className= 'active';
 		}
 		return (
@@ -20,8 +20,8 @@ class NavBar extends Component {
 				</Link>
 				<ul className='navbar-nav'>
 						<li className='nav-item small'>
-							<a className={className} href='/about'>
-								<span class="nav-text px-1">About</span>
+							<a className={className} href='/help'>
+								<span class="nav-text px-1">Help</span>
 							</a> &nbsp;|&nbsp; 
 							<a color='link' href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>
 								<span class="nav-text px-1">Sign Out</span>
