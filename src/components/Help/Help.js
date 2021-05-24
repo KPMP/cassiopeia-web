@@ -56,7 +56,7 @@ class Help extends Component {
                         <Col xs='12'><img src='img/help/figure_viewer-controls.png' alt='' /></Col>
                     </Row>
                     <Row>
-                        <Col xs='12' className='major-heading'>Frequently Asked Questions</Col>
+                        <Col xs='12' className='major-heading py-3'>Frequently Asked Questions</Col>
                     </Row>
                     <Row>
                         <Col xs='12'>
@@ -69,7 +69,7 @@ class Help extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs='12' className='major-heading'>If you still need help...</Col>
+                        <Col xs='12' className='major-heading py-3'>If you still need help...</Col>
                     </Row>
                     <Row>
                         <Col xs='12'>
