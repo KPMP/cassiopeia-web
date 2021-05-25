@@ -10,7 +10,7 @@ class WhatIsStaining extends Component {
                 <Collapse isOpen={this.props.isOpen}>
                     <div className='py-2'>
                         <Row>
-                            <Col xs='4'>
+                            <Col lg='4' xs='12'>
                                 <p>Staining is a technique used to enhance contrast in samples,
                                 generally at the microscopic level. Stains and dyes are
                                 frequently used in histology (the study of tissue under the
@@ -28,7 +28,7 @@ class WhatIsStaining extends Component {
                                 a glass microscope slide.
                                 </p>
                             </Col>
-                            <Col xs='8'>
+                            <Col lg='8' xs='12'>
                                 <img src='img/help/pathologist-slide.png' />
                             </Col>
                         </Row>

@@ -10,7 +10,7 @@ class WhatSeen extends Component {
                 <Collapse isOpen={this.props.isOpen}>
                     <div className='py-2'>
                         <Row>
-                            <Col xs='4'>
+                            <Col lg='4' xs='12'>
                                 <p>
                                     If you zoom in on the part of your kidney where the cortex and medulla meet,
                                     you will see that it is made up of many, many nephrons. The main filtering
@@ -20,12 +20,12 @@ class WhatSeen extends Component {
                                     During the biopsy procedure, the doctor aims to capture multiple nephrons.
                                 </p>
                             </Col>
-                            <Col xs='8'>
+                            <Col lg='8' xs='12'>
                                 <img src='img/help/figure_kidney.png' />
                             </Col>
                         </Row>
                         <Row>
-                            <Col xs='4'>
+                            <Col lg='4' xs='12'>
                                 <p>
                                     Each nephron is made up of a glomerulus (blood filter) that connects to the
                                     collecting duct by tubules (tubes where uring flows).
@@ -35,18 +35,18 @@ class WhatSeen extends Component {
                                     and function.
                                 </p>
                             </Col>
-                            <Col xs='8'>
+                            <Col lg='8' xs='12'>
                                 <img src='img/help/figure_nephron.png' />
                             </Col>
                         </Row>
                         <Row>
-                            <Col xs='4'>
+                            <Col lg='4' xs='12'>
                                 <p>
                                     A pthologist can see certain forms and parts of the kidney that show the type
                                     of disease and how much damage is in the biopsy.
                                 </p>
                             </Col>
-                            <Col xs='8'>
+                            <Col lg='8' xs='12'>
                                 <img src='img/help/figure_wsi.png' />
                             </Col>
                         </Row>

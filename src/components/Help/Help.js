@@ -39,24 +39,24 @@ class Help extends Component {
                 <div id="summary-content-wrapper">
                     {slideMessage}
                     <Row>
-                        <Col xs='12' className='major-heading pb-3'>How to use the Participant Portal</Col>
+                        <Col xs='12' className='pb-3'><h2>How to use the Participant Portal</h2></Col>
                     </Row>
-                    <Row>
-                        <Col xs='4'>
+                    <Row className='pb-3'>
+                        <Col lg='4' xs='12' className='pb-3'>
                             Watch the video for an overview of the Participant Portal and how to navigate its features.
                         </Col>
-                        <Col xs='8'>
+                        <Col lg='8' xs='12'>
                             <ReactPlayer url='https://www.youtube.com/watch?v=WoGe9dgbkSw' />
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs='12' className='minor-heading pb-3'>Navigation controls:</Col>
+                        <Col xs='12' className='pb-3'><h3>Navigation controls:</h3></Col>
                     </Row>
                     <Row>
                         <Col xs='12'><img src='img/help/figure_viewer-controls.png' alt='' /></Col>
                     </Row>
                     <Row>
-                        <Col xs='12' className='major-heading py-3'>Frequently Asked Questions</Col>
+                        <Col xs='12' className='py-3'><h2>Frequently Asked Questions</h2></Col>
                     </Row>
                     <Row>
                         <Col xs='12'>
@@ -69,7 +69,7 @@ class Help extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs='12' className='major-heading py-3'>If you still need help...</Col>
+                        <Col xs='12' className='py-3'><h2>If you still need help...</h2></Col>
                     </Row>
                     <Row>
                         <Col xs='12'>
