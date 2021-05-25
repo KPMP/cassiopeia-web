@@ -1,5 +1,6 @@
 @import "menu.scss";
 @import "common-values.scss";
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 // Temporary classes
 .content-warning {
@@ -445,4 +446,60 @@ canvas {
 
 	}
 
+}
+
+#summary-page {
+
+	.major-heading {
+		font-size: 32px;
+	}
+	
+	.minor-heading {
+		font-size: 21px;
+	}
+	
+	.question-heading {
+		font-size: 19px;
+	}
+	
+	.help-accordion {
+		background-color: #cee5ff;
+	}
+	
+	.collapsed::before {
+		font-family: "FontAwesome";
+		content: "\f054";
+		float: left;
+		padding-right: 10px;
+	}
+	
+	.open::before {
+		font-family: "FontAwesome";
+		content: "\f078";
+		float: left;
+		padding-right: 10px;
+	}
+	
+	.collapsed {
+		cursor: pointer;
+	}
+	
+	.open {
+		cursor: pointer;
+	}
+	
+	.annotation {
+		font-size: smaller;
+		font-style: italic;
+	}
+	
+	.no-bullets {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		color: #4393DD;
+	}
 }

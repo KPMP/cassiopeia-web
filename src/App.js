@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBarContainer from './components/Nav/NavBarContainer';
-import AboutContainer from './components/About/AboutContainer';
+import HelpContainer from './components/Help/HelpContainer';
 import NotFound from './components/Error/NotFound'
 import SlidesContainer from './components/Slides/SlidesContainer';
 import { Container } from 'reactstrap';
@@ -66,7 +66,7 @@ class App extends Component {
                             <Switch>
                                 <Route exact path='/' component={HomePageContainer}/>
                                 <Route exact path='/slides' component={SlidesContainer}/>
-                                <Route exact path='/about' component={AboutContainer}/>
+                                <Route exact path='/help' component={HelpContainer}/>
                                 <Route exact path='/oops' component={ErrorPage} />
                                 <Route component={NotFound} />
                             </Switch>
