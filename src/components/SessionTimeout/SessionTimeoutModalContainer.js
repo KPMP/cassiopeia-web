@@ -5,7 +5,7 @@ import { sessionTimedOut } from '../../actions/SessionTimeout/sessionTimeoutActi
 
 const mapStateToProps = (state, props) =>
     ({
-        sessionTimedOut: state.sessionTimedOut
+        sessionIsTimedOut: state.sessionTimedOut
     });
 
 const mapDispatchToProps = (dispatch, props) =>

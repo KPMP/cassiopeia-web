@@ -23,7 +23,7 @@ class SessionTimeoutModal extends Component {
     render() {
         let countdown = <Countdown date={Date.now() + 60000} renderer={this.renderer}/>
         return(
-        <Modal isOpen={this.props.sessionTimedOut} >
+        <Modal isOpen={this.props.sessionIsTimedOut} >
             <ModalHeader>Session timeout</ModalHeader>
             <ModalBody>
                 For security reasons, your connection times out after you've been inactive for awhile.
