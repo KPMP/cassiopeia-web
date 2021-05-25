@@ -16,8 +16,7 @@ import createHistory from 'history/createBrowserHistory';
 import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
 import ErrorPage from './components/Error/ErrorPage';
 import HomePageContainer from './components/Home/HomePageContainer';
-
-
+import SessionTimeoutModalContainer, {startTimer} from './components/SessionTimeout/SessionTimeoutModalContainer';
 
 const cacheStore = window.sessionStorage.getItem('redux-store');
 const initialState = cacheStore ?
@@ -37,10 +36,12 @@ function logPageView(location, action) {
 const history = createHistory();
 history.listen((location, action) => {
     logPageView(location, action);
+    startTimer(store.dispatch);
 });
 
 store.subscribe(function () {
     console.log(store.getState())
+    startTimer(store.dispatch);
 });
 
 store.subscribe(saveState);
@@ -61,6 +62,7 @@ class App extends Component {
                         <ErrorBoundaryContainer>
                         <div>
                             <NavBarContainer/>
+                            <SessionTimeoutModalContainer/>
                             <Switch>
                                 <Route exact path='/' component={HomePageContainer}/>
                                 <Route exact path='/slides' component={SlidesContainer}/>
