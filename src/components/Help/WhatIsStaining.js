@@ -19,7 +19,7 @@ class WhatIsStaining extends Component {
                                 serve different purposes.</p>
                                 <p>Biopsy stains are important because they allow the pathologist,
                                 a doctor who studies the kidney tissue, to see certain parts
-                                and forms in the kidney. Stains allow the pathologis to find
+                                and forms in the kidney. Stains allow the pathologist to find
                                 out about the type of disease and how much damage is in the
                                 biospy. This information helps researchers map pathways involved
                                 in kidney disease among study participants.

@@ -6,7 +6,7 @@ class WhatSeen extends Component {
         return (
             <div className='pb-2'>
                 <div onClick={this.props.toggle} data-event={this.props.indexNumber} className={`p-1 rotate help-accordion question-heading ${this.props.isOpen ? 'open' : 'collapsed'}`}>
-                    What do researcher see in these images?</div>
+                    What do researchers see in these images?</div>
                 <Collapse isOpen={this.props.isOpen}>
                     <div className='py-2'>
                         <Row>
@@ -28,7 +28,7 @@ class WhatSeen extends Component {
                             <Col lg='4' xs='12'>
                                 <p>
                                     Each nephron is made up of a glomerulus (blood filter) that connects to the
-                                    collecting duct by tubules (tubes where uring flows).
+                                    collecting duct by tubules (tubes where urine flows).
                                 </p>
                                 <p>
                                     The sections of the tubule are further classified based on their location 
@@ -42,7 +42,7 @@ class WhatSeen extends Component {
                         <Row>
                             <Col lg='4' xs='12'>
                                 <p>
-                                    A pthologist can see certain forms and parts of the kidney that show the type
+                                    A pathologist can see certain forms and parts of the kidney that show the type
                                     of disease and how much damage is in the biopsy.
                                 </p>
                             </Col>
