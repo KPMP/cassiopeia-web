@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
 
+	signOut = () => {
+		this.props.resetState();
+		window.location.href = 'https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout';
+	}
+
 	render() {
 		let activePage = this.props.location.pathname
 		let className = '';
@@ -23,8 +28,8 @@ class NavBar extends Component {
 							<a className={className} href='/help'>
 								<span class="nav-text px-1">Help</span>
 							</a> &nbsp;|&nbsp; 
-							<a color='link' href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>
-								<span class="nav-text px-1">Sign Out</span>
+							<a color='link'>
+								<span class="nav-text px-1" onClick={this.signOut}>Sign Out</span>
 							</a>
 						</li>
 				</ul>

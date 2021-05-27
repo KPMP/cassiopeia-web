@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import SessionTimeoutModal from './SessionTimeoutModal';
 import { sessionTimedOut } from '../../actions/SessionTimeout/sessionTimeoutAction';
+import { resetState } from '../../actions/resetStateAction';
 
 const mapStateToProps = (state, props) =>
     ({
@@ -19,6 +20,9 @@ const mapDispatchToProps = (dispatch, props) =>
         },
         sessionTimedOut(isTimedOut) {
             dispatch(sessionTimedOut(isTimedOut));
+            if (isTimedOut) {
+                dispatch(resetState());
+            }
         }
     });
 
