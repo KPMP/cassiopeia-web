@@ -16,7 +16,8 @@ import createHistory from 'history/createBrowserHistory';
 import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
 import ErrorPage from './components/Error/ErrorPage';
 import HomePageContainer from './components/Home/HomePageContainer';
-import SessionTimeoutModalContainer, {startTimer} from './components/SessionTimeout/SessionTimeoutModalContainer';
+import SessionTimeoutModalContainer from './components/SessionTimeout/SessionTimeoutModalContainer';
+import { startTimer } from './actions/SessionTimeout/sessionTimeoutAction';
 
 const cacheStore = window.sessionStorage.getItem('redux-store');
 const initialState = cacheStore ?
@@ -35,8 +36,8 @@ function logPageView(location, action) {
 }
 const history = createHistory();
 history.listen((location, action) => {
-    logPageView(location, action);
     startTimer(store.dispatch);
+    logPageView(location, action);
 });
 
 store.subscribe(function () {
@@ -51,6 +52,7 @@ SlidePrintManager.getInstance().setReduxStore(store);
 class App extends Component {
 	
     componentDidMount() {
+        startTimer(store.dispatch);
     	logPageView(window.location, '');
     }
 

@@ -9,6 +9,7 @@ const mapStateToProps = (state, props) =>
 
 const mapDispatchToProps = (dispatch, props) =>
 ({
+
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Help));

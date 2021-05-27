@@ -6,3 +6,13 @@ export const sessionTimedOut = (isTimedOut) => {
         payload: isTimedOut
     }
 }
+
+export const startTimer = (dispatch) => {
+    var highestTimeoutId = setTimeout(';');
+    for (var i=0; i< highestTimeoutId; i++) {
+        clearTimeout(i);
+    }
+    setTimeout(function() {
+            dispatch(sessionTimedOut(true));
+    },  5 * 60 * 1000);
+}
