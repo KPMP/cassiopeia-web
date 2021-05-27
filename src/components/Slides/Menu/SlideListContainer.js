@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import SlideList from './SlideList';
 import { setSelectedSlide } from '../../../actions/Patients/participantActions';
+import { startTimer } from '../../../actions/SessionTimeout/sessionTimeoutAction';
 
 const mapStateToProps = (state, props) =>
     ({
@@ -10,7 +11,8 @@ const mapStateToProps = (state, props) =>
 const mapDispatchToProps = (dispatch, props) =>
     ({
         setSelectedSlide(slide) {
-            dispatch(setSelectedSlide(slide))
+            dispatch(setSelectedSlide(slide));
+            startTimer(dispatch);
         }
     });
 

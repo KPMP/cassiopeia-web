@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import SessionTimeoutModal from './SessionTimeoutModal';
-import { sessionTimedOut } from '../../actions/SessionTimeout/sessionTimeoutAction';
 import { resetState } from '../../actions/resetStateAction';
+import { sessionTimedOut, startTimer } from '../../actions/SessionTimeout/sessionTimeoutAction';
 
 const mapStateToProps = (state, props) =>
     ({
@@ -11,8 +11,8 @@ const mapStateToProps = (state, props) =>
 
 const mapDispatchToProps = (dispatch, props) =>
     ({
-        startTimer(){
-            startTimer(dispatch);
+        clearState() {
+            dispatch(resetState());
         },
         restartTimer() {
             dispatch(sessionTimedOut(false));
@@ -27,10 +27,3 @@ const mapDispatchToProps = (dispatch, props) =>
     });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionTimeoutModal));
-
-export const startTimer = (dispatch) => {
-    clearTimeout();
-    setTimeout(function() {
-        dispatch(sessionTimedOut(true));
-    }, 5 * 60 * 1000);
-}
