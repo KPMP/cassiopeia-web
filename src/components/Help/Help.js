@@ -21,9 +21,7 @@ class Help extends Component {
 
     toggle = (toggleEvent) => {
         let event = toggleEvent.target.dataset.event;
-        console.log(event);
         this.setState({ indexOpen: this.state.indexOpen === Number(event) ? 0 : Number(event) });
-        console.log(this.state.indexOpen);
     }
 
     render() {
