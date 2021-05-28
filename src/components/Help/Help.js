@@ -7,6 +7,7 @@ import WhatSeen from './WhatSeen';
 import CanIShare from './CanIShare';
 import MakeRecommendation from './MakeRecommendation';
 import PasswordIssues from './PasswordIssues';
+import ReactGA from 'react-ga';
 
 class Help extends Component {
 
@@ -17,6 +18,14 @@ class Help extends Component {
 
     componentDidMount() {
         document.body.classList.remove('slide-viewer-body');
+        let action = 'View Help';
+        if (this.props.slides === undefined || this.props.slides.length === 0) {
+            action = 'Sent to Help (no slides)'
+        }
+        ReactGA.event({
+			category: 'Participant Portal',
+			action: action,
+		});
     }
 
     toggle = (toggleEvent) => {
