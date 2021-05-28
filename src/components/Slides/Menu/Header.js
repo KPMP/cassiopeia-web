@@ -19,19 +19,26 @@ class Header extends Component {
         let nextSlide = getNextSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
         this.props.setSelectedSlide(nextSlide);
         this.props.toggleMenu(true);
+		ReactGA.event({
+			category: 'Participant Portal',
+			action: 'Select Slide',
+		});
     }
 
     handlePreviousSlide() {
         let previousSlide = getPreviousSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
         this.props.setSelectedSlide(previousSlide);
         this.props.toggleMenu(true);
+		ReactGA.event({
+			category: 'Participant Portal',
+			action: 'Select slide',
+		});
     }
     
     handleDownload() {
         ReactGA.event({
-            category: 'Slide View',
-            action: 'Download Slide',
-            label: this.props.selectedPatient.selectedSlide.slideName
+            category: 'Participant Portal',
+            action: 'Download Slide'
         });
     	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
     	downloadSlide(downloadFileName);
@@ -39,9 +46,8 @@ class Header extends Component {
     
     onPrint() {
         ReactGA.event({
-            category: 'Slide View',
-            action: 'Print Slide',
-            label: this.props.selectedPatient.selectedSlide.slideName
+            category: 'Participant Portal',
+            action: 'Print Slide'
         });
         SlidePrintManager.getInstance().beforePrint();
         setTimeout(window.print, 10);

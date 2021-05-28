@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import { noSlidesFound } from '../slideHelpers.js';
 import Header from './Header';
+import ReactGA from 'react-ga';
 
 class SlideList extends Component {
 
@@ -13,6 +14,10 @@ class SlideList extends Component {
     handleSelectSlide(slide) {
         this.props.setSelectedSlide(slide);
         this.props.toggleMenu(true);
+		ReactGA.event({
+			category: 'Participant Portal',
+			action: 'Select Slide',
+		});
     }
     
     componentDidUpdate (){
