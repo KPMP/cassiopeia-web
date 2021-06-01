@@ -53,14 +53,16 @@ class Help extends Component {
                             Watch the video for an overview of the Participant Portal and how to navigate its features.
                         </Col>
                         <Col lg='8' xs='12'>
-                            <ReactPlayer url='https://www.youtube.com/watch?v=WoGe9dgbkSw' />
+                            <div className='player-wrapper'>
+                                <ReactPlayer className='react-player' width='100%' height='100%' url='https://www.youtube.com/watch?v=WoGe9dgbkSw' />
+                            </div>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs='12' className='pb-3'><h3>Navigation controls:</h3></Col>
                     </Row>
                     <Row>
-                        <Col xs='12'><img src='img/help/figure_viewer-controls.png' alt='' /></Col>
+                        <Col xs='12'><img src='img/help/figure_viewer-controls.png' alt='' className='img-fluid' /></Col>
                     </Row>
                     <Row>
                         <Col xs='12' className='py-3'><h2>Frequently Asked Questions</h2></Col>

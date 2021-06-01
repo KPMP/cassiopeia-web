@@ -12,7 +12,7 @@ class MakeRecommendation extends Component {
                         <Row>
                             <Col xs='12'>
                                 <p>Contact your research coordinators with suggestions for improvements to the Participant
-                                    Portal. They can make sure your ideas reach the software team that maintains the Participant Portal.
+                                    Portal. They can make sure your ideas reach the software team who maintains the Participant Portal.
                                 </p>
                             </Col>
                         </Row>
