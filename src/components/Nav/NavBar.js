@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { NavbarBrand, Button } from 'reactstrap'
+import { NavbarBrand } from 'reactstrap'
 import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
 
 	signOut = () => {
-		this.props.resetState();
 		window.location.href = 'https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout';
 	}
 
@@ -28,8 +27,8 @@ class NavBar extends Component {
 							<a className={className} href='/help'>
 								<span class="nav-text px-1">Help</span>
 							</a> &nbsp;|&nbsp; 
-							<a color='link'>
-								<span class="nav-text px-1" onClick={this.signOut}>Sign Out</span>
+							<a color='link' href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>
+								Sign Out
 							</a>
 						</li>
 				</ul>
