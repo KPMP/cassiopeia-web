@@ -12,7 +12,7 @@ import rootReducer from './reducers';
 import { Router, Switch, Route } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory }  from 'history';
 import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
 import ErrorPage from './components/Error/ErrorPage';
 import HomePageContainer from './components/Home/HomePageContainer';
@@ -34,7 +34,7 @@ function logPageView(location, action) {
     ReactGA.set({ page: location.pathname + location.search });
     ReactGA.pageview(location.pathname + location.search);
 }
-const history = createHistory();
+const history = createBrowserHistory();
 history.listen((location, action) => {
     startTimer(store.dispatch);
     logPageView(location, action);

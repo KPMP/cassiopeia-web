@@ -1,40 +1,33 @@
-import React, { Component } from 'react';
-import { NavbarBrand } from 'reactstrap'
-import { Link } from 'react-router-dom';
+// import React, { Component } from 'react';
+import { NavbarBrand, Collapse, Navbar, NavbarToggler, Nav, NavItem, Container, NavLink, NavbarText } from 'reactstrap';
+import React, { useState } from 'react';
 
-class NavBar extends Component {
-
-	signOut = () => {
-		window.location.href = 'https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout';
-	}
-
-	render() {
-		let activePage = this.props.location.pathname
-		let className = '';
-		if (activePage === '/help') {
-			className= 'active';
-		}
-		return (
-			<nav id='navbar' className='nav-container fixed-top navbar navbar-expand-* px-4 py-2'>
-				<Link to='/' className='navbar-header'>
-					<NavbarBrand className='d-flex align-items-center ml-3'>
-						<img src='img/logo.png' className='logo' alt='Participant Slide Viewer'/>
-						<span id='title-text' className='ml-4'>Participant Portal</span>
-					</NavbarBrand>
-				</Link>
-				<ul className='navbar-nav'>
-						<li className='nav-item small'>
-							<a className={className} href='/help'>
-								<span class="nav-text px-1">Help</span>
-							</a> &nbsp;|&nbsp; 
-							<a color='link' href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>
-								Sign Out
-							</a>
-						</li>
-				</ul>
-			</nav>
-		);
-	}
+const NavBar = (props) => {
+	const [isOpen, setIsOpen] = useState(false);
+  
+	const toggle = () => setIsOpen(!isOpen);
+  
+	return (
+	  <Container>
+		<Navbar id="navbar" className="fixed-top px-1 py-1 mb-3 container-fluid" expand="md" light>
+			<NavbarBrand href='/' className='ml-2 text-dark d-flex align-items-center'>
+				<img src='img/logo.png' className='logo' alt='Participant Slide Viewer'/>
+				<span id='title-text' className='ml-4'>Participant Portal</span>
+			</NavbarBrand>
+		  <NavbarToggler onClick={toggle} />
+		  <Collapse isOpen={isOpen} navbar>
+			<Nav className="ml-auto" navbar>
+				<NavItem className={`${window.location.pathname.replaceAll("/", "") === 'help' ? 'active' : ''} px-1`}>
+					<NavLink href='/help'>Help</NavLink>
+				</NavItem>
+				<NavItem className='px-1'>
+					<NavLink href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>Sign Out</NavLink>
+				</NavItem>
+			</Nav>
+		  </Collapse>
+		</Navbar>
+	  </Container>
+	);
 }
-
+  
 export default NavBar;
