@@ -13,7 +13,6 @@ class SessionTimeoutModal extends Component {
 
     renderer = ({hours, minutes, seconds, completed}) => {
         if (completed) {
-            this.props.clearState();
             window.location='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'
         } else {
             return <span>[:{seconds}]</span>;
