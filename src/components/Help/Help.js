@@ -39,7 +39,6 @@ class Help extends Component {
             slideMessage = <Row><Col xs-12><div class="alert alert-primary">No images or data have been processed from your biopsy
     		sample yet. Keep checking back.<br />If you have questions or need help, please contact your study coordinator.</div></Col></Row>;
         }
-        let indexOpen = this.state.indexOpen;
 
         return (
             <div id="summary-page">

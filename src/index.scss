@@ -20,8 +20,9 @@
 body {
 	overflow: auto;
 	color: rgb(51, 51, 51);
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
+
 }
 
 body.slide-viewer-body {
@@ -57,50 +58,43 @@ canvas {
 	-ms-interpolation-mode: nearest-neighbor;   /* IE                            */
 }
 
-.nav-container {
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgba(121, 121, 121, 1);
-	border-radius: 0px;
-	margin-left: 0px !important;
-	padding-left: 0px !important;
-	height: $header-height;
-	top: 0px;
-	z-index: 1000;
-	background: white;
 
-	.logo {
-		height: 30px;
-	}
+#navbar {
+	background-color: white;
+	border-bottom: 1px solid #d8d8d8;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 
-	.navbar-brand {
-		padding-top: 0px !important;
-		padding-bottom: 0px !important;
-	}
-
-	.navbar-nav {
-		a:hover {
-			text-decoration: underline;
+	.nav-item.active {
+	  .nav-text {
+		@media (max-width: 576px) {
+		  padding-bottom: 5px;
 		}
+		padding-bottom: 12px;
+		margin-bottom: -6px;
+		content: " ";
+	  }
 	}
-
-	.btn-link {
-		font-weight: 400  !important;
-		color: $kpmp-blue  !important;
-		padding: 0px;
+  
+	.navbar-brand img.logo {
+	  width: 80px;
+	  min-width: 80px;
 	}
-
-	.nav-item {
-		color: $kpmp-blue;
+  
+	.active .nav-link {
+	  color: #0082f3 !important;
+	  font-weight: 600;
 	}
-}
-
-.container-fluid {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
-	padding-right: 0px !important;
-	padding-left: 0px !important;
-}
+  
+	.nav-link:hover {
+	  color: #0275d8 !important;
+	}
+  
+	#nav-user-dropdown-menu {
+	  a:hover {
+		text-decoration: none !important;
+	  }
+	}
+  }
 
 #error-container {
 	padding-right: 15px !important;
@@ -349,7 +343,7 @@ canvas {
 
 @media only print {
 	body {
-
+		font-size: 16px;
 		background: white;
 
 		#patient-select-wrapper, #slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
@@ -431,22 +425,7 @@ canvas {
 
 }
 
-#navbar {
-	
-	.nav-item {
-		font-size: 16px;
-		a:hover {
-			text-decoration: none;
-			color: #0275d8;
-		}
-		.active .nav-text{
-			color: #0082f3;
-			font-weight: 600;
-		}
 
-	}
-
-}
 
 #summary-page {
 	

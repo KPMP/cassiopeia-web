@@ -16,7 +16,7 @@ class AfterBiopsy extends Component {
                                 <span className='annotation'>*Your other samples are processed and sent to KPMP scientists for additional studies.</span>
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/image_embed.png'/>
+                                <img alt='sample embedded in parrafin (wax)' src='img/help/image_embed.png'/>
                             </Col>
                         </Row>
                         <Row>
@@ -25,7 +25,7 @@ class AfterBiopsy extends Component {
                                 The slices are stained and affixed to glass microscope slides.
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/image_affix.png'/>
+                                <img alt='slices affixed to microscop slides' src='img/help/image_affix.png'/>
                             </Col>
                         </Row>
                         <Row>
@@ -34,7 +34,7 @@ class AfterBiopsy extends Component {
                                 The slides are scanned into digital images and uploaded to the image repository.
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/image_scan.png'/>
+                                <img alt='slides scanned to digital images' src='img/help/image_scan.png'/>
                             </Col>
                         </Row>
                     </div>

@@ -3,9 +3,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Countdown from 'react-countdown';
 
 class SessionTimeoutModal extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     toggle = () => {
          this.props.restartTimer();
