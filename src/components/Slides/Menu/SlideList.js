@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
-import { noSlidesFound } from '../slideHelpers.js';
 import Header from './Header';
 import ReactGA from 'react-ga';
 
@@ -18,10 +17,6 @@ class SlideList extends Component {
 			category: 'Participant Portal',
 			action: 'Select Slide',
 		});
-    }
-    
-    componentDidUpdate (){
-    	noSlidesFound(this.props.selectedPatient);
     }
 
 

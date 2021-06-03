@@ -67,10 +67,10 @@ class App extends Component {
                             <SessionTimeoutModalContainer/>
                             <Switch>
                                 <Route exact path='/' component={HomePageContainer}/>
-                                <Route exact path='/slides' component={SlidesContainer}/>
-                                <Route exact path='/help' component={HelpContainer}/>
-                                <Route exact path='/oops' component={ErrorPage} />
-                                <Route component={NotFound} />
+                                <Route path='/slides' component={SlidesContainer}/>
+                                <Route path='/help' component={HelpContainer}/>
+                                <Route path='/oops' component={ErrorPage} />
+                                <Route path='*' component={NotFound} />
                             </Switch>
                         </div>
                         </ErrorBoundaryContainer>
