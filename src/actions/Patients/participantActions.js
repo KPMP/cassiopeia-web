@@ -31,11 +31,9 @@ export const getParticipantSlides = (props) => {
 			}
 			dispatch(setSelectedPatient({id: '', slides: slides, selectedSlide: selectedSlide}));
 			dispatch(sessionTimedOut(false));
-			props.history.replace(nextPage);
-			// sleep(1300).then(() => {
-			// 	console.log("redirecting")
-			// 	props.history.push(nextPage);
-			// });
+			sleep(1000).then(() => {
+				props.history.push(nextPage);
+			});
 		})
 		.catch(err => {
 			dispatch(sessionTimedOut(false));
