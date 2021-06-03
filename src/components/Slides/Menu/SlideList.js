@@ -39,8 +39,10 @@ class SlideList extends Component {
     						return (
 	    						<Row className={"slide-menu-item " + highlightedClass} onClick={() => this.handleSelectSlide(slide)}>
 		    						<Col xs='12' className="no-padding">
-										<img className="thumbnail img-fluid" src={thumbnailSrc} onError={(e) => {e.target.onerror=null; e.target.src='/img/thumbnail_stain_other.png'}} alt=""/>
-										<span className='px-3 slide-name align-middle'>{slide.slideName}</span>
+										<div className='d-inline-block'>
+											<img className="thumbnail img-fluid" src={thumbnailSrc} onError={(e) => {e.target.onerror=null; e.target.src='/img/thumbnail_stain_other.png'}} alt=""/>
+											<span className='pl-3 slide-name align-middle'>{slide.slideName}</span>
+										</div>
 									</Col>
 	    						</Row>
     						)

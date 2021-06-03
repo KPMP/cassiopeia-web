@@ -66,12 +66,12 @@ $menu-header-height-mobile: 40px;
 	max-height: calc(100vh - #{$header-height});
 	overflow: hidden;
 	border-right: 1px solid silver;
-
+	
 	#bm-menu-wrap {
-		@media only screen and (max-width: 767px) {
-			width: 66% !important;
+		@media screen and (max-width: 769px) {
+			width: 100% !important;
 		}
-		@media only screen and (min-width: 768px) {
+		@media only screen and (min-width: 770px) {
 			width: 33% !important;
 		}
 	}
@@ -137,15 +137,18 @@ $menu-header-height-mobile: 40px;
 				
 				.no-padding {
 					padding-left: 0px;
+					padding-right: 0px;
 				}
 				
 				.slide-name {
+					line-height: $thumbnail-height;
 					text-align: left;
 					color: $link-blue;
 				}
 
 				.thumbnail {
-					width: $thumbnail-width;
+					height: $thumbnail-height;
+					float: left;
 				}
 			}
 			
