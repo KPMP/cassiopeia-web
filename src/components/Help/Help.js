@@ -53,7 +53,7 @@ class Help extends Component {
                         </Col>
                         <Col lg='8' xs='12'>
                             <div className='player-wrapper'>
-                                <ReactPlayer className='react-player' width='100%' height='100%' url='https://www.youtube.com/watch?v=WoGe9dgbkSw' />
+                                <ReactPlayer className='react-player' width='100%' height='100%' url='https://youtu.be/K_hiGYBkP38' />
                             </div>
                         </Col>
                     </Row>
