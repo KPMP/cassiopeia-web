@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
-import { noSlidesFound } from '../slideHelpers.js';
 import Header from './Header';
 import ReactGA from 'react-ga';
 
@@ -19,10 +18,6 @@ class SlideList extends Component {
 			action: 'Select Slide',
 		});
     }
-    
-    componentDidUpdate (){
-    	noSlidesFound(this.props.selectedPatient);
-    }
 
 
     render() {
@@ -39,8 +34,10 @@ class SlideList extends Component {
     						return (
 	    						<Row className={"slide-menu-item " + highlightedClass} onClick={() => this.handleSelectSlide(slide)}>
 		    						<Col xs='12' className="no-padding">
-										<img className="thumbnail img-fluid" src={thumbnailSrc} onError={(e) => {e.target.onerror=null; e.target.src='/img/thumbnail_stain_other.png'}} alt=""/>
-										<span className='px-3 slide-name align-middle'>{slide.slideName}</span>
+										<div className='d-inline-block'>
+											<img className="thumbnail img-fluid" src={thumbnailSrc} onError={(e) => {e.target.onerror=null; e.target.src='/img/thumbnail_stain_other.png'}} alt=""/>
+											<span className='pl-3 slide-name align-middle'>{slide.slideName}</span>
+										</div>
 									</Col>
 	    						</Row>
     						)

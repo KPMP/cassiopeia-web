@@ -22,19 +22,18 @@ export const getParticipantSlides = (props) => {
 		axios.get('/api/v1/slides/')
 		.then(result => {
 			let slides = result.data;
-			if (slides.length === 0) {
-				dispatch(setSelectedPatient({id: "", slides: [], selectedSlide: ''}));
-				dispatch(sessionTimedOut(false));
-				sleep(1000).then(() => {
-					props.history.push("/help");
-				});
-			} else {
-				dispatch(setSelectedPatient({id: "", slides: slides, selectedSlide: slides[0]}));
-				dispatch(sessionTimedOut(false));
-				sleep(1000).then(() => {
-					props.history.push("/slides");
-				});
+			let selectedSlide = '';
+			let nextPage = '/help';
+			
+			 if (slides.length > 0) {
+				selectedSlide = slides[0];
+				nextPage = '/slides';
 			}
+			dispatch(setSelectedPatient({id: '', slides: slides, selectedSlide: selectedSlide}));
+			dispatch(sessionTimedOut(false));
+			sleep(1000).then(() => {
+				props.history.push(nextPage);
+			});
 		})
 		.catch(err => {
 			dispatch(sessionTimedOut(false));

@@ -24,9 +24,7 @@ export const downloadSlide = (downloadFileName) => {
 }
 
 export const noSlidesFound = (selectedPatient) => {
-    if (selectedPatient === null || selectedPatient === undefined || Object.keys(selectedPatient.slides).length === 0) {
-        window.location.assign("/help");
-    } 
+    return selectedPatient === null || selectedPatient === undefined || Object.keys(selectedPatient.slides).length === 0;
 }
 
 const getSlideIndex = (slideArray, selectedSlide) => {
