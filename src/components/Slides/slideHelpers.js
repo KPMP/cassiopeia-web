@@ -24,7 +24,6 @@ export const downloadSlide = (downloadFileName) => {
 }
 
 export const noSlidesFound = (selectedPatient) => {
-    console.log(selectedPatient);
     return selectedPatient === null || selectedPatient === undefined || Object.keys(selectedPatient.slides).length === 0;
 }
 
