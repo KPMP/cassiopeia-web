@@ -21,7 +21,7 @@ const NavBar = (props) => {
 					<NavLink href='/help'>Help</NavLink>
 				</NavItem>
 				<NavItem className='px-1'>
-					<NavLink href='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'>Sign Out</NavLink>
+					<NavLink href='https://mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.mydata.kpmp.org/idp/profile/Logout'>Sign Out</NavLink>
 				</NavItem>
 			</Nav>
 		  </Collapse>

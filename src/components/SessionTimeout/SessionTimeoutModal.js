@@ -10,7 +10,7 @@ class SessionTimeoutModal extends Component {
 
     renderer = ({hours, minutes, seconds, completed}) => {
         if (completed) {
-            window.location='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'
+            window.location='https://mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.mydata.kpmp.org/idp/profile/Logout'
         } else {
             return <span>[:{seconds}]</span>;
         }
@@ -25,7 +25,7 @@ class SessionTimeoutModal extends Component {
                 For security reasons, your connection times out after you've been inactive for awhile.
             </ModalBody>
             <ModalFooter>
-                <Button color="secondary" onClick={() => window.location='https://dev-mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.dev-mydata.kpmp.org/idp/profile/Logout'}>SIGN OUT</Button>{' '}
+                <Button color="secondary" onClick={() => window.location='https://mydata.kpmp.org/Shibboleth.sso/Logout?return=https://login.mydata.kpmp.org/idp/profile/Logout'}>SIGN OUT</Button>{' '}
                 <Button color="primary" onClick={() => this.toggle()}>KEEP ME SIGNED IN {countdown}</Button>
             </ModalFooter>
         </Modal>
