@@ -1,32 +1,36 @@
 {
   "name": "cassiopeia-web",
-  "version": "0.1.0",
+  "version": "1.2.0",
   "private": true,
   "devDependencies": {
-    "node-sass-chokidar": "1.3.4",
+    "node-sass-chokidar": "1.5.0",
     "npm-run-all": "4.1.5",
-    "react-scripts": "2.1.1"
+    "react-scripts": "4.0.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.8",
     "@fortawesome/free-solid-svg-icons": "5.5.0",
     "@fortawesome/react-fontawesome": "0.1.3",
-    "antd": "3.11.0",
-    "axios": "0.18.0",
-    "bootstrap": "4.1.3",
+    "antd": "4.15.1",
+    "axios": "0.21.1",
+    "bootstrap": "4.3.1",
     "es6-shim": "0.35.4",
-    "history": "4.7.2",
-    "html-react-parser": "0.4.7",
-    "lodash": "4.17.11",
+    "history": "4.9.0",
+    "html-react-parser": "0.13.0",
+    "lodash": "4.17.21",
     "openseadragon": "2.4.0",
-    "react": "16.6.3",
+    "react": "17.0.1",
+    "react-app-polyfill": "1.0.6",
     "react-burger-menu": "2.5.4",
-    "react-dom": "16.6.3",
-    "react-ga": "2.5.6",
-    "react-redux": "5.1.1",
-    "react-router-dom": "4.3.1",
-    "reactstrap": "6.5.0",
-    "redux": "4.0.1",
+    "react-countdown": "2.3.2",
+    "react-device-detect": "1.6.1",
+    "react-dom": "17.0.1",
+    "react-ga": "3.3.0",
+    "react-player": "2.9.0",
+    "react-redux": "7.2.2",
+    "react-router-dom": "5.2.0",
+    "reactstrap": "8.8.1",
+    "redux": "4.0.5",
     "redux-thunk": "2.3.0"
   },
   "scripts": {
@@ -46,6 +50,7 @@
     ">0.2%",
     "not dead",
     "not ie <= 11",
-    "not op_mini all"
+    "not op_mini all",
+    "ie 11"
   ]
 }

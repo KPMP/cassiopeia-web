@@ -1,31 +1,24 @@
 @import "common-values.scss";
 $menu-header-height: 80px;
-
+$menu-header-height-mobile: 40px;
 
 .bm-burger-button {
-  position: fixed;
-  width: 45px;
-  height: 45px;
-  left: calc(#{$standard-padding + $standard-padding + $menu-button-width});
-  top: calc(#{$header-height + $standard-padding});
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0px 3px 5px gray;
-   
-  svg {
-  	width: 23px !important;
-  	height: 23px !important;
-  	margin-top: 11px;
-  	margin-left: 11px;
-  	color: $kpmp-blue;
-  }
-  
+	line-height: 25px;
+	float: left;
+	position: absolute;
+	height: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background: $kpmp-blue;
+	padding-right: 10px;
+	cursor: pointer;
+	z-index: 999;
+	color: white;
 }
 
-.bm-burger-button:hover {
-  opacity: 0.6;
+.bm-icon {
+	padding-left: 10px;
 }
-
 .bm-cross-button {
   height: 24px;
   width: 24px;
@@ -73,12 +66,12 @@ $menu-header-height: 80px;
 	max-height: calc(100vh - #{$header-height});
 	overflow: hidden;
 	border-right: 1px solid silver;
-
+	
 	#bm-menu-wrap {
-		@media only screen and (max-width: 767px) {
-			width: 66% !important;
+		@media screen and (max-width: 769px) {
+			width: 100% !important;
 		}
-		@media only screen and (min-width: 768px) {
+		@media only screen and (min-width: 770px) {
 			width: 33% !important;
 		}
 	}
@@ -118,8 +111,8 @@ $menu-header-height: 80px;
 		.menu-control:hover {
 			opacity: 0.6;
 		}
-	}
-	
+		
+	}	
 	#menu-slide-list {
 		background: white;
 		border-bottom: 1px solid silver;
@@ -144,18 +137,18 @@ $menu-header-height: 80px;
 				
 				.no-padding {
 					padding-left: 0px;
+					padding-right: 0px;
 				}
 				
 				.slide-name {
-					text-align: left;
-					height: $thumbnail-height;
 					line-height: $thumbnail-height;
+					text-align: left;
 					color: $link-blue;
 				}
 
 				.thumbnail {
 					height: $thumbnail-height;
-					width: $thumbnail-width;
+					float: left;
 				}
 			}
 			

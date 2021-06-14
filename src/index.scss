@@ -1,6 +1,6 @@
 @import "menu.scss";
 @import "common-values.scss";
-
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
 
 // Temporary classes
 .content-warning {
@@ -20,15 +20,9 @@
 body {
 	overflow: auto;
 	color: rgb(51, 51, 51);
-	font-family: "Arial";
-	font-feature-settings: "kern";
-	font-kerning: normal;
-	font-size: 14px;
-	font-style: normal;
+	font-size: 16px;
 	font-weight: 400;
-	letter-spacing: normal;
-	text-rendering: optimizelegibility;
-	text-transform: none;
+
 }
 
 body.slide-viewer-body {
@@ -64,44 +58,67 @@ canvas {
 	-ms-interpolation-mode: nearest-neighbor;   /* IE                            */
 }
 
-.nav-container {
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgba(121, 121, 121, 1);
-	border-radius: 0px;
-	margin-left: 0px !important;
-	padding-left: 0px !important;
-	height: $header-height;
-	position: fixed;
-	top: 0px;
-	z-index: 1000;
-	background: white;
-	
-	.logo {
-		margin-top: 10px;
-		margin-left: 10px;
-		height: 40px;
+
+#navbar {
+	background-color: white;
+	border-bottom: 1px solid #d8d8d8;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+
+	.nav-item.active {
+	  .nav-text {
+		@media (max-width: 576px) {
+		  padding-bottom: 5px;
+		}
+		padding-bottom: 12px;
+		margin-bottom: -6px;
+		content: " ";
+	  }
+	}
+  
+	.navbar-brand img.logo {
+	  width: 80px;
+	  min-width: 80px;
+	}
+  
+	.active .nav-link {
+	  color: #0082f3 !important;
+	  font-weight: 600;
+	}
+  
+	.nav-link:hover {
+	  color: #0275d8 !important;
+	}
+  
+	#nav-user-dropdown-menu {
+	  a:hover {
+		text-decoration: none !important;
+	  }
+	}
+  }
+
+#error-container {
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+	margin-right: auto !important;
+	margin-left: auto !important;
+
+	a {
+		color: blue;
 	}
 
-	.navbar-brand {
-		padding-top: 0px !important;
-		padding-bottom: 0px !important;
+	a:link {
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	a:active {
+		text-decoration: underline;
 	}
 }
-
-#landing-page {
-	margin-top: 15px;
-	margin-left: 15px;
-}
-
-
-.container-fluid {
-	margin-left: 0px !important;
-	margin-right: 0px !important;
-	padding-right: 0px !important;
-	padding-left: 0px !important;
-}
-
 
 #summary-page {
 	max-width: 1150px;
@@ -145,8 +162,12 @@ canvas {
 	}
 
 	#summary-content-wrapper {
-		margin-top: 200px;
+		margin-top: 100px;
 		z-index: 0;
+
+		.row {
+			margin-left: 20px;
+		}
 	}
 
 	.light-border {
@@ -157,7 +178,6 @@ canvas {
 
 		p {
 			color: rgb(51, 51, 51);
-			font-family: "ArialMT", "Arial";
 			font-feature-settings: "kern";
 			font-kerning: normal;
 			font-size: 14px;
@@ -209,7 +229,7 @@ canvas {
 	}
 
 	.row-summary-info {
-		margin: 25px 30px 15px 30px;
+		margin: 10px 30px 15px 30px;
 	}
 
 	.row-summary-organ-images {
@@ -308,7 +328,7 @@ canvas {
 			font-size: 14pt;
 			display: block !important;
 			background: white;
-			color: black;
+			color: $kpmp-blue;
 			margin-bottom: 1px;
 			cursor: pointer;
 			text-align: center;
@@ -323,7 +343,7 @@ canvas {
 
 @media only print {
 	body {
-
+		font-size: 16px;
 		background: white;
 
 		#patient-select-wrapper, #slide-viewer, .osd-div, .osd-navigator-wrapper, #osd-navigator, .osd-toolbar, .nav-container {
@@ -366,7 +386,107 @@ canvas {
 	}
 }
 
+#title-text {
+	font-size: 20px;
+	color: $kpmp-blue;
+}
+
 @page {
 	size: landscape;
 	margin: 0;
+}
+
+#landing-page {
+	margin-top: 150px;
+	font-size: 32px;
+
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+#error-content {
+
+	margin-top: 150px;
+
+	.error-huge {
+		font-size: 130px;
+		color: $kpmp-blue;
+	}
+
+	.error-big {
+		font-size: 72px;
+	}
+
+	.error-small {
+		font-size: 32px;
+	}
+
+}
+
+
+
+#summary-page {
+	
+	.question-heading {
+		font-size: 19px;
+	}
+	
+	.help-accordion {
+		background-color: #cee5ff;
+	}
+	
+	.collapsed::before {
+		font-family: "FontAwesome";
+		content: "\f054";
+		float: left;
+		padding-right: 10px;
+	}
+	
+	.open::before {
+		font-family: "FontAwesome";
+		content: "\f078";
+		float: left;
+		padding-right: 10px;
+	}
+	
+	.collapsed {
+		cursor: pointer;
+	}
+	
+	.open {
+		cursor: pointer;
+	}
+	
+	.annotation {
+		font-size: smaller;
+		font-style: italic;
+	}
+	
+	.no-bullets {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		color: #4393DD;
+	}
+
+	.player-wrapper {
+		position: relative;
+		padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+	  }
+	  
+	.react-player {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.row {
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
 }

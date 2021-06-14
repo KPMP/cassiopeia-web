@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 import actionNames from './actions/actionNames';
 import loadedState from './initialState';
-import { selectedPatient, patients } from './components/Summary/patientSelectReducer';
+import { selectedPatient } from './components/Slides/patientSelectReducer';
+import { sessionTimedOut } from './components/SessionTimeout/sessionTimeoutReducer';
 
 const appReducer = combineReducers({
     selectedPatient,
-    patients
+    sessionTimedOut
 });
 
 const rootReducer = (state, action) => {

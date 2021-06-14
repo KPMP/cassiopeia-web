@@ -10,10 +10,3 @@ export const selectedPatient = (state = {}, action) => {
             return state;
     }
 }
-
-export const patients = (state = [], action) => {
-    switch(action.type) {
-    default:
-        return state;
-    }
-}
