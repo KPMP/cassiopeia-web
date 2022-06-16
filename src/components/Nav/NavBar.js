@@ -17,6 +17,9 @@ const NavBar = (props) => {
 		  <NavbarToggler onClick={toggle} />
 		  <Collapse isOpen={isOpen} navbar>
 			<Nav className="ml-auto" navbar>
+				<NavItem className='px-1'>
+					<NavLink href='https://www.kpmp.org/participant-letters' target='_blank'>Participant letters</NavLink>
+				</NavItem>
 				<NavItem className={`${window.location.pathname.replaceAll("/", "") === 'help' ? 'active' : ''} px-1`}>
 					<NavLink href='/help'>Help</NavLink>
 				</NavItem>
