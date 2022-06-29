@@ -5,3 +5,5 @@
 To use build the container use: ```docker build -t <your image name> .```
 
 Then run it with ```docker run -p 80:80 <your_image_name>```
+
+Then access this page with localhost:80
