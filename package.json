@@ -52,5 +52,17 @@
     "not ie <= 11",
     "not op_mini all",
     "ie 11"
-  ]
+  ],
+  "description": "[![Build Status](https://travis-ci.org/KPMP/cassiopeia-web.svg?branch=develop)](https://travis-ci.org/KPMP/cassiopeia-web)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KPMP/cassiopeia-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KPMP/cassiopeia-web/issues"
+  },
+  "homepage": "https://github.com/KPMP/cassiopeia-web#readme"
 }
