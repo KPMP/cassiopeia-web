@@ -18,11 +18,12 @@ RUN apk add apache2 \
   && apk add nodejs \
   && apk add --update npm \
   && apk add openrc --no-cache \
+  && apk add openssl \
+  &&rm -rf /var/cache/apk/* \
   && rm /etc/apache2/conf.d/default.conf \
   && rm /etc/apache2/conf.d/info.conf \
   && rm /etc/apache2/conf.d/mpm.conf \ 
-  && rm /etc/apache2/conf.d/userdir.conf \
-  && apk add apache2-ssl
+  && rm /etc/apache2/conf.d/userdir.conf 
 
 RUN echo "************** Built Apache WITHOUT Shibboleth **************"
 
@@ -31,15 +32,15 @@ COPY package.json package-lock.json /tmp/
 RUN cd /tmp && ls
 RUN cd /tmp && npm install
 RUN npm rebuild node-sass
-RUN mkdir -p /var/www/localhost/htdocs && cp -a /tmp/* /var/www/localhost/htdocs
+RUN mkdir -p /var/www/localhost/htdocs && mv -v /tmp/* /var/www/localhost/htdocs
 COPY . /var/www/localhost/htdocs
 RUN cd /var/www/localhost/htdocs && npm run build
 RUN mv var/www/localhost/htdocs/build/* /var/www/localhost/htdocs/
 RUN cd /var/www/localhost/htdocs/ && mkdir /var/www/localhost/htdocs/KPMP
 RUN cd /var/www/localhost/htdocs/KPMP && mkdir /var/www/localhost/htdocs/KPMP/cassiopeia-web/
 RUN cp -R /var/www/localhost/htdocs/static /var/www/localhost/htdocs/KPMP/cassiopeia-web/
-RUN cp /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/* /etc/apache2/conf.d/
-RUN cp /var/www/localhost/htdocs/httpd.conf /etc/apache2/
+RUN cp /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/virt.conf /etc/apache2/conf.d/
+RUN cp /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/httpd.conf /etc/apache2/
 
 
 EXPOSE 80 443
