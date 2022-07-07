@@ -4,5 +4,5 @@ services:
     build: .
     ports:
       - "80:80"
-  redis:
-    image: "kingstonduo/cassiopeia-web:1.1"
+  # redis:
+  #   image: "kingstonduo/cassiopeia-web:1.1"
