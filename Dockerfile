@@ -1,4 +1,4 @@
-FROM alpine/openssl:latest
+FROM alpine:3.14
 #RUN cd /etc/yum.repos.d/
 
 # Add starters and installers
@@ -18,6 +18,7 @@ RUN apk add apache2 \
   && apk add nodejs \
   && apk add --update npm \
   && apk add openrc --no-cache \
+  && apk add apache2-ssl \
   && rm /etc/apache2/conf.d/default.conf \
   && rm /etc/apache2/conf.d/info.conf \
   && rm /etc/apache2/conf.d/mpm.conf \ 
@@ -27,10 +28,9 @@ RUN echo "************** Built Apache WITHOUT Shibboleth **************"
 
 
 COPY package.json package-lock.json /tmp/
-RUN cd /tmp && ls
 RUN cd /tmp && npm install
 RUN npm rebuild node-sass
-RUN mkdir -p /var/www/localhost/htdocs && mv -v /tmp/* /var/www/localhost/htdocs
+RUN mkdir -p /var/www/localhost/htdocs && cp -a /tmp/node_modules /var/www/localhost/htdocs
 COPY . /var/www/localhost/htdocs
 RUN cd /var/www/localhost/htdocs && npm run build
 RUN mv var/www/localhost/htdocs/build/* /var/www/localhost/htdocs/
