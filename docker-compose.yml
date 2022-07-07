@@ -5,5 +5,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - /home/ubuntu/certs:/certs
   # redis:
-  #   image: "kingstonduo/cassiopeia-web:1.1"
+  #   image: "kingstonduo/cassiopeia-web:1.1
