@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine/openssl:latest
 #RUN cd /etc/yum.repos.d/
 
 # Add starters and installers
@@ -18,8 +18,6 @@ RUN apk add apache2 \
   && apk add nodejs \
   && apk add --update npm \
   && apk add openrc --no-cache \
-  && apk add openssl \
-  &&rm -rf /var/cache/apk/* \
   && rm /etc/apache2/conf.d/default.conf \
   && rm /etc/apache2/conf.d/info.conf \
   && rm /etc/apache2/conf.d/mpm.conf \ 
