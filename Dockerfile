@@ -40,6 +40,7 @@ RUN cp -R /var/www/localhost/htdocs/static /var/www/localhost/htdocs/KPMP/cassio
 RUN cp /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/virt.conf /etc/apache2/conf.d/
 RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/httpd.conf /etc/apache2/
 RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/ssl.conf /etc/apache2/conf.d/ssl.conf
+RUN mkdir /certs
 
 
 EXPOSE 80 443
