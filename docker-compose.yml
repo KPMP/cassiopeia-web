@@ -1,10 +1,11 @@
-version: "2.2"
+version: "3.3"
 services:
   web:
+    build: .
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - "/home/ubuntu/certs:/certs"
-    redis:  
-      image: "kingstonduo/cassiopeia-web:1.2"
+  # redis:
+  #   image: "kingstonduo/cassiopeia-web:1.1"

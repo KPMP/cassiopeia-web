@@ -39,7 +39,7 @@ RUN cd /var/www/localhost/htdocs/KPMP && mkdir /var/www/localhost/htdocs/KPMP/ca
 RUN cp -R /var/www/localhost/htdocs/static /var/www/localhost/htdocs/KPMP/cassiopeia-web/
 RUN cp /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/virt.conf /etc/apache2/conf.d/
 RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/httpd.conf /etc/apache2/
-RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/ssl.conf /etc/apache2/conf.d/
+RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/ssl.conf /etc/apache2/conf.d/ssl.conf
 
 
 EXPOSE 80 443
