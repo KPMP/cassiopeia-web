@@ -3,6 +3,7 @@ FROM alpine:3.14
 
 # Add starters and installers
 COPY ./container_files /opt
+COPY . /tmp
 
 RUN apk add apache2 \
   && apk add --update --no-cache python2 \
@@ -27,20 +28,14 @@ RUN apk add apache2 \
 RUN echo "************** Built Apache WITHOUT Shibboleth **************"
 
 
-COPY package.json package-lock.json /tmp/
-RUN cd /tmp && npm install
-RUN npm rebuild node-sass
-RUN mkdir -p /var/www/localhost/htdocs && cp -a /tmp/node_modules /var/www/localhost/htdocs
-COPY . /var/www/localhost/htdocs
-RUN cd /var/www/localhost/htdocs && npm run build
-RUN mv var/www/localhost/htdocs/build/* /var/www/localhost/htdocs/
-RUN cd /var/www/localhost/htdocs/ && mkdir /var/www/localhost/htdocs/KPMP
-RUN cd /var/www/localhost/htdocs/KPMP && mkdir /var/www/localhost/htdocs/KPMP/cassiopeia-web/
-RUN cp -R /var/www/localhost/htdocs/static /var/www/localhost/htdocs/KPMP/cassiopeia-web/
-RUN cp /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/virt.conf /etc/apache2/conf.d/
-RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/httpd.conf /etc/apache2/
-RUN mv -f /var/www/localhost/htdocs/container_files/etc/httpd/conf.d/ssl.conf /etc/apache2/conf.d/ssl.conf
+RUN mkdir -p /var/www/localhost/htdocs
+RUN cd tmp/ && npm i && \
+    npm run build && mv build/* /var/www/localhost/htdocs/
+RUN cp /tmp/container_files/etc/httpd/conf.d/virt.conf /etc/apache2/conf.d/
+RUN mv -f /tmp/container_files/etc/httpd/conf.d/httpd.conf /etc/apache2/
+RUN mv -f /tmp/container_files/etc/httpd/conf.d/ssl.conf /etc/apache2/conf.d/ssl.conf
 RUN mkdir /certs
+RUN mv -f /tmp/apache-selfsigned.key /certs/ && mv -f /tmp/apache-selfsigned.crt /certs/
 
 
 EXPOSE 80 443
