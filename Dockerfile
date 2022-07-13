@@ -35,7 +35,6 @@ RUN cp /tmp/container_files/etc/httpd/conf.d/virt.conf /etc/apache2/conf.d/
 RUN mv -f /tmp/container_files/etc/httpd/conf.d/httpd.conf /etc/apache2/
 RUN mv -f /tmp/container_files/etc/httpd/conf.d/ssl.conf /etc/apache2/conf.d/ssl.conf
 RUN mkdir /certs
-RUN mv -f /tmp/apache-selfsigned.key /certs/ && mv -f /tmp/apache-selfsigned.crt /certs/
 
 
 EXPOSE 80 443

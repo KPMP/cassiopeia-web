@@ -9,7 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import loadedState from './initialState';
 import rootReducer from './reducers';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
 import ReactGA from 'react-ga';
 import { createBrowserHistory }  from 'history';
