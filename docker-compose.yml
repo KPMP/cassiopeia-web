@@ -1,11 +1,15 @@
 version: "3.3"
 services:
   web:
+<<<<<<< HEAD
     image: "dockerifycassiopeiaweb_web"
+=======
+    image: dockerifycassiopeiaweb_web:latest
+>>>>>>> 459c71c555f16d617dea56b10cdd69a9264669d0
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - "/home/ubuntu/certs:/certs"
+   volumes:
+     - "/home/ubuntu/certs:/certs"
   # redis:
   #   image: "kingstonduo/cassiopeia-web:1.1"
