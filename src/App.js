@@ -60,7 +60,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Container fluid>
-                    <Router history={history}>
+                    <BrowserRouter history={history}>
                         <ErrorBoundaryContainer>
                         <div>
                             <NavBarContainer/>
@@ -74,7 +74,7 @@ class App extends Component {
                             </Switch>
                         </div>
                         </ErrorBoundaryContainer>
-                    </Router>
+                    </BrowserRouter>
                 </Container>
             </Provider>
         );
