@@ -16,7 +16,6 @@ RUN apk add apache2 \
   && apk add nodejs \
   && apk add build-base \
   && apk add nano \
-  && apk add nodejs \
   && apk add --update npm \
   && apk add openrc --no-cache \
   && apk add apache2-ssl \
