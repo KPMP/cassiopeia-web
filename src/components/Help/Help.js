@@ -90,6 +90,11 @@ class Help extends Component {
                                 <li><a href='mailto:kpmprc-columbia@uw.edu?subject=Question from Participant Portal'>Columbia University</a></li>
                                 <li><a href='mailto:kpmprc-jhmi@uw.edu?subject=Question from Participant Portal'>Johns Hopkins University</a></li>
                                 <li><a href='mailto:kpmprc-joslin@uw.edu?subject=Question from Participant Portal'>Joslin/Beth Isreal Deaconess</a></li>
+                                <li><a href='mailto:kpmprc-mssm@uw.edu?subject=Question from Participant Portal'>Mount Sinai</a></li>
+                                <li><a href='mailto:kpmprc-arizona@uw.edu?subject=Question from Participant Portal'>University of Arizona</a></li>
+                                <li><a href='mailto:kpmprc-uic@uw.edu?subject=Question from Participant Portal'>University of Illinois Chicago</a></li>
+                                <li><a href='mailto:kpmprc-umn@uw.edu?subject=Question from Participant Portal'>University of Minnesota</a></li>
+                                <li><a href='mailto:kpmprc-unc@uw.edu?subject=Question from Participant Portal'>University of North Carolina</a></li>
                                 <li><a href='mailto:kpmprc-upmc@uw.edu?subject=Question from Participant Portal'>University of Pittsburgh</a></li>
                                 <li><a href='mailto:kpmprc-utsw@uw.edu?subject=Question from Participant Portal'>UT Southwestern</a></li>
                                 <li><a href='mailto:kpmprc-yale@uw.edu?subject=Question from Participant Portal'>Yale University</a></li>

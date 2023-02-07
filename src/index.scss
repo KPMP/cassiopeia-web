@@ -126,6 +126,7 @@ canvas {
 	max-width: 1150px;
 	position: relative;
 	margin: auto;
+	padding-bottom: 20px;
 
 	.btn-primary {
 		background-color: #BB0606;
@@ -166,7 +167,7 @@ canvas {
 	#summary-content-wrapper {
 		margin-top: 100px;
 		z-index: 0;
-
+		padding-bottom: 1.25rem;
 		.row {
 			margin-left: 20px;
 		}
