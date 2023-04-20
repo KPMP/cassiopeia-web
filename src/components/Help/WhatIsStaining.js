@@ -29,7 +29,7 @@ class WhatIsStaining extends Component {
                                 </p>
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/pathologist-slide.png' />
+                                <img alt='hand holding slide' src='img/help/pathologist-slide.png' />
                             </Col>
                         </Row>
 

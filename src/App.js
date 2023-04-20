@@ -11,7 +11,7 @@ import loadedState from './initialState';
 import rootReducer from './reducers';
 import { Router, Switch, Route } from 'react-router-dom';
 import SlidePrintManager from './components/Slides/Menu/SlidePrintManager';
-import ReactGA from 'react-ga';
+import { default as ReactGA4 } from 'react-ga4';
 import { createBrowserHistory }  from 'history';
 import ErrorBoundaryContainer from './components/Error/ErrorBoundaryContainer';
 import ErrorPage from './components/Error/ErrorPage';
@@ -27,12 +27,12 @@ const store = applyMiddleware(thunk)(createStore)(rootReducer, initialState, win
 const saveState = () => {
     window.sessionStorage.setItem('redux-store', JSON.stringify(store.getState()));
 };
-const GA_TRACKING_ID = 'UA-124331187-3';
+const GA_TRACKING_ID = 'G-1GQRYQ6B9C';
 
-ReactGA.initialize(GA_TRACKING_ID);
+ReactGA4.initialize(GA_TRACKING_ID,  { testMode: process.env.NODE_ENV === 'test' });
 function logPageView(location, action) {
-    ReactGA.set({ page: location.pathname + location.search });
-    ReactGA.pageview(location.pathname + location.search);
+    ReactGA4.set({ page: location.pathname + location.search });
+    ReactGA4.pageview(location.pathname + location.search);
 }
 const history = createBrowserHistory();
 history.listen((location, action) => {
