@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
 import Header from './Header';
-import ReactGA from 'react-ga';
+import { default as ReactGA4 } from 'react-ga4';
 
 class SlideList extends Component {
 
@@ -13,9 +13,10 @@ class SlideList extends Component {
     handleSelectSlide(slide) {
         this.props.setSelectedSlide(slide);
         this.props.toggleMenu(true);
-		ReactGA.event({
+		ReactGA4.event({
 			category: 'Participant Portal',
-			action: 'Select Slide',
+			action: 'Navigation',
+			label: 'Select Slide'
 		});
     }
 

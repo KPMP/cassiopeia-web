@@ -7,7 +7,7 @@ import WhatSeen from './WhatSeen';
 import CanIShare from './CanIShare';
 import MakeRecommendation from './MakeRecommendation';
 import PasswordIssues from './PasswordIssues';
-import ReactGA from 'react-ga';
+import { default as ReactGA4 } from 'react-ga4';
 
 class Help extends Component {
 
@@ -18,13 +18,14 @@ class Help extends Component {
 
     componentDidMount() {
         document.body.classList.remove('slide-viewer-body');
-        let action = 'View Help';
+        let label = 'Help';
         if (this.props.slides === undefined || this.props.slides.length === 0) {
-            action = 'Sent to Help (no slides)'
+            label = 'No Slides'
         }
-        ReactGA.event({
+        ReactGA4.event({
 			category: 'Participant Portal',
-			action: action,
+			action:'Navigation',
+            label: label
 		});
     }
 

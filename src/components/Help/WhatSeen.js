@@ -21,7 +21,7 @@ class WhatSeen extends Component {
                                 </p>
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/figure_kidney.png' />
+                                <img alt="breakdown of kidney structure" src='img/help/figure_kidney.png' />
                             </Col>
                         </Row>
                         <Row>
@@ -36,7 +36,7 @@ class WhatSeen extends Component {
                                 </p>
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/figure_nephron.png' />
+                                <img alt='breakdown of nephron structure' src='img/help/figure_nephron.png' />
                             </Col>
                         </Row>
                         <Row>
@@ -47,7 +47,7 @@ class WhatSeen extends Component {
                                 </p>
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img src='img/help/figure_wsi.png' />
+                                <img alt='anatomy of slide image' src='img/help/figure_wsi.png' />
                             </Col>
                         </Row>
                     </div>
