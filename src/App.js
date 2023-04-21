@@ -31,7 +31,7 @@ const GA_TRACKING_ID = 'G-1GQRYQ6B9C';
 
 ReactGA4.initialize(GA_TRACKING_ID,  { testMode: process.env.NODE_ENV === 'test' });
 function logPageView(location, action) {
-    ReactGA4.set({ page: location.pathname + location.search });
+    // ReactGA4.set({ page: location.pathname + location.search });
     ReactGA4.pageview(location.pathname + location.search);
 }
 const history = createBrowserHistory();
