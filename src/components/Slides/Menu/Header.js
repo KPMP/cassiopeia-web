@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faChevronRight, faChevronLeft, faPrint, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row } from 'reactstrap';
-import ReactGA from 'react-ga';
+import { default as ReactGA4 } from 'react-ga4';
 import SlidePrintManager from './SlidePrintManager';
 import { getNextSlide, getPreviousSlide, downloadSlide } from '../slideHelpers.js';
 import { isMobile } from 'react-device-detect';
@@ -19,9 +19,10 @@ class Header extends Component {
         let nextSlide = getNextSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
         this.props.setSelectedSlide(nextSlide);
         this.props.toggleMenu(true);
-		ReactGA.event({
+		ReactGA4.event({
 			category: 'Participant Portal',
-			action: 'Select Slide',
+			action: 'Navigation',
+			label: 'Select Slide'
 		});
     }
 
@@ -29,25 +30,28 @@ class Header extends Component {
         let previousSlide = getPreviousSlide(this.props.selectedPatient.slides, this.props.selectedPatient.selectedSlide);
         this.props.setSelectedSlide(previousSlide);
         this.props.toggleMenu(true);
-		ReactGA.event({
+		ReactGA4.event({
 			category: 'Participant Portal',
-			action: 'Select slide',
+			action: 'Navigation',
+			label: 'Select Slide'
 		});
     }
     
     handleDownload() {
-        ReactGA.event({
+		let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
+        ReactGA4.event({
             category: 'Participant Portal',
-            action: 'Download Slide'
+            action: 'Download',
+			label: downloadFileName
         });
-    	let downloadFileName = this.props.selectedPatient.selectedSlide.slideName + ".jpg";
-    	downloadSlide(downloadFileName);
+		downloadSlide(downloadFileName);
     }
     
     onPrint() {
-        ReactGA.event({
+        ReactGA4.event({
             category: 'Participant Portal',
-            action: 'Print Slide'
+            action: 'Print',
+			label: this.props.selectedPatient.selectedSlide.slideName
         });
         SlidePrintManager.getInstance().beforePrint();
         setTimeout(window.print, 10);

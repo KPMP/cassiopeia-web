@@ -119,11 +119,14 @@ canvas {
 		text-decoration: underline;
 	}
 }
-
+.btn-primary {
+	background-color: rgb(2, 117, 216);
+}
 #summary-page {
 	max-width: 1150px;
 	position: relative;
 	margin: auto;
+	padding-bottom: 20px;
 
 	.btn-primary {
 		background-color: #BB0606;
@@ -164,7 +167,7 @@ canvas {
 	#summary-content-wrapper {
 		margin-top: 100px;
 		z-index: 0;
-
+		padding-bottom: 1.25rem;
 		.row {
 			margin-left: 20px;
 		}
@@ -340,7 +343,23 @@ canvas {
 		}
 	}
 }
+#oops-content {
 
+	margin-top: 150px;
+
+	.oops-big {
+		font-size: 72px;
+	}
+
+	.oops-small {
+		font-size: 32px;
+	}
+
+	#oops-image {
+		width: 385px;
+		height: 330px;
+	}
+}
 @media only print {
 	body {
 		font-size: 16px;
