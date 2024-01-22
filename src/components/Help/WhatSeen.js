@@ -47,7 +47,7 @@ class WhatSeen extends Component {
                                 </p>
                             </Col>
                             <Col lg='8' xs='12'>
-                                <img alt='anatomy of slide image' src='img/help/figure_wsi.png' />
+                                <img alt='anatomy of slide' src='img/help/figure_wsi.png' />
                             </Col>
                         </Row>
                     </div>
