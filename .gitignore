@@ -4,3 +4,4 @@ build/
 **/*.css
 .idea
 *.iml
+**/*.css.map
