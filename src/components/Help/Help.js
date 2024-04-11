@@ -50,11 +50,12 @@ class Help extends Component {
                     </Row>
                     <Row className='pb-3'>
                         <Col lg='4' xs='12' className='pb-3'>
-                            Watch the video for an overview of the Participant Portal and how to navigate its features.
+                            <p>Watch the video for an overview of the Participant Portal and how to navigate its features.</p>
+                            <p><a target='_blank' href='https://youtu.be/SPJVMtA4qWI' >Mira el video en espa&#241;ol.</a></p>
                         </Col>
                         <Col lg='8' xs='12'>
                             <div className='player-wrapper'>
-                                <ReactPlayer className='react-player' width='100%' height='100%' url='https://youtu.be/K_hiGYBkP38' />
+                                <ReactPlayer className='react-player' width='100%' height='100%' url='https://youtu.be/Ik9RCT_dR60' />
                             </div>
                         </Col>
                     </Row>
