@@ -1,6 +1,6 @@
 {
   "name": "cassiopeia-web",
-  "version": "1.2.0",
+  "version": "1.7.0",
   "private": true,
   "devDependencies": {
     "sass": "1.63.6",
