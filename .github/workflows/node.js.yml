@@ -4,14 +4,98 @@
 name: Node.js CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+  create:
+    branches: [ develop ]
   push:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
 
-jobs:
-  build:
+permissions:
+  contents: write
+  pull-requests: write
 
+jobs:
+  bump-version:
+    if: ${{ (github.event_name == 'create' && github.event.ref == 'develop' && github.event.ref_type == 'branch') || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    env:
+      BUMP_TYPE: ${{ github.event.inputs.bump_type || 'patch' }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Create version bump branch
+        run: |
+          BRANCH_NAME="chore/version-bump-${GITHUB_RUN_ID}"
+          git checkout -b "$BRANCH_NAME"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> "$GITHUB_ENV"
+
+      - name: Bump package version
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const pkgPath = path.join(process.cwd(), 'package.json');
+          const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+          const [major, minor, patch] = String(pkg.version || '0.0.0').split('.').map(Number);
+          const bumpType = (process.env.BUMP_TYPE || 'patch').toLowerCase();
+
+          let nextVersion;
+          switch (bumpType) {
+            case 'major':
+              nextVersion = `${major + 1}.0.0`;
+              break;
+            case 'minor':
+              nextVersion = `${major}.${minor + 1}.0`;
+              break;
+            default:
+              nextVersion = `${major}.${minor}.${patch + 1}`;
+          }
+
+          pkg.version = nextVersion;
+          fs.writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
+          NODE
+
+      - name: Commit version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- package.json; then
+            echo "VERSION_BUMP_CREATED=false" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          git add package.json
+          git commit -m "Bump package version for develop (${BUMP_TYPE})"
+          git push origin "$BRANCH_NAME"
+          echo "VERSION_BUMP_CREATED=true" >> "$GITHUB_ENV"
+
+      - name: Create pull request
+        if: ${{ env.VERSION_BUMP_CREATED == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base develop \
+            --head "$BRANCH_NAME" \
+            --title "Bump package version for develop (${BUMP_TYPE})" \
+            --body "This PR bumps the package version using the ${BUMP_TYPE} increment after the develop branch was created."
+
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,13 +104,13 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
