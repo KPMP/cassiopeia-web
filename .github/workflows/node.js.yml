@@ -12,8 +12,8 @@ permissions:
 
 jobs:
   bump-version:
-    name: 'Bump Version on master'
-    if: github.ref == 'refs/heads/master'
+    name: 'Bump Version on develop'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
  
     steps:
